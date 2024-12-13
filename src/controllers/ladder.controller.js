@@ -1,6 +1,8 @@
+import { sequelize } from "../database/database.js";
+import { Op } from "sequelize";
 import { Juego } from "../models/Juego.model.js";
 import { Clan } from "../models/Clan.model.js";
-import { calcularNuevoRaking } from "../utils/rankings.js";
+import { calcularAscensoRanking, nuevoRankingCLanUnranked, obtenerRankingActual } from "../utils/rankings.js";
 
 export const crearJuego = async(req, res) =>{
     try {
@@ -54,18 +56,60 @@ export const obtenerLadders = async(req, res) =>{
 
 export const ranking = async(req, res) =>{
     try {
-        const rankingClanGanador = await calcularNuevoRaking(6)
+        const transaction = await sequelize.transaction()
+        const { id_clan_ganador , id_clan_perdedor } = req.body
+        const rankingGanador = await obtenerRankingActual(2)
+        const rankingPerdedor = await obtenerRankingActual(1)
+        let nuevoRankingGanador
 
-        await Clan.update(
-            {
-            ranking_actual:rankingClanGanador
-            },
-            {
-                where: {
-                    id: 6
+        //Si el clan está unranked queda en el último lugar de la tabla
+        if(rankingGanador === 0){
+            nuevoRankingGanador = await nuevoRankingCLanUnranked()
+        }
+        //Si el clan ganador tiene peor ranking pero más de un lugar de diferencia se calcula el nuevo lugar
+        else if(rankingGanador - rankingPerdedor > 1){
+            nuevoRankingGanador = await calcularAscensoRanking(rankingGanador, rankingPerdedor)
+        }
+        //si el clan ganador solo tiene un lugar de diferencia, automáticamente sube un lugar y el otro clan baja uno
+        else if(rankingGanador - rankingPerdedor == 1){
+            nuevoRankingGanador = 1
+        }
+        //en todos los demás casos el clan ganador mantiene su lugar
+        else{
+            nuevoRankingGanador = rankingGanador
+        }
+        console.log(rankingGanador);
+        console.log(rankingPerdedor);
+        console.log(nuevoRankingGanador)
+        if(nuevoRankingGanador != rankingGanador){
+            await Clan.update(
+                {
+                    ranking_actual: nuevoRankingGanador,
+                    ranking_anterior: rankingGanador
+                },
+                {
+                    where: {
+                        id: 2
+                    }
                 }
-            }
             )
+
+            await Clan.update(
+                { ranking_actual: sequelize.literal("ranking_actual + 1") },
+                {
+                    where: {
+                        ranking_actual: {
+                            [Op.between]: [nuevoRankingGanador , rankingGanador], 
+                        },
+                        id: {
+                            [Op.ne]: 2
+                        },
+                    },
+                }
+            );
+        }
+        await transaction.commit() 
+
 
 
 
