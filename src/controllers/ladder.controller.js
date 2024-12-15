@@ -54,13 +54,14 @@ export const obtenerLadders = async(req, res) =>{
     }
 }
 
-export const ranking = async(req, res) =>{
+export const calcularNuevoRanking = async(req, res) =>{
     try {
         const transaction = await sequelize.transaction()
         const { id_clan_ganador , id_clan_perdedor } = req.body
-        const rankingGanador = await obtenerRankingActual(2)
-        const rankingPerdedor = await obtenerRankingActual(1)
+        const rankingGanador = await obtenerRankingActual(id_clan_ganador)
+        const rankingPerdedor = await obtenerRankingActual(id_clan_perdedor)
         let nuevoRankingGanador
+
 
         //Si el clan está unranked queda en el último lugar de la tabla
         if(rankingGanador === 0){
@@ -78,18 +79,16 @@ export const ranking = async(req, res) =>{
         else{
             nuevoRankingGanador = rankingGanador
         }
-        console.log(rankingGanador);
-        console.log(rankingPerdedor);
-        console.log(nuevoRankingGanador)
+      
         if(nuevoRankingGanador != rankingGanador){
             await Clan.update(
                 {
                     ranking_actual: nuevoRankingGanador,
-                    ranking_anterior: rankingGanador
+                    ranking_anterior: rankingGanador,
                 },
                 {
                     where: {
-                        id: 2
+                        id: id_clan_ganador
                     }
                 }
             )
@@ -102,20 +101,45 @@ export const ranking = async(req, res) =>{
                             [Op.between]: [nuevoRankingGanador , rankingGanador], 
                         },
                         id: {
-                            [Op.ne]: 2
+                            [Op.ne]: id_clan_ganador
                         },
                     },
                 }
             );
+
+            
         }
+        //Actualizar Juegos y Victorias Clan Ganador
+        await Clan.update(
+            {
+                triunfos: sequelize.literal('triunfos + 1'),
+                juegos: sequelize.literal('juegos + 1')
+            },
+            {
+                where: {
+                    id: id_clan_ganador
+                }
+            }
+        )
+        
+        //Actualizar Juegos y Derrotas Clan Ganador
+        await Clan.update(
+            {
+                derrotas: sequelize.literal('derrotas + 1'),
+                juegos: sequelize.literal('juegos + 1')
+            },
+            {
+                where: {
+                    id: id_clan_perdedor
+                }
+            }
+        )
         await transaction.commit() 
-
-
 
 
         res.status(200).json({
             code:200,
-            message: "Rankings obtenidos Con éxito",
+            message: "Reporte realizado con éxito",
         })
     } catch (error) {
         console.log(error.message);
