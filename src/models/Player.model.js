@@ -11,6 +11,10 @@ export const Player = sequelize.define('Player', {
         type: DataTypes.STRING(100),
         allowNull: false,
     },
+    password:{
+        type: DataTypes.STRING(100),
+        allowNull: false,
+    },
     email: {
         type: DataTypes.STRING(150),
         allowNull: false,
@@ -18,13 +22,15 @@ export const Player = sequelize.define('Player', {
     },
     victorias: {
         type: DataTypes.INTEGER,
-        type: DataTypes.INTEGER,
         defaultValue: 0
     },
     derrotas: {
         type: DataTypes.INTEGER,
-        type: DataTypes.INTEGER,
         defaultValue: 0
+    },
+    admin:{
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
     },
     created_at: {
         type: DataTypes.DATE,

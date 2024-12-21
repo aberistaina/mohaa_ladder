@@ -66,7 +66,7 @@ Player.belongsToMany(Clan, {
 Clan.belongsToMany(Player, {
     through: PlayerClan,
     foreignKey: "clan_id",
-    as: "jugadores",
+    as: "players",
 });
 
 // Asociación entre PlayerClan y Rango

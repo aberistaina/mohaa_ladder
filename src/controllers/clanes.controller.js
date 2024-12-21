@@ -1,4 +1,6 @@
 import { Clan } from "../models/Clan.model.js";
+import { Player } from "../models/Player.model.js";
+import { PlayerClan } from "../models/PlayerClan.model.js";
 
 export const crearClan = async(req, res) =>{
     try {
@@ -37,6 +39,63 @@ export const obtenerClanes = async(req, res) =>{
             code:200,
             message: "Clanes obtenidos Con éxito",
             data: clanes
+        })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
+
+export const obtenerClan = async(req, res) =>{
+    try {
+        const { id } = req.params
+        const clan = await Clan.findOne({
+            include:[{
+                model: Player,
+                attributes: ["username", "victorias", "derrotas"],
+                as: "players",
+                through:{
+                model: PlayerClan,
+                attributes: []
+                }
+            }],
+            where:{
+                id
+            }
+        })
+        res.status(200).json({
+            code:200,
+            message: "Clan obtenido Con éxito",
+            data: clan
+        })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
+
+export const ingresarPlayerClan = async(req, res) =>{
+    try {
+
+        const { player_id, clan_id } = req.body
+
+        await PlayerClan.create({   
+            player_id,
+            clan_id,
+            rank_id: 1
+
+        })
+
+        res.status(200).json({
+            code:200,
+            message: "Jugador ingresado correctamente al clan",
+
         })
     } catch (error) {
         console.log(error.message);

@@ -11,7 +11,10 @@ export const Etapa = sequelize.define("Etapa", {
     },
     nombre: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
+        validate:{
+            notEmpty: true
+        }
     },
     id_juego: {
         type: DataTypes.INTEGER,

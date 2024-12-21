@@ -17,6 +17,3 @@ export const PlayerClan = sequelize.define('PlayerClan', {
     tableName: 'player_clan',
     timestamps: false,
 });
-
-Player.belongsToMany(Clan, { through: PlayerClan, foreignKey: 'player_id' });
-Clan.belongsToMany(Player, { through: PlayerClan, foreignKey: 'clan_id' });

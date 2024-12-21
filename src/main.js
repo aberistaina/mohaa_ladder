@@ -27,6 +27,6 @@ app.use("/api/v1/juegos", juegosRoutes)
 app.use("/api/v1/etapas", etapasRoutes)
 app.use("/api/v1/clanes", clanesRoutes)
 app.use("/api/v1/ladder", ladderRoutes)
-app.use("/api/v1/usuarios", usuariosRoutes)
+app.use("/api/v1/players", usuariosRoutes)
 
 

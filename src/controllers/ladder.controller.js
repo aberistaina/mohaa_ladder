@@ -55,8 +55,9 @@ export const obtenerLadders = async(req, res) =>{
 }
 
 export const calcularNuevoRanking = async(req, res) =>{
+    const transaction = await sequelize.transaction()
     try {
-        const transaction = await sequelize.transaction()
+        
         const { id_clan_ganador , id_clan_perdedor } = req.body
         const rankingGanador = await obtenerRankingActual(id_clan_ganador)
         const rankingPerdedor = await obtenerRankingActual(id_clan_perdedor)
@@ -79,7 +80,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         else{
             nuevoRankingGanador = rankingGanador
         }
-      
+
         if(nuevoRankingGanador != rankingGanador){
             await Clan.update(
                 {
