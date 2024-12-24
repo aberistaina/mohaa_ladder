@@ -42,11 +42,13 @@ export const obtenerEtapas = async(req, res) =>{
                 },
             ],
             attributes: ["id", "nombre"],
+            raw: true,
+            nest: true,     
         });
 
         const etapasConJuego = etapas.map((etapa) => {
             return {
-                ...etapa.toJSON(),
+                ...etapa,
                 juego: etapa.juego.nombre,
             };
         });
