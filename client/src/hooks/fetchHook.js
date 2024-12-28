@@ -1,7 +1,6 @@
 
 export const fetchHook = async(url, method, body ) => {
     try {
-        console.log(body);
         const response = await fetch(url, {
             method: method,
             headers: {
