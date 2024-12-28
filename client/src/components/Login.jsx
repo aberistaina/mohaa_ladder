@@ -1,9 +1,14 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { fetchHook } from '../hooks/fetchHook';
+import { guardarLocalStorage } from '../hooks/localStorage';
+import { useState } from 'react';
 
 
 export const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const url = "http://localhost:3000/api/v1/login/google";
     const method = "POST";
@@ -16,8 +21,24 @@ export const Login = () => {
                 email
             };
                 const data = await fetchHook(url, method, body);
-                console.log(data);
+                guardarLocalStorage(data.token, data.playerData);
             };
+
+    const login = async (e) => {
+        e.preventDefault()
+    
+        const url = "http://localhost:3000/api/v1/login";
+        const method = "POST";
+        const body = {
+            email,
+            password
+        };
+    
+        const data = await fetchHook(url, method, body);
+        console.log(data);
+        guardarLocalStorage(data.token, data.playerData);
+    };
+            
 
     return (
         <div className="flex items-center justify-center">
@@ -28,7 +49,7 @@ export const Login = () => {
                 </h2>
 
                 {/* Formulario */}
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit= {login}>
                     {/* Email */}
                     <div>
                         <label
@@ -42,6 +63,7 @@ export const Login = () => {
                             id="email"
                             placeholder="Ingresa tu correo"
                             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
 
@@ -58,6 +80,7 @@ export const Login = () => {
                             id="password"
                             placeholder="Ingresa tu contraseña"
                             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 

@@ -11,25 +11,25 @@ let secret = process.env.SECRET
 
 export const emitirToken = async(req, res, next) =>{
     try {
-        let {id, password } = req.body
+        let {email, password } = req.body
 
         let player = await Player.findOne({
             attributes: ["id", "username", "email", "admin", "password"],
             where:{
-                id
+                email
             }
         })
 
         console.log(player);
         if (!player){
-            return res.json({code:400, message: "ID o Password Incorrecto",})
+            return res.json({code:400, message: "email o Password Incorrecto",})
         }
 
         let validacionPassword = await bcrypt.compare(password, player.password)
         
         
         if(!validacionPassword){
-            return res.json({code:400, message: "ID o Password Incorrecto",})
+            return res.json({code:400, message: "email o Password Incorrecto",})
         }
 
         const { password: _, ...usuarioSinPassword } = player.toJSON();
