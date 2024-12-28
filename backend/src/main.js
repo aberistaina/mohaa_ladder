@@ -4,7 +4,8 @@ import etapasRoutes  from "./routes/etapas.routes.js"
 import juegosRoutes  from "./routes/juegos.routes.js"
 import clanesRoutes  from "./routes/clanes.routes.js"
 import ladderRoutes  from "./routes/ladder.routes.js"
-import usuariosRoutes  from "./routes/usuarios.routes.js"
+import playersRoutes  from "./routes/players.routes.js"
+import loginRoutes  from "./routes/login.routes.js"
 
 
 import * as path from "path";
@@ -27,6 +28,7 @@ app.use("/api/v1/juegos", juegosRoutes)
 app.use("/api/v1/etapas", etapasRoutes)
 app.use("/api/v1/clanes", clanesRoutes)
 app.use("/api/v1/ladder", ladderRoutes)
-app.use("/api/v1/players", usuariosRoutes)
+app.use("/api/v1/players", playersRoutes)
+app.use("/api/v1/login", loginRoutes)
 
 

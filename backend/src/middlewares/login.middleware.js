@@ -19,6 +19,8 @@ export const emitirToken = async(req, res, next) =>{
                 id
             }
         })
+
+        console.log(player);
         if (!player){
             return res.json({code:400, message: "ID o Password Incorrecto",})
         }

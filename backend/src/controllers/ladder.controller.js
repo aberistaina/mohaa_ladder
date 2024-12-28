@@ -85,7 +85,7 @@ export const calcularNuevoRanking = async(req, res) =>{
             await Clan.update(
                 {
                     ranking_actual: nuevoRankingGanador,
-                    ranking_anterior: rankingGanador,
+                    ultimo_ranking: rankingGanador,
                 },
                 {
                     where: {
@@ -93,6 +93,20 @@ export const calcularNuevoRanking = async(req, res) =>{
                     }
                 }
             )
+
+            await Clan.update(
+                { ultimo_ranking: sequelize.literal("ranking_actual") },
+                {
+                    where: {
+                        ranking_actual: {
+                            [Op.between]: [nuevoRankingGanador , rankingGanador], 
+                        },
+                        id: {
+                            [Op.ne]: id_clan_ganador
+                        },
+                    },
+                }
+            );
 
             await Clan.update(
                 { ranking_actual: sequelize.literal("ranking_actual + 1") },
@@ -114,7 +128,13 @@ export const calcularNuevoRanking = async(req, res) =>{
         await Clan.update(
             {
                 triunfos: sequelize.literal('triunfos + 1'),
-                juegos: sequelize.literal('juegos + 1')
+                juegos: sequelize.literal('juegos + 1'),
+                racha_actual: sequelize.literal(`
+                    CASE 
+                        WHEN racha_actual <= 0 THEN 1
+                        ELSE racha_actual + 1
+                    END
+                `)
             },
             {
                 where: {
@@ -123,11 +143,17 @@ export const calcularNuevoRanking = async(req, res) =>{
             }
         )
         
-        //Actualizar Juegos y Derrotas Clan Ganador
+        //Actualizar Juegos y Derrotas Clan Perdedor
         await Clan.update(
             {
                 derrotas: sequelize.literal('derrotas + 1'),
-                juegos: sequelize.literal('juegos + 1')
+                juegos: sequelize.literal('juegos + 1'),
+                racha_actual: sequelize.literal(`
+                    CASE 
+                        WHEN racha_actual > 0 THEN 0
+                        ELSE racha_actual - 1
+                    END
+                `)
             },
             {
                 where: {

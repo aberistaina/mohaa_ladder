@@ -34,7 +34,9 @@ export const crearClan = async(req, res) =>{
 
 export const obtenerClanes = async(req, res) =>{
     try {
-        const clanes = await Clan.findAll()
+        const clanes = await Clan.findAll({
+            order: [["ranking_actual", "ASC"]]
+        })
         res.status(200).json({
             code:200,
             message: "Clanes obtenidos Con éxito",
