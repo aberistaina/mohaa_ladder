@@ -1,0 +1,100 @@
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
+import { fetchHook } from '../hooks/fetchHook';
+
+
+export const Login = () => {
+
+    const url = "http://localhost:3000/api/v1/login/google";
+    const method = "POST";
+    
+    const loginGoogle = async (token, name, email) => {
+
+            const body = {
+                token,
+                name,
+                email
+            };
+                const data = await fetchHook(url, method, body);
+                console.log(data);
+            };
+
+    return (
+        <div className="flex items-center justify-center">
+            <div className="w-full max-w-md p-6">
+                {/* Título */}
+                <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                    Iniciar Sesión
+                </h2>
+
+                {/* Formulario */}
+                <form className="space-y-4">
+                    {/* Email */}
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-700"
+                        >
+                            Correo Electrónico
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Ingresa tu correo"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        />
+                    </div>
+
+                    {/* Contraseña */}
+                    <div>
+                        <label
+                            htmlFor="password"
+                            className="block text-sm font-medium text-gray-700"
+                        >
+                            Contraseña
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Ingresa tu contraseña"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        />
+                    </div>
+
+                    {/* Botón de iniciar sesión */}
+                    <div>
+                        <button
+                            type="submit"
+                            className="w-full px-4 py-2 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-300"
+                        >
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+
+                {/* Divider */}
+                <div className="flex items-center justify-center my-4">
+                    <span className="h-px w-full bg-gray-300"></span>
+                    <span className="px-3 text-sm text-gray-500">O</span>
+                    <span className="h-px w-full bg-gray-300"></span>
+                </div>
+
+                {/* Botón de Google */}
+                <div>
+                    
+
+                            <GoogleLogin 
+                            onSuccess={(credentialResponse) => {
+                                const token = credentialResponse.credential
+                                const username = jwtDecode(credentialResponse.credential).name
+                                const email = jwtDecode(credentialResponse.credential).email
+                                loginGoogle(token, username, email)
+                            }} 
+                            
+                            onError={() => console.log("login failed")}
+                            />
+                </div>
+            </div>
+        </div>
+    );
+};

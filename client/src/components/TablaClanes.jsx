@@ -18,7 +18,7 @@ export const TablaClanes = () => {
     return (
         <>
             <div className="overflow-x-auto flex justify-center p-4">
-                <table className="min-w-[60%] table-auto bg-white rounded-lg shadow-md">
+                <table className="min-w-[80%] table-auto bg-white rounded-lg shadow-md">
                     <thead className="bg-[#F3F3F3] text-black">
                         <tr>
                             <th className="px-4 py-2 text-left">Lugar</th>

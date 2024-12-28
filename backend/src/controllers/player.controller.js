@@ -1,6 +1,26 @@
 import bcrypt from "bcrypt"
 import { Player } from "../models/Player.model.js"
 
+export const obtenerPlayers = async(req, res) =>{
+    try {
+        const players = await Player.findAll()
+                
+            res.status(201).json({
+                code:201,
+                message: "Playes encontrados Con éxito",
+                data: players
+            })
+        
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
+
 
 export const crearPlayer = async(req, res) =>{
     try {
