@@ -12363,3 +12363,29 @@
 2024-12-28 17:02:43 info: Executing (default): SHOW INDEX FROM `ladder`
 2024-12-28 17:02:43 info: Modelos sincronizados correctamente.
 2024-12-28 17:02:43 info: Servidor escuchando en el puerto: 3000
+2024-12-28 17:35:38 error: Ha ocurrido un error Access denied for user ''@'localhost' (using password: YES)
+2024-12-28 17:41:11 info: Executing (default): SELECT 1+1 AS result
+2024-12-28 17:41:11 info: Conexión a la base de datos establecida correctamente.
+2024-12-28 17:41:11 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:11 info: Executing (default): CREATE TABLE IF NOT EXISTS `juego` (`id` INTEGER auto_increment , `nombre` TEXT NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+2024-12-28 17:41:11 info: Executing (default): SHOW INDEX FROM `juego`
+2024-12-28 17:41:11 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:11 info: Executing (default): CREATE TABLE IF NOT EXISTS `etapa` (`id` INTEGER auto_increment , `nombre` TEXT NOT NULL, `id_juego` INTEGER NOT NULL, `activo` TINYINT(1) DEFAULT true, `fecha_creacion` DATETIME, PRIMARY KEY (`id`), FOREIGN KEY (`id_juego`) REFERENCES `juego` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+2024-12-28 17:41:11 info: Executing (default): SHOW INDEX FROM `etapa`
+2024-12-28 17:41:11 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:11 info: Executing (default): CREATE TABLE IF NOT EXISTS `clan` (`id` INTEGER auto_increment , `nombre` VARCHAR(255) NOT NULL, `tag` VARCHAR(20) NOT NULL UNIQUE, `id_etapa` INTEGER, `ranking_actual` INTEGER DEFAULT 0, `ultimo_ranking` INTEGER DEFAULT 0, `mejor_ranking` INTEGER DEFAULT 0, `triunfos` INTEGER DEFAULT 0, `derrotas` INTEGER DEFAULT 0, `juegos` INTEGER DEFAULT 0, `porcentaje_triunfos` INTEGER DEFAULT 0, `racha_actual` INTEGER DEFAULT 0, `mejor_racha` INTEGER DEFAULT 0, `peor_racha` INTEGER DEFAULT 0, `dias_inactivos` INTEGER DEFAULT 0, PRIMARY KEY (`id`), FOREIGN KEY (`id_etapa`) REFERENCES `etapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+2024-12-28 17:41:12 info: Executing (default): SHOW INDEX FROM `clan`
+2024-12-28 17:41:12 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:12 info: Executing (default): CREATE TABLE IF NOT EXISTS `player` (`id` INTEGER auto_increment , `username` VARCHAR(100) NOT NULL, `password` VARCHAR(100) NOT NULL, `email` VARCHAR(150) NOT NULL UNIQUE, `victorias` INTEGER DEFAULT 0, `derrotas` INTEGER DEFAULT 0, `admin` TINYINT(1) DEFAULT false, `created_at` DATETIME, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+2024-12-28 17:41:12 info: Executing (default): SHOW INDEX FROM `player`
+2024-12-28 17:41:12 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'rango' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:12 info: Executing (default): CREATE TABLE IF NOT EXISTS `rango` (`id` INTEGER auto_increment , `name` VARCHAR(50) NOT NULL UNIQUE, `description` TEXT, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+2024-12-28 17:41:12 info: Executing (default): SHOW INDEX FROM `rango`
+2024-12-28 17:41:12 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:12 info: Executing (default): CREATE TABLE IF NOT EXISTS `player_clan` (`id` INTEGER auto_increment , `joined_at` DATETIME, `player_id` INTEGER, `clan_id` INTEGER, `rank_id` INTEGER, UNIQUE `player_clan_clan_id_player_id_unique` (`player_id`, `clan_id`), PRIMARY KEY (`id`), FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (`clan_id`) REFERENCES `clan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (`rank_id`) REFERENCES `rango` (`id`) ON DELETE SET NULL ON UPDATE CASCADE) ENGINE=InnoDB;
+2024-12-28 17:41:12 info: Executing (default): SHOW INDEX FROM `player_clan`
+2024-12-28 17:41:12 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 17:41:12 info: Executing (default): CREATE TABLE IF NOT EXISTS `ladder` (`id` INTEGER auto_increment , `comentario` TEXT, `fecha` DATETIME, `id_clan_ganador` INTEGER NOT NULL, `id_clan_perdedor` INTEGER NOT NULL, `id_etapa` INTEGER NOT NULL, PRIMARY KEY (`id`), FOREIGN KEY (`id_clan_ganador`) REFERENCES `clan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (`id_clan_perdedor`) REFERENCES `clan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (`id_etapa`) REFERENCES `etapa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB;
+2024-12-28 17:41:12 info: Executing (default): SHOW INDEX FROM `ladder`
+2024-12-28 17:41:12 info: Modelos sincronizados correctamente.
+2024-12-28 17:41:12 info: Servidor escuchando en el puerto: 3000
