@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+import { obtenerLocalStorage } from "../hooks/localStorage";
+import { fetchHook } from "../hooks/fetchHook";
+import { formatDate } from '../utils/formatearFecha';
+
 export const MiCuenta = () => {
+    const [player, setPlayer] = useState({})
+
+    useEffect(() => {
+        const getInfoPlayer = async () => {
+            const { playerData } = obtenerLocalStorage()
+            const url = `http://localhost:3000/api/v1/players/${playerData.id}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
+            setPlayer(data.data[0]);
+        };
+        getInfoPlayer()
+    }, []);
+
     return (
         <>
             <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -7,7 +25,7 @@ export const MiCuenta = () => {
                     <div className="w-full md:w-1/3 md:pr-6 mb-6 md:mb-0">
                         {/* Imagen del Jugador */}
                         <img
-                            src="https://via.placeholder.com/150"
+                            src="https://st3.depositphotos.com/9468312/12912/v/450/depositphotos_129128076-stock-illustration-gray-man-avatar.jpg"
                             alt="Jugador"
                             className="rounded-full w-32 h-32 md:w-full md:h-full object-cover mx-auto"
                         />
@@ -18,25 +36,25 @@ export const MiCuenta = () => {
                         </h2>
                         <div className="space-y-2">
                             <p>
-                                <strong>ID:</strong> 12345
+                                <strong>ID:</strong> {player.id}
                             </p>
                             <p>
-                                <strong>Username:</strong> player_username
+                                <strong>Username:</strong> {player.username}
                             </p>
                             <p>
-                                <strong>Fecha de Ingreso:</strong> 2024-01-01
+                            <strong>Fecha de Ingreso:</strong> {player && formatDate(player.created_at)}
                             </p>
                             <p>
                                 <strong>ID Volute:</strong> 67890
                             </p>
                             <p>
-                                <strong>Email:</strong> player@example.com
+                                <strong>Email:</strong> {player.email}
                             </p>
                             <p>
-                                <strong>Victorias:</strong> 20
+                                <strong>Victorias:</strong> {player.victorias}
                             </p>
                             <p>
-                                <strong>Derrotas:</strong> 5
+                                <strong>Derrotas:</strong> {player.derrotas}
                             </p>
                         </div>
                     </div>
@@ -62,24 +80,22 @@ export const MiCuenta = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr className="border-b">
-                                    <td className="px-4 py-2">Clan Alpha</td>
-                                    <td className="px-4 py-2">Etapa 1</td>
-                                    <td className="px-4 py-2">Rango A</td>
-                                    <td className="px-4 py-2">2023-06-15</td>
-                                </tr>
-                                <tr className="border-b">
-                                    <td className="px-4 py-2">Clan Beta</td>
-                                    <td className="px-4 py-2">Etapa 2</td>
-                                    <td className="px-4 py-2">Rango B</td>
-                                    <td className="px-4 py-2">2023-09-20</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-2">Clan Gamma</td>
-                                    <td className="px-4 py-2">Etapa 3</td>
-                                    <td className="px-4 py-2">Rango C</td>
-                                    <td className="px-4 py-2">2024-01-01</td>
-                                </tr>
+                            {player.clanes && player.clanes.map((clan) => (
+                                    <tr className="border-b" key={clan.id}>
+                                        <td className="px-4 py-2">
+                                            {clan.nombre}
+                                        </td>
+                                        <td className="px-4 py-2">
+                                            {clan.etapa_nombre}
+                                        </td>
+                                        <td className="px-4 py-2">
+                                            {clan.rango}
+                                        </td>
+                                        <td className="px-4 py-2">
+                                            {clan && formatDate(clan.joined_at)}
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

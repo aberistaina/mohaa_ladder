@@ -1,13 +1,16 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../database/database.js';
-import { Player } from './Player.model.js';
-import { Clan } from './Clan.model.js';
+
 
 export const PlayerClan = sequelize.define('PlayerClan', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+    },
+    rango: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
     },
     joined_at: {
         type: DataTypes.DATE,

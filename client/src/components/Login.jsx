@@ -21,7 +21,8 @@ export const Login = () => {
                 email
             };
                 const data = await fetchHook(url, method, body);
-                guardarLocalStorage(data.token, data.playerData);
+                
+                guardarLocalStorage(data.token, data.player);
             };
 
     const login = async (e) => {
@@ -35,8 +36,7 @@ export const Login = () => {
         };
     
         const data = await fetchHook(url, method, body);
-        console.log(data);
-        guardarLocalStorage(data.token, data.playerData);
+        guardarLocalStorage(data.token, data.player);
     };
             
 

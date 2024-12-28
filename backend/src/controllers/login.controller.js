@@ -30,8 +30,6 @@ export const loginGoogle = async(req, res) =>{
             attributes: ["id", "username", "email", "admin"],
             where: { email }
         })
-        console.log(player);
-        console.log(name);
 
         if(!player){
             const password = crypto.randomBytes(16).toString('hex')

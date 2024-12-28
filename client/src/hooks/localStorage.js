@@ -1,6 +1,6 @@
 export const guardarLocalStorage = (token, playerData) => {
     localStorage.setItem("token", token)
-    localStorage.setItem("token", JSON.stringify(playerData))
+    localStorage.setItem("player", JSON.stringify(playerData))
 }
 
 export const limpiarLocalStorage = () => {
@@ -9,6 +9,6 @@ export const limpiarLocalStorage = () => {
 
 export const obtenerLocalStorage = () => { 
     const token = localStorage.getItem("token")
-    const playerData = JSON.parse(localStorage.getItem("playerData"))
+    const playerData = JSON.parse(localStorage.getItem("player"))
     return {token, playerData}
 }
