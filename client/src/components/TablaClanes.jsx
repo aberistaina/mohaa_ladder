@@ -17,29 +17,29 @@ export const TablaClanes = () => {
 
     return (
         <>
-            <div className="overflow-x-auto flex justify-center p-4">
-                <table className="min-w-[80%] table-auto bg-white rounded-lg shadow-md">
-                    <thead className="bg-[#F3F3F3] text-black">
-                        <tr>
-                            <th className="px-4 py-2 text-left">Lugar</th>
-                            <th className="px-4 py-2 text-left">Clan</th>
-                            <th className="px-4 py-2 text-left">Ganados</th>
-                            <th className="px-4 py-2 text-left">Perdidos</th>
-                            <th className="px-4 py-2 text-left">Racha</th>
-                            <th className="px-4 py-2 text-left">
+            <div className="overflow-x-auto flex justify-center rounded border border-slate-500">
+                <table className="min-w-[80%] table-auto bg-slate-900 rounded-lg shadow-md">
+                    <thead className="bg-slate-950 border-b border-slate-500">
+                        <tr className="text-slate-100 text-xl">
+                            <th className="px-4 py-2 text-left font-semibold">Lugar</th>
+                            <th className="px-4 py-2 text-center font-semibold">Clan</th>
+                            <th className="px-4 py-2 text-left font-semibold">Ganados</th>
+                            <th className="px-4 py-2 text-left font-semibold">Perdidos</th>
+                            <th className="px-4 py-2 text-left font-semibold">Racha</th>
+                            <th className="px-4 py-2 text-left font-semibold">
                                 Promedio Victorias
                             </th>
-                            <th className="px-4 py-2 text-left">
+                            <th className="px-4 py-2 text-left font-semibold">
                                 Último Registro
                             </th>
-                            <th className="px-4 py-2 text-left">Id</th>
+                            <th className="px-4 py-2 text-left font-semibold">Id</th>
                         </tr>
                     </thead>
                     <tbody>
                         {clanes &&
                             clanes.map((clan) => (
                                 <tr
-                                    className="hover:bg-[#7C8C98] text-black"
+                                    className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800"
                                     key={clan.id}
                                 >
                                     <td className="px-4 py-2">
@@ -53,19 +53,19 @@ export const TablaClanes = () => {
                                         ? "⬆️ " + clan.ranking_actual
                                         : "⬇️ " + clan.ranking_actual}
                                     </td>
-                                    <td className="px-4 py-2 font-semibold text-blue-600">
+                                    <td className="px-4 py-2 font-semibold text-slate-50">
                                         {clan.nombre}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2 text-center">
                                         {clan.triunfos}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2 text-center">
                                         {clan.derrotas}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2 text-center">
                                         {clan.racha_actual}
                                     </td>
-                                    <td className="px-4 py-2">
+                                    <td className="px-4 py-2 text-center">
                                         {clan.juegos === 0
                                             ? 0
                                             : Math.round((clan.triunfos / clan.juegos) * 100) + " %"
@@ -74,7 +74,7 @@ export const TablaClanes = () => {
                                     <td className="px-4 py-2">
                                         {clan.dias_inactivo}
                                     </td>
-                                    <td className="px-4 py-2">{clan.id}</td>
+                                    <td className="px-4 py-2 text-center">{clan.id}</td>
                                 </tr>
                             ))}
                     </tbody>

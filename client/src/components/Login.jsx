@@ -41,10 +41,10 @@ export const Login = () => {
             
 
     return (
-        <div className="flex items-center justify-center">
-            <div className="w-full max-w-md p-6">
+        <div className="flex items-center justify-center bg-slate-900">
+            <div className="w-full max-w-md p-6 border border-slate-500 rounded">
                 {/* Título */}
-                <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">
                     Iniciar Sesión
                 </h2>
 
@@ -54,7 +54,7 @@ export const Login = () => {
                     <div>
                         <label
                             htmlFor="email"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-semibold text-slate-300"
                         >
                             Correo Electrónico
                         </label>
@@ -71,7 +71,7 @@ export const Login = () => {
                     <div>
                         <label
                             htmlFor="password"
-                            className="block text-sm font-medium text-gray-700"
+                            className="block text-sm font-semibold text-slate-300"
                         >
                             Contraseña
                         </label>
@@ -88,9 +88,9 @@ export const Login = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full px-4 py-2 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-300"
+                            className="w-full px-4 py-2 text-slate-200 font-semibold bg-indigo-800 rounded-lg transition-all duration-300 hover:bg-indigo-900"
                         >
-                            Iniciar Sesión
+                            Inicia Sesión
                         </button>
                     </div>
                 </form>
@@ -104,18 +104,16 @@ export const Login = () => {
 
                 {/* Botón de Google */}
                 <div>
+                    <GoogleLogin 
+                    onSuccess={(credentialResponse) => {
+                        const token = credentialResponse.credential
+                        const username = jwtDecode(credentialResponse.credential).name
+                        const email = jwtDecode(credentialResponse.credential).email
+                        loginGoogle(token, username, email)
+                    }} 
                     
-
-                            <GoogleLogin 
-                            onSuccess={(credentialResponse) => {
-                                const token = credentialResponse.credential
-                                const username = jwtDecode(credentialResponse.credential).name
-                                const email = jwtDecode(credentialResponse.credential).email
-                                loginGoogle(token, username, email)
-                            }} 
-                            
-                            onError={() => console.log("login failed")}
-                            />
+                    onError={() => console.log("login failed")}
+                    />
                 </div>
             </div>
         </div>
