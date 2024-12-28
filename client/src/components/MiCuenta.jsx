@@ -19,7 +19,7 @@ export const MiCuenta = () => {
 
     return (
         <>
-            <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+            <div className="max-w-4xl mx-auto p-6 border border-slate-500 bg-slate-900 rounded shadow-md">
                 {/* Información del Jugador */}
                 <div className="flex flex-col md:flex-row mb-8">
                     <div className="w-full md:w-1/3 md:pr-6 mb-6 md:mb-0">
@@ -31,44 +31,51 @@ export const MiCuenta = () => {
                         />
                     </div>
                     <div className="w-full md:w-2/3">
-                        <h2 className="text-2xl font-semibold mb-4">
+                        <h2 className="text-2xl font-bold mb-4 text-slate-100">
                             Información del Jugador
                         </h2>
-                        <div className="space-y-2">
-                            <p>
-                                <strong>ID:</strong> {player.id}
-                            </p>
-                            <p>
-                                <strong>Username:</strong> {player.username}
-                            </p>
-                            <p>
-                            <strong>Fecha de Ingreso:</strong> {player && formatDate(player.created_at)}
-                            </p>
-                            <p>
-                                <strong>ID Volute:</strong> 67890
-                            </p>
-                            <p>
-                                <strong>Email:</strong> {player.email}
-                            </p>
-                            <p>
-                                <strong>Victorias:</strong> {player.victorias}
-                            </p>
-                            <p>
-                                <strong>Derrotas:</strong> {player.derrotas}
-                            </p>
+                        <div className="space-y-2 text-slate-100 text-lg">
+                            <div className="flex justify-between">
+                                <p className="font-semibold">ID:</p>  
+                                <span className="font-normal text-slate-300">{player.id}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">Username:</p>  
+                                <span className="font-normal text-slate-300">{player.username}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">Fecha de Ingreso:</p>  
+                                <span className="font-normal text-slate-300">{player && formatDate(player.created_at)}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">ID Volute:</p>  
+                                <span className="font-normal text-slate-300">65874</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">Email:</p>  
+                                <span className="font-normal text-slate-300">{player.email}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">Victorias:</p>  
+                                <span className="font-normal text-slate-300">{player.victorias}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="font-semibold">Derrotas:</p>  
+                                <span className="font-normal text-slate-300">{player.derrotas}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Información del Equipo */}
                 <div>
-                    <h2 className="text-2xl font-semibold mb-4">
+                    <h2 className="text-2xl font-bold mb-4 text-slate-100">
                         Información del Equipo
                     </h2>
-                    <div className="overflow-x-auto bg-gray-50 rounded-lg shadow-md">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-200 text-left">
-                                <tr>
+                    <div className="overflow-x-auto bg-gray-50 rounded shadow-md">
+                        <table className="min-w-full border border-slate-500 bg-slate-900">
+                            <thead className="bg-slate-950 border-b border-slate-500">
+                                <tr className="text-slate-100 text-lg">
                                     <th className="px-4 py-2">
                                         Nombre del Clan
                                     </th>
@@ -79,9 +86,9 @@ export const MiCuenta = () => {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="text-center text-lg font-medium">
                             {player.clanes && player.clanes.map((clan) => (
-                                    <tr className="border-b" key={clan.id}>
+                                    <tr className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800" key={clan.id}>
                                         <td className="px-4 py-2">
                                             {clan.nombre}
                                         </td>
