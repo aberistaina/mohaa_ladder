@@ -4,7 +4,6 @@ import { Clan } from "./Clan.model.js";
 import { Ladder } from "./Ladder.model.js";
 import { Player } from "./Player.model.js";
 import { PlayerClan } from "./PlayerClan.model.js"
-import { Rango } from "./Rangos.model.js"
 
 // Asociación entre Juego y Etapa
 Juego.hasMany(Etapa, {
@@ -69,12 +68,3 @@ Clan.belongsToMany(Player, {
     as: "players",
 });
 
-// Asociación entre PlayerClan y Rango
-Rango.hasMany(PlayerClan, {
-    foreignKey: "rank_id",
-    as: "player_clans",
-});
-PlayerClan.belongsTo(Rango, {
-    foreignKey: "rank_id",
-    as: "rango",
-});
