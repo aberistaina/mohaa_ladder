@@ -2,6 +2,7 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 import { Clan } from "./Clan.model.js"; 
 import { Etapa } from "./Etapa.model.js";
+import { Juego } from "./Juego.model.js";
 
 export const Ladder = sequelize.define(
     "Ladder",
@@ -39,6 +40,14 @@ export const Ladder = sequelize.define(
             allowNull: false,
             references: {
                 model: Etapa,
+                key: "id",
+            },
+        },
+        id_juego: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: Juego,
                 key: "id",
             },
         },

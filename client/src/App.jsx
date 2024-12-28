@@ -5,6 +5,7 @@ import { NavBar } from "./components/NavBar"
 import { HomePage } from "./pages/HomePage"
 import { Login } from "./components/Login"
 import { MiCuenta } from "./components/MiCuenta"
+import { Reportes } from "./components/Reportes"
 
 
 function App() {
@@ -34,6 +35,7 @@ return (
                         <Routes>
                             <Route path="/" element={<HomePage />} />
                             <Route path="/micuenta" element={<MiCuenta />} />
+                            <Route path="/reportes" element={<Reportes />} />
                         </Routes>
                     </BrowserRouter>
                 </main>
