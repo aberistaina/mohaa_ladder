@@ -113,8 +113,11 @@ export const crearPlayer = async (req, res) => {
 export const obtenerClanPorEtapa = async (req, res) => {
     try {
         const { idUser, idEtapa } = req.params;
+        console.log(req.params)
+
+        
         const players = await Player.findOne({
-            attributes: ["id"],
+            attributes: ["id", "username"],
             where: {
                 id: idUser,
             },
@@ -133,10 +136,25 @@ export const obtenerClanPorEtapa = async (req, res) => {
             ],
         });
 
+        if (players == null) {
+            return res.status(400).json({
+                 code: 400,
+                 message: "Debes estar en un clan en esta etapa para poder reportar",
+             });
+         }
+
+        const datosPlayer = {
+            id: players.id,
+            username: players.username,
+            clanes: players.clanes[0].id,
+            rango: players.clanes[0].PlayerClan.rango,
+        }
+
+
         res.status(201).json({
             code: 201,
             message: "Playes encontrados Con éxito",
-            data: players.clanes[0].id,
+            data: datosPlayer,
         });
     } catch (error) {
         console.log(error.message);

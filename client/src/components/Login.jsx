@@ -1,14 +1,17 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { fetchHook } from '../hooks/fetchHook';
-import { guardarLocalStorage } from '../hooks/localStorage';
-import { useState } from 'react';
+import { guardarLocalStorage, obtenerLocalStorage, limpiarLocalStorage } from '../hooks/localStorage';
+import { useState, useEffect } from 'react';
+import {useSnackbar} from 'notistack';
 
 
 export const Login = () => {
 
+    const { enqueueSnackbar } = useSnackbar();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [player, setPlayer] = useState({});
 
     const url = "http://localhost:3000/api/v1/login/google";
     const method = "POST";
@@ -36,13 +39,51 @@ export const Login = () => {
         };
     
         const data = await fetchHook(url, method, body);
-        guardarLocalStorage(data.token, data.player);
+        if (data.code === 200) {
+            enqueueSnackbar(data.message, { variant: "success" });
+            guardarLocalStorage(data.token, data.player);
+            setTimeout(function () {
+                window.location.href = "/";
+            }, 1000);
+        }else{
+            enqueueSnackbar(data.message, { variant: "error" });
+        }
+        
     };
+
+    useEffect(() => {
+        const { playerData } = obtenerLocalStorage()
+        console.log(playerData);
+        setPlayer(playerData);
+    }, []);
             
 
     return (
-        <div className="flex items-center justify-center bg-slate-900">
-            <div className="w-full max-w-md p-6 border border-slate-500 rounded">
+        <div>
+            { player 
+            ? (<div className="flex flex-col items-center justify-center">
+                {player ? (
+                    <div className="flex flex-col items-center">
+                        <h1 className="text-3xl font-bold text-center text-slate-100">Bienvenido</h1>
+                        <h3 className="text-xl font-bold text-center text-slate-100 mb-1">{player.username}</h3>
+                        <h3 className="text-lg font-bold text-center text-slate-100 mb-2">ID: {player.id}</h3>
+                        <button
+                            className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
+                            onClick={() => {limpiarLocalStorage(); setPlayer()}}
+                            
+                        >
+                            Cerrar Sesión
+                        </button>
+                    </div>
+                ) : (
+                    <h1 className="text-2xl font-bold text-center text-slate-100">No hay jugador</h1>
+                )}
+            </div>
+            
+            ) 
+            : 
+            (
+                <div className="w-full max-w-md p-6 border border-slate-500 rounded">
                 {/* Título */}
                 <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">
                     Iniciar Sesión
@@ -116,6 +157,9 @@ export const Login = () => {
                     />
                 </div>
             </div>
+
+            )}
+            
         </div>
     );
 };

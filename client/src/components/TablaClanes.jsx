@@ -63,7 +63,13 @@ export const TablaClanes = () => {
                                         {clan.derrotas}
                                     </td>
                                     <td className="px-4 py-2 text-center">
-                                        {clan.racha_actual}
+                                        {
+                                        clan.racha_actual >= 10 
+                                        ? "🔥" + clan.racha_actual 
+                                        : clan.racha_actual <=-10
+                                        ? "❄️" + clan.racha_actual
+                                        : clan.racha_actual
+                                        }
                                     </td>
                                     <td className="px-4 py-2 text-center">
                                         {clan.juegos === 0
@@ -72,7 +78,7 @@ export const TablaClanes = () => {
                                         }
                                     </td>
                                     <td className="px-4 py-2">
-                                        {clan.dias_inactivo}
+                                        {clan.ultimo_registro}
                                     </td>
                                     <td className="px-4 py-2 text-center">{clan.id}</td>
                                 </tr>

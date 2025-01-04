@@ -88,6 +88,13 @@ export const obtenerClanesParaReporte = async(req, res) =>{
 
         const { idEtapa, idClanPerdedor } = req.params
 
+        if(!idClanPerdedor){
+            return res.status(400).json({
+                code:400,
+                message: "Debes pertenecer a un clan dentro de esta etapa para poder reportar"
+            })
+        }
+
         const clanes = await Clan.findAll({
             order: [["ranking_actual", "ASC"]],
             where: {

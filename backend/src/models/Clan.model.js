@@ -34,6 +34,10 @@ export const Clan = sequelize.define("Clan", {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
+    ultimo_registro: {
+        type: DataTypes.STRING(255),
+        default: "sin registro"
+    },
     mejor_ranking: {
         type: DataTypes.INTEGER,
         defaultValue: 0
