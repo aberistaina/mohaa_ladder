@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
+import { where } from "sequelize";
 
 export const obtenerPlayers = async (req, res) => {
     try {
@@ -20,6 +21,8 @@ export const obtenerPlayers = async (req, res) => {
         });
     }
 };
+
+
 
 export const obtenerPlayerById = async (req, res) => {
     try {
@@ -97,6 +100,44 @@ export const crearPlayer = async (req, res) => {
                 data: nuevoUsario,
             });
         }
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+};
+
+
+export const obtenerClanPorEtapa = async (req, res) => {
+    try {
+        const { idUser, idEtapa } = req.params;
+        const players = await Player.findOne({
+            attributes: ["id"],
+            where: {
+                id: idUser,
+            },
+            include: [
+                
+                {
+                    attributes: ["id", "nombre"],
+                    model: Clan,
+                    as: "clanes",
+                    exclude: ["PlayerClan"],
+                    where: {
+                        id_etapa: idEtapa,
+                    },
+                },
+                
+            ],
+        });
+
+        res.status(201).json({
+            code: 201,
+            message: "Playes encontrados Con éxito",
+            data: players.clanes[0].id,
+        });
     } catch (error) {
         console.log(error.message);
         res.status(500).json({

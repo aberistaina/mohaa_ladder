@@ -1,19 +1,46 @@
 import { useState, useEffect } from "react";
 import { fetchHook } from "../hooks/fetchHook";
+import { obtenerLocalStorage } from "../hooks/localStorage";
 
 export const Reportes = () => {
     const [etapas, setEtapas] = useState([]);
     const [juegos, setJuegos] = useState([]);
+    const [clanes, setClanes] = useState([]);
+    const [idEtapa, setidEtapa] = useState("");
+    const [idJuego, setidJuego] = useState("");
     const [idClanGanador, setIdClanGanador] = useState("");
+    const [idClanPerdedor, setIdClanPerdedor] = useState("");
+    const [comentario, setComentario] = useState("");
+
+    const getEtapas = async (id) => { 
+        const url = `http://localhost:3000/api/v1/etapas/${id}`;
+        const method = "GET";
+        const data = await fetchHook(url, method);
+        setidJuego(id);
+        setEtapas(data.data);
+    };
+
+    const getClanes = async (idEtapa, idClanPerdedor) => { 
+        const url = `http://localhost:3000/api/v1/clanes/obtenerCLanReporte/${idEtapa}/${idClanPerdedor}`;
+        const method = "GET";
+        const data = await fetchHook(url, method);
+        setClanes(data.data);
+    };
+
+    const getIdClanPerdedor = async (idEtapa) => { 
+        setidEtapa(idEtapa);
+        const { playerData } = obtenerLocalStorage()
+        const idJugador = playerData.id;
+        console.log(idEtapa);
+        const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
+        const method = "GET";
+        const data = await fetchHook(url, method);
+        setIdClanPerdedor(data.data);
+        getClanes(idEtapa, data.data);
+    };
 
     useEffect(() => {
-        const getEtapas = async () => {
-            const url = `http://localhost:3000/api/v1/etapas`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setEtapas(data.data);
-
-        };
+        
         const getJuegos = async () => {
             const url = `http://localhost:3000/api/v1/juegos`;
             const method = "GET";
@@ -21,19 +48,22 @@ export const Reportes = () => {
             setJuegos(data.data);
 
         };
-        getEtapas();
         getJuegos();
     }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
+        getIdClanPerdedor(idEtapa);
 
         const url = `http://localhost:3000/api/v1/ladder`;
         const method = "POST";
         const body = {
             id_clan_ganador: idClanGanador,
-            id_clan_perdedor: 1
+            id_clan_perdedor: idClanPerdedor,
+            id_etapa: idEtapa,
+            id_juego: idJuego,
+            comentario: comentario,
         };
 
         const data = await fetchHook(url, method, body);
@@ -60,9 +90,11 @@ export const Reportes = () => {
                                 name="juegos"
                                 id="juegos"
                                 className="mt-1 block w-full px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
+                                onChange={(e) => getEtapas(e.target.value)}
                             >
+                                <option value="" >Seleccione un juego</option>
                                 {juegos.map((juego) => (
-                                    <option key={juego.id} value={juego.id}>
+                                    <option key={juego.id} value={juego.id} >
                                         {juego.nombre}
                                     </option>
                                 ))}
@@ -80,7 +112,9 @@ export const Reportes = () => {
                                 name="etapa"
                                 id="etapa"
                                 className="mt-1 block w-full px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
+                                onChange={(e) => getIdClanPerdedor(e.target.value)}
                             >
+                                <option value="" >Seleccione una Etapa</option>
                                 {etapas.map((etapa) => (
                                     <option key={etapa.id} value={etapa.id}>
                                         {etapa.nombre}
@@ -96,12 +130,34 @@ export const Reportes = () => {
                             >
                                 Id Clan Ganador
                             </label>
-                            <input
-                                type="text"
+                            <select
                                 name="id_clan_ganador"
                                 id="id_clan_ganador"
                                 className="mt-1 block w-full px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
-                                onChange={(e) => setIdClanGanador(e.target.value)}
+                                onChange={(e) => setIdClanGanador(e.target.value)}>
+                                <option value="">Seleccione un clan</option>
+                                {clanes.map((clan) => (
+                                    <option key={clan.id} value={clan.id}>
+                                        {clan.nombre}
+                                    </option>
+                                ))}
+                            </select>
+                            
+                        </div>
+
+                        <div>
+                            <label
+                                htmlFor="comentario"
+                                className="block text-lg font-semibold text-white mb-2"
+                            >
+                                Comentario
+                            </label>
+                            <textarea
+                                type="text"
+                                name="comentario"
+                                id="comentario"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
+                                onChange={(e) => setComentario(e.target.value)}
                             />
                         </div>
 

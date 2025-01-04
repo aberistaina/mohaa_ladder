@@ -12,6 +12,10 @@ export const PlayerClan = sequelize.define('PlayerClan', {
         type: DataTypes.STRING(50),
         allowNull: false,
     },
+    id_etapa: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     joined_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,

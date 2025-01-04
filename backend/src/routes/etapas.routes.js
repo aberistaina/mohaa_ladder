@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { crearEtapa, obtenerEtapas } from "../controllers/etapas.controller.js";
+import { crearEtapa, obtenerEtapas, obtenerEtapasPorJuego } from "../controllers/etapas.controller.js";
 
 
 const router = Router()
 
 router.get("/", obtenerEtapas)
+router.get("/:id", obtenerEtapasPorJuego)
 router.post("/", crearEtapa)
 
 

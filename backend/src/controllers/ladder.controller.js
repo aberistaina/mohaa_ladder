@@ -59,6 +59,7 @@ export const calcularNuevoRanking = async(req, res) =>{
     try {
         
         const { id_clan_ganador , id_clan_perdedor } = req.body
+        console.log(req.body);
         const rankingGanador = await obtenerRankingActual(id_clan_ganador)
         const rankingPerdedor = await obtenerRankingActual(id_clan_perdedor)
         let nuevoRankingGanador
@@ -74,7 +75,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         }
         //si el clan ganador solo tiene un lugar de diferencia, automáticamente sube un lugar y el otro clan baja uno
         else if(rankingGanador - rankingPerdedor == 1){
-            nuevoRankingGanador = 1
+            nuevoRankingGanador = rankingPerdedor
         }
         //en todos los demás casos el clan ganador mantiene su lugar
         else{
