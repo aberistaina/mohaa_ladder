@@ -1,8 +1,9 @@
 import bcrypt from "bcrypt";
+import { Op } from "sequelize";
 import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
-import { where } from "sequelize";
+
 
 export const obtenerPlayers = async (req, res) => {
     try {
@@ -81,25 +82,51 @@ export const crearPlayer = async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const hash = bcrypt.hashSync(password, 10);
+        console.log(username);
 
         if (!username || !email || !password) {
-            res.status(400).json({
+            return res.status(400).json({
                 code: 400,
                 message: "Todos los campos son requeridos",
             });
-        } else {
-            const nuevoUsario = await Player.create({
-                username,
-                email,
-                password: hash,
-            });
-
-            res.status(201).json({
-                code: 201,
-                message: "Usuario Creado Con éxito",
-                data: nuevoUsario,
-            });
         }
+
+        const usuario = await Player.findOne({
+            where: {
+                [Op.or]: [
+                    { username },  
+                    { email}      
+                ]
+            }
+        });
+
+        if(usuario){
+            if(usuario.username === username){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Ya hay un jugador con ese nombre",
+                });
+            } 
+    
+            if(usuario.email === email){
+                return res.status(400).json({
+                    code: 400,
+                    message: "Ya hay un jugador registrado con ese email",
+                });
+            }
+        };
+
+        const nuevoUsario = await Player.create({
+            username,
+            email,
+            password: hash,
+        });
+
+        res.status(201).json({
+            code: 201,
+            message: "Usuario Creado Con éxito",
+            data: nuevoUsario,
+        });
     } catch (error) {
         console.log(error.message);
         res.status(500).json({

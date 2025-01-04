@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage"
 import { Login } from "./components/Login"
 import { MiCuenta } from "./components/MiCuenta"
 import { Reportes } from "./components/Reportes"
+import { RegisterPage } from "./pages/RegisterPage"
 
 
 function App() {
@@ -36,6 +37,7 @@ return (
                             <Route path="/" element={<HomePage />} />
                             <Route path="/micuenta" element={<MiCuenta />} />
                             <Route path="/reportes" element={<Reportes />} />
+                            <Route path="/registro" element={<RegisterPage />} />
                         </Routes>
                     </BrowserRouter>
                 </main>

@@ -24,8 +24,17 @@ export const Login = () => {
                 email
             };
                 const data = await fetchHook(url, method, body);
+
+                if (data.code === 200) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                    guardarLocalStorage(data.token, data.player);
+                    setTimeout(function () {
+                        window.location.href = "/";
+                    }, 1000);
+                }else{
+                    enqueueSnackbar(data.message, { variant: "error" });
+                }
                 
-                guardarLocalStorage(data.token, data.player);
             };
 
     const login = async (e) => {
@@ -51,6 +60,16 @@ export const Login = () => {
         
     };
 
+    const logout = () => {
+        enqueueSnackbar("Sesión Cerrada", { variant: "warning" })
+        setTimeout(function () {
+            window.location.href = "/";
+            limpiarLocalStorage();
+            setPlayer();
+        }, 1000);
+        
+    };
+
     useEffect(() => {
         const { playerData } = obtenerLocalStorage()
         console.log(playerData);
@@ -69,7 +88,7 @@ export const Login = () => {
                         <h3 className="text-lg font-bold text-center text-slate-100 mb-2">ID: {player.id}</h3>
                         <button
                             className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
-                            onClick={() => {limpiarLocalStorage(); setPlayer()}}
+                            onClick={() => {logout()}}
                             
                         >
                             Cerrar Sesión
@@ -134,6 +153,7 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
                     </div>
+                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <a className="underline" href="/registro">Aquí</a></p>
                 </form>
 
                 {/* Divider */}
