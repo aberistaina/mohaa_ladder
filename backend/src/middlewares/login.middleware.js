@@ -20,7 +20,7 @@ export const emitirToken = async(req, res, next) =>{
             }
         })
 
-        console.log(player);
+        
         if (!player){
             return res.json({code:400, message: "email o Password Incorrecto",})
         }

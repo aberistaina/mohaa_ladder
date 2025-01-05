@@ -72,7 +72,6 @@ export const Login = () => {
 
     useEffect(() => {
         const { playerData } = obtenerLocalStorage()
-        console.log(playerData);
         setPlayer(playerData);
     }, []);
             

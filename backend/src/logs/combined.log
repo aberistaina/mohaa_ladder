@@ -20801,3 +20801,841 @@
 2025-01-04 19:02:56 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
 2025-01-04 19:02:56 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
 2025-01-04 19:02:56 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-04 19:02:59 info: Executing (default): SELECT 1+1 AS result
+2025-01-04 19:02:59 info: Conexión a la base de datos establecida correctamente.
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-04 19:02:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-04 19:02:59 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-04 19:02:59 info: Modelos sincronizados correctamente.
+2025-01-04 19:02:59 info: Servidor escuchando en el puerto: 3000
+2025-01-04 19:03:04 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'contacto@cosmetichile.cl';
+2025-01-04 19:03:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-04 19:03:06 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-04 19:03:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-04 19:03:06 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-04 19:03:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-04 19:03:37 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-04 19:03:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-04 19:03:37 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:09:39 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:09:39 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:09:39 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:09:39 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:09:39 info: Modelos sincronizados correctamente.
+2025-01-05 14:09:39 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:09:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:09:46 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:09:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:09:46 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:10:27 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:10:27 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:10:27 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:27 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:10:27 info: Modelos sincronizados correctamente.
+2025-01-05 14:10:27 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:10:31 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:10:31 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:10:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:10:31 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:10:31 info: Modelos sincronizados correctamente.
+2025-01-05 14:10:31 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:07 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:07 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:07 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:07 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:07 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:10 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:10 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:10 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:10 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:10 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:18 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:18 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:18 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:18 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:18 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:18 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:31 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:31 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:31 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:31 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:31 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:31 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:34 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:34 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:34 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:34 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:34 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:34 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:42 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:42 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:42 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:42 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:42 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:52 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:52 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:52 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:52 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:52 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:11:55 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:11:55 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:11:55 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:11:55 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:11:55 info: Modelos sincronizados correctamente.
+2025-01-05 14:11:55 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:12:50 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:12:50 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:12:50 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:50 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:12:50 info: Modelos sincronizados correctamente.
+2025-01-05 14:12:50 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:12:52 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:12:52 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:12:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:12:52 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:12:52 info: Modelos sincronizados correctamente.
+2025-01-05 14:12:52 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:13:01 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:13:01 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:13:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:01 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:13:01 info: Modelos sincronizados correctamente.
+2025-01-05 14:13:01 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:13:07 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:13:07 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:13:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:07 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:13:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:07 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:13:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:07 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:13:07 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:07 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:13:08 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:08 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:13:08 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:08 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:13:08 info: Modelos sincronizados correctamente.
+2025-01-05 14:13:08 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:13:36 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:13:36 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:13:36 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:36 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:13:36 info: Modelos sincronizados correctamente.
+2025-01-05 14:13:36 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:13:43 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:13:43 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:13:43 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:13:43 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:13:43 info: Modelos sincronizados correctamente.
+2025-01-05 14:13:43 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:13:47 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = 1 WHERE `Player`.`id` = 1;
+2025-01-05 14:14:03 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:14:03 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:14:03 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:03 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:14:03 info: Modelos sincronizados correctamente.
+2025-01-05 14:14:03 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:14:05 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:14:05 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:14:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:05 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:14:05 info: Modelos sincronizados correctamente.
+2025-01-05 14:14:05 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:14:09 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = 2 WHERE `Player`.`id` = 1;
+2025-01-05 14:14:19 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:14:19 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:14:19 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:19 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:14:19 info: Modelos sincronizados correctamente.
+2025-01-05 14:14:19 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:14:22 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:14:22 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:14:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:22 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:14:22 info: Modelos sincronizados correctamente.
+2025-01-05 14:14:22 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:14:22 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = 1 WHERE `Player`.`id` = 3;
+2025-01-05 14:14:33 info: Executing (default): SELECT `id`, `username`, `password`, `email`, `victorias`, `derrotas`, `admin`, `created_at` FROM `player` AS `Player`;
+2025-01-05 14:14:59 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:14:59 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:14:59 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:14:59 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:14:59 info: Modelos sincronizados correctamente.
+2025-01-05 14:14:59 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:15:41 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:15:41 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:15:41 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:41 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:15:41 info: Modelos sincronizados correctamente.
+2025-01-05 14:15:41 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:15:45 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:15:45 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:15:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:45 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:15:45 info: Modelos sincronizados correctamente.
+2025-01-05 14:15:45 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:15:47 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:15:47 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:15:47 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:47 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:15:47 info: Modelos sincronizados correctamente.
+2025-01-05 14:15:47 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:15:56 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:15:56 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:15:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:15:56 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:15:56 info: Modelos sincronizados correctamente.
+2025-01-05 14:15:56 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:16:26 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:16:26 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:16:26 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:26 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:16:26 info: Modelos sincronizados correctamente.
+2025-01-05 14:16:26 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:16:42 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:16:42 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:16:42 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:42 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:16:42 info: Modelos sincronizados correctamente.
+2025-01-05 14:16:42 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:16:49 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:16:49 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:16:49 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:16:49 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:16:49 info: Modelos sincronizados correctamente.
+2025-01-05 14:16:49 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:01 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:01 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:01 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:01 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:01 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:01 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:05 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:05 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:05 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:05 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:05 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:05 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:22 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:22 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:22 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:22 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:22 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:22 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:23 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:23 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:23 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:23 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:23 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:23 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:25 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:25 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:25 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:25 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:25 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:17:45 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:17:45 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:17:45 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:17:45 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:17:45 info: Modelos sincronizados correctamente.
+2025-01-05 14:17:45 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:18:33 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = 1 WHERE `Player`.`id` = 3;
+2025-01-05 14:18:33 info: Executing (default): INSERT INTO `clan` (`id`,`nombre`,`tag`,`id_etapa`,`ranking_actual`,`ultimo_ranking`,`mejor_ranking`,`triunfos`,`derrotas`,`juegos`,`porcentaje_triunfos`,`racha_actual`,`mejor_racha`,`peor_racha`,`dias_inactivos`) VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+2025-01-05 14:18:33 info: Executing (default): INSERT INTO `player_clan` (`id`,`rango`,`id_etapa`,`joined_at`,`player_id`,`clan_id`) VALUES (DEFAULT,?,?,?,?,?);
+2025-01-05 14:18:38 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:18:38 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:18:38 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:18:38 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:20:45 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:20:47 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:20:51 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:20:51 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:20:51 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:20:51 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:25 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:26 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:26 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:26 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:21:26 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:21:29 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:45 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:21:48 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:03 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:03 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:03 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:03 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:06 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:11 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:12 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:18 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:18 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:18 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:18 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:33 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:33 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:38 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:23:44 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'alejandro_beristain@hotmail.com';
+2025-01-05 14:23:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:46 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:46 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:23:49 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:49 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:49 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:49 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:23:51 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:23:52 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:24:30 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:30 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:30 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:30 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:33 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:24:34 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:24:48 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:48 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:24:48 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:48 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:24:53 info: Executing (default): SELECT `id`, `username`, `email`, `admin` FROM `player` AS `Player` WHERE `Player`.`email` = 'beristain.alejandro@gmail.com';
+2025-01-05 14:24:55 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:55 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:24:55 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:55 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:24:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:24:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:25:00 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:25:01 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '3';
+2025-01-05 14:26:10 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:26:10 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:26:10 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:10 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:26:10 info: Modelos sincronizados correctamente.
+2025-01-05 14:26:10 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:26:25 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:26:25 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:26:25 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:26:25 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:26:25 info: Modelos sincronizados correctamente.
+2025-01-05 14:26:25 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:26:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:26:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:26:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:26:33 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:26:35 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:26:36 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '3';
+2025-01-05 14:27:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:06 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:07 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:27:10 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '3';
+2025-01-05 14:27:23 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:25 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:27 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:27 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:27 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:27 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:28 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:27:30 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '3';
+2025-01-05 14:27:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:35 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:27:35 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:35 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:27:40 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'alejandro_beristain@hotmail.com';
+2025-01-05 14:27:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:42 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:27:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:42 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:27:45 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:46 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:27:48 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:27:49 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:28:15 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:18 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:22 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:24 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:25 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:25 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:26 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:26 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:27 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:28:28 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:28:34 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:38 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:38 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:28:38 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:28:39 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:28:52 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:28:52 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:28:52 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:28:52 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:28:52 info: Modelos sincronizados correctamente.
+2025-01-05 14:28:52 info: Servidor escuchando en el puerto: 3000
+2025-01-05 14:29:02 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:02 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:02 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:02 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:05 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:29:06 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:29:06 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id_etapa` = '1' AND `Clan`.`id` != '1' ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:20 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:23 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:23 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:24 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:24 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:26 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:29:26 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:29:26 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id_etapa` = '1' AND `Clan`.`id` != '1' ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:41 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:42 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:43 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id` WHERE `Etapa`.`id_juego` = '1';
+2025-01-05 14:29:43 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:29:43 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id_etapa` = '1' AND `Clan`.`id` != '1' ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:50 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:50 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:50 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:50 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:52 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->PlayerClan`.`id_etapa` AS `clanes.PlayerClan.id_etapa`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`player_id` AS `clanes.PlayerClan.player_id`, `clanes->PlayerClan`.`clan_id` AS `clanes.PlayerClan.clan_id` FROM `player` AS `Player` INNER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` AND `clanes`.`id_etapa` = '1' WHERE `Player`.`id` = '1';
+2025-01-05 14:29:52 info: Executing (c93c419b-fbfa-4af4-b4f9-ce2472a21d42): START TRANSACTION;
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `ranking_actual` FROM `clan` AS `Clan` WHERE `Clan`.`id` = '7';
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `ranking_actual` FROM `clan` AS `Clan` WHERE `Clan`.`id` = 1;
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id` = '7';
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id` = 1;
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `ranking_actual` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:52 info: Executing (default): UPDATE `clan` SET `ranking_actual`=?,`ultimo_ranking`=? WHERE `id` = ?
+2025-01-05 14:29:52 info: Executing (default): UPDATE `clan` SET `ultimo_ranking`=ranking_actual WHERE `ranking_actual` BETWEEN 7 AND 0 AND `id` != '7'
+2025-01-05 14:29:52 info: Executing (default): UPDATE `clan` SET `ranking_actual`=ranking_actual + 1 WHERE `ranking_actual` BETWEEN 7 AND 0 AND `id` != '7'
+2025-01-05 14:29:52 info: Executing (default): UPDATE `clan` SET `triunfos`=triunfos + 1,`juegos`=juegos + 1,`racha_actual`=
+                    CASE 
+                        WHEN racha_actual <= 0 THEN 1
+                        ELSE racha_actual + 1
+                    END
+                ,`ultimo_registro`=? WHERE `id` = ?
+2025-01-05 14:29:52 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` WHERE `Clan`.`id_etapa` = '1' AND `Clan`.`id` != '1' ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:52 info: Executing (default): UPDATE `clan` SET `derrotas`=derrotas + 1,`juegos`=juegos + 1,`racha_actual`=
+                    CASE 
+                        WHEN racha_actual > 0 THEN 0
+                        ELSE racha_actual - 1
+                    END
+                ,`ultimo_registro`=? WHERE `id` = ?
+2025-01-05 14:29:52 info: Executing (default): INSERT INTO `ladder` (`id`,`comentario`,`fecha`,`id_clan_ganador`,`id_clan_perdedor`,`id_etapa`,`id_juego`) VALUES (DEFAULT,?,?,?,?,?,?);
+2025-01-05 14:29:52 info: Executing (c93c419b-fbfa-4af4-b4f9-ce2472a21d42): COMMIT;
+2025-01-05 14:29:54 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:54 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:29:54 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-05 14:29:54 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `ultimo_registro`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-05 14:32:06 info: Executing (default): SELECT 1+1 AS result
+2025-01-05 14:32:06 info: Conexión a la base de datos establecida correctamente.
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-05 14:32:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-05 14:32:06 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-05 14:32:06 info: Modelos sincronizados correctamente.
+2025-01-05 14:32:06 info: Servidor escuchando en el puerto: 3000

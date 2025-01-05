@@ -82,7 +82,6 @@ export const crearPlayer = async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const hash = bcrypt.hashSync(password, 10);
-        console.log(username);
 
         if (!username || !email || !password) {
             return res.status(400).json({
@@ -140,9 +139,7 @@ export const crearPlayer = async (req, res) => {
 export const obtenerClanPorEtapa = async (req, res) => {
     try {
         const { idUser, idEtapa } = req.params;
-        console.log(req.params)
 
-        
         const players = await Player.findOne({
             attributes: ["id", "username"],
             where: {
@@ -179,7 +176,7 @@ export const obtenerClanPorEtapa = async (req, res) => {
 
 
         res.status(201).json({
-            code: 201,
+            code: 200,
             message: "Playes encontrados Con éxito",
             data: datosPlayer,
         });

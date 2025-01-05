@@ -28,7 +28,6 @@ export const Reportes = () => {
         const data = await fetchHook(url, method);
 
         if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "success" });
             setClanes(data.data);
         }else{
             enqueueSnackbar(data.message, { variant: "error" });
@@ -40,13 +39,11 @@ export const Reportes = () => {
         setidEtapa(idEtapa);
         const { playerData } = obtenerLocalStorage()
         const idJugador = playerData.id;
-        console.log(idEtapa);
         const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
         const method = "GET";
         const data = await fetchHook(url, method);
 
         if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "success" });
             setClanPerdedor(data.data);
             const idClanPerdedor = data.data.clanes;
             const rango = data.data.rango;

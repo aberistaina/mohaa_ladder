@@ -24,7 +24,7 @@ export const obtenerLadders = async(req, res) =>{
 }
 
 export const calcularNuevoRanking = async(req, res) =>{
-    console.log(req.body);
+
     const transaction = await sequelize.transaction()
     try {
         
