@@ -6,6 +6,7 @@ import { formatDate } from '../utils/formatearFecha';
 export const MiCuenta = () => {
     const [player, setPlayer] = useState({})
 
+
     useEffect(() => {
         const getInfoPlayer = async () => {
             const { playerData } = obtenerLocalStorage()
@@ -84,6 +85,10 @@ export const MiCuenta = () => {
                                     <th className="px-4 py-2">
                                         Fecha de Ingreso
                                     </th>
+                                    {player.clanes?.some(
+                                        (clan) =>
+                                            clan.rango === "Lider" || clan.rango === "Co-Lider"
+                                    ) && <th className="px-4 py-2">Acciones</th>}
                                 </tr>
                             </thead>
                             <tbody className="text-center text-lg font-medium">
@@ -101,6 +106,24 @@ export const MiCuenta = () => {
                                         <td className="px-4 py-2">
                                             {clan && formatDate(clan.joined_at)}
                                         </td>
+                                        {(clan && (clan.rango === "Lider" || clan.rango === "Co-Lider")) && (
+                                            <td className="px-4 py-2">
+                                                {clan.rango === "Lider" 
+                                                ?
+                                                (<div className="flex justify-center">
+                                                    <button className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">Editar</button>
+                                                    <button className="px-2 py-0 mx-2  bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">Eliminar</button>
+                                                    
+                                                </div>)
+                                                :
+                                                (<div className="flex justify-center">
+                                                    <button className="px-4 py-0 mx-2  bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">Editar</button>
+                                                </div>)
+                                                }
+                                            </td>
+                                        )}
+
+                
                                     </tr>
                                 ))}
                             </tbody>

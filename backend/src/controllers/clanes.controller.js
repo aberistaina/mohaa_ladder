@@ -58,7 +58,7 @@ export const crearClan = async (req, res) => {
             data: nuevoClan,
         });
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
         res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor",

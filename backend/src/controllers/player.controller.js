@@ -28,7 +28,7 @@ export const obtenerPlayers = async (req, res) => {
 export const obtenerPlayerById = async (req, res) => {
     try {
         const { id } = req.params;
-        const player = await Player.findAll({
+        const player = await Player.findOne({
             where: {
                 id,
             },
@@ -45,29 +45,23 @@ export const obtenerPlayerById = async (req, res) => {
                     ],
                 },
             ],
-            raw: true,
+            raw: false,  // Cambiado a false para manejar correctamente los includes
             nest: true,
         });
 
-        const formatPlayer = player.map((item) => {
-            const clanes = Array.isArray(item.clanes)
-                ? item.clanes
-                : [item.clanes];
-            return {
-                ...item,
-                clanes: clanes.map((clan) => ({
-                    ...clan,
-                    joined_at: clan.PlayerClan.joined_at,
-                    rango: clan.PlayerClan.rango,
-                    etapa_nombre: clan.etapa ? clan.etapa.nombre : null,
-                })),
-            };
-        });
+        if (!player) {
+            return res.status(404).json({
+                code: 404,
+                message: "Jugador no encontrado",
+            });
+        }
+
+        
 
         res.status(201).json({
             code: 201,
-            message: "Playes encontrados Con éxito",
-            data: formatPlayer,
+            message: "Jugador encontrado con éxito",
+            data: player,
         });
     } catch (error) {
         console.log(error.message);
@@ -77,6 +71,8 @@ export const obtenerPlayerById = async (req, res) => {
         });
     }
 };
+
+
 
 export const crearPlayer = async (req, res) => {
     try {
