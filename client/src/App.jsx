@@ -4,9 +4,9 @@ import { Banner } from "./components/Banner"
 import { NavBar } from "./components/NavBar"
 import { HomePage } from "./pages/HomePage"
 import { Login } from "./components/Login"
-import { MiCuenta } from "./components/MiCuenta"
 import { Reportes } from "./components/Reportes"
 import { RegisterPage } from "./pages/RegisterPage"
+import { UserPage } from "./pages/UserPage"
 
 
 function App() {
@@ -35,7 +35,7 @@ return (
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<HomePage />} />
-                            <Route path="/micuenta" element={<MiCuenta />} />
+                            <Route path="/micuenta" element={<UserPage />} />
                             <Route path="/reportes" element={<Reportes />} />
                             <Route path="/registro" element={<RegisterPage />} />
                         </Routes>

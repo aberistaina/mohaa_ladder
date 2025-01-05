@@ -8,3 +8,4 @@
 2024-12-06 22:08:01 error: Ha ocurrido un error Access denied for user ''@'localhost' (using password: NO)
 2024-12-28 17:35:38 error: Ha ocurrido un error Access denied for user ''@'localhost' (using password: YES)
 2025-01-04 13:44:48 error: Ha ocurrido un error tru is not defined
+2025-01-05 17:56:35 error: Ha ocurrido un error Constraint invitaciones_ibfk_1 on table invitaciones does not exist

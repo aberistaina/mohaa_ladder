@@ -4,6 +4,7 @@ import { Clan } from "./Clan.model.js";
 import { Ladder } from "./Ladder.model.js";
 import { Player } from "./Player.model.js";
 import { PlayerClan } from "./PlayerClan.model.js"
+import { Invitacion } from "./Invitaciones.js";
 
 // Asociación entre Juego y Etapa
 Juego.hasMany(Etapa, {
@@ -61,10 +62,36 @@ Player.belongsToMany(Clan, {
     through: PlayerClan,
     foreignKey: "player_id",
     as: "clanes",
+    onDelete: 'CASCADE',  
 });
+
 Clan.belongsToMany(Player, {
     through: PlayerClan,
     foreignKey: "clan_id",
     as: "players",
+    onDelete: 'CASCADE', 
 });
 
+// Asociación entre Player e invitaciones 
+Player.hasMany(Invitacion, {
+    foreignKey: "player_id",
+    as: "invitaciones",
+    onDelete: 'CASCADE',
+});
+
+Invitacion.belongsTo(Player, {
+    foreignKey: "player_id",
+    as: "players",
+});
+
+// Asociación entre Clan y Invitacion 
+Clan.hasMany(Invitacion, {
+    foreignKey: "clan_id",
+    as: "invitaciones_enviadas",
+    onDelete: 'CASCADE', 
+});
+
+Invitacion.belongsTo(Clan, {
+    foreignKey: "clan_id",
+    as: "clanes",
+});
