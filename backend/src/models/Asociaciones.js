@@ -84,7 +84,7 @@ Invitacion.belongsTo(Player, {
     as: "players",
 });
 
-// Asociación entre Clan y Invitacion 
+// Asociación entre Clan e Invitacion 
 Clan.hasMany(Invitacion, {
     foreignKey: "clan_id",
     as: "invitaciones_enviadas",
@@ -94,4 +94,16 @@ Clan.hasMany(Invitacion, {
 Invitacion.belongsTo(Clan, {
     foreignKey: "clan_id",
     as: "clanes",
+});
+
+// Asociación entre Etapa e Invitacion 
+Etapa.hasMany(Invitacion, {
+    foreignKey: "id_etapa",
+    as: "invitaciones_enviadas",
+    onDelete: 'CASCADE', 
+});
+
+Invitacion.belongsTo(Etapa, {
+    foreignKey: "id_etapa",
+    as: "etapa",
 });

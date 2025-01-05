@@ -1,6 +1,20 @@
 import { formatDate } from "../../utils/formatearFecha";
+import { useEffect, useState } from "react";
+import { fetchHook } from "../../hooks/fetchHook";
 
 export const PlayerInvitacionCard = ({ player }) => {
+
+    const [invitaciones, setInvitaciones] = useState();
+
+    useEffect(() => {
+        const getInvitationsPlayer = async () => {
+            const url = `http://localhost:3000/api/v1/invitaciones/${player.id}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
+            setInvitaciones(data.data);
+        };
+        getInvitationsPlayer();
+        }, [player.id]);
     
     return (
         <>
@@ -26,6 +40,28 @@ export const PlayerInvitacionCard = ({ player }) => {
                                     </tr>
                                 </thead>
                                 <tbody className="text-center text-lg font-medium">
+                                {invitaciones &&
+                                    invitaciones.map((invitacion) => (
+                                        <tr
+                                            className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800"
+                                            key={invitacion.id}
+                                        >
+                                            <td className="px-4 py-2">{invitacion.clan}</td>
+                                            <td className="px-4 py-2">{invitacion.etapa}</td>
+                                            <td className="px-4 py-2">{formatDate(invitacion.fecha_envio)}</td>
+                                            <td className="px-4 py-2">
+                                                        <div className="flex justify-center">
+                                                            <button className="px-3 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                                Aceptar
+                                                            </button>
+                                                            <button className="px-2 py-0 mx-2  bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                                Rechazar
+                                                            </button>
+                                                        </div>
+                                                </td>
+                                        </tr>
+                                    ))}
+
                                 </tbody>
                             </table>
                         </div>
