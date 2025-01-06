@@ -15,6 +15,7 @@ function App() {
 
 return (
     <>
+    <BrowserRouter>
         <div className="bg-slate-700">
             <div className="container mx-auto grid grid-cols-1 bg-gradient-to-r from-slate-800 to-slate-900 lg:grid-cols-12 min-h-screen">
                 {/* Banner */}
@@ -34,7 +35,7 @@ return (
 
                 {/* Body */}
                 <main className="lg:col-span-9 flex items-start justify-center text-2xl p-4">
-                    <BrowserRouter>
+                    
                         <Routes>
                             <Route path="/" element={<HomePage />} />
                             <Route path="/micuenta" element={<UserPage />} />
@@ -43,10 +44,11 @@ return (
                             <Route path="/detalle-clan/:id" element={<ClanPage />} />
                             <Route path="/detalle-jugador/:id" element={<DetalleJugadorPage />} />
                         </Routes>
-                    </BrowserRouter>
+                    
                 </main>
             </div>
         </div>
+        </BrowserRouter>
     </>
     );
 };
