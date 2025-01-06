@@ -2,6 +2,8 @@ import { Op } from "sequelize";
 import { Clan } from "../models/Clan.model.js";
 import { Player } from "../models/Player.model.js";
 import { PlayerClan } from "../models/PlayerClan.model.js";
+import { Etapa } from "../models/Etapa.model.js";
+import { Juego } from "../models/Juego.model.js";
 
 export const crearClan = async (req, res) => {
     try {
@@ -92,12 +94,23 @@ export const obtenerClan = async (req, res) => {
             include: [
                 {
                     model: Player,
-                    attributes: ["username", "victorias", "derrotas"],
+                    attributes: ["id","username", "victorias", "derrotas", "volute"],
                     as: "players",
                     through: {
                         model: PlayerClan,
-                        attributes: [],
+                        attributes: ["rango", "joined_at"],
                     },
+                },
+                {
+                    model: Etapa,
+                    as: "etapa",
+                    include: [
+                        {
+                            model: Juego,
+                            as: "juego",
+                            
+                        },
+                    ],
                 },
             ],
             where: {

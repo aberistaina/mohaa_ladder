@@ -73,7 +73,11 @@ export const Clan = sequelize.define("Clan", {
     dias_inactivos: {
         type: DataTypes.INTEGER,
         defaultValue: 0
-    }
+    },
+    created_at: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+    },
 }, {
     tableName: "clan", 
     timestamps: false, 

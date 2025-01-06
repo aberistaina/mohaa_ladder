@@ -20,6 +20,10 @@ export const Player = sequelize.define('Player', {
         allowNull: false,
         unique: true,
     },
+    volute: {
+        type: DataTypes.STRING(150),
+        allowNull: false,
+    },
     victorias: {
         type: DataTypes.INTEGER,
         defaultValue: 0

@@ -7,6 +7,8 @@ import { Login } from "./components/Login"
 import { Reportes } from "./components/Reportes"
 import { RegisterPage } from "./pages/RegisterPage"
 import { UserPage } from "./pages/UserPage"
+import { ClanPage } from "./pages/ClanPage"
+import { DetalleJugadorPage } from "./pages/DetalleJugadorPage"
 
 
 function App() {
@@ -38,6 +40,8 @@ return (
                             <Route path="/micuenta" element={<UserPage />} />
                             <Route path="/reportes" element={<Reportes />} />
                             <Route path="/registro" element={<RegisterPage />} />
+                            <Route path="/detalle-clan/:id" element={<ClanPage />} />
+                            <Route path="/detalle-jugador/:id" element={<DetalleJugadorPage />} />
                         </Routes>
                     </BrowserRouter>
                 </main>

@@ -1,4 +1,6 @@
 import { formatDate } from "../../utils/formatearFecha";
+import { Link } from 'react-router-dom';
+
 
 export const PlayerClanCard = ({ player }) => {
     return (
@@ -31,7 +33,7 @@ export const PlayerClanCard = ({ player }) => {
                                         key={clan.id}
                                     >
                                         <td className="px-4 py-2">
-                                            {clan.nombre}
+                                            <Link className= "hover:text-blue-500 hover:underline transition duration-300" to={`/detalle-clan/${clan.id}`}>{clan.nombre}</Link>
                                         </td>
                                         <td className="px-4 py-2">
                                             {clan.etapa.nombre}
