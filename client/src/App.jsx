@@ -9,6 +9,10 @@ import { RegisterPage } from "./pages/RegisterPage"
 import { UserPage } from "./pages/UserPage"
 import { ClanPage } from "./pages/ClanPage"
 import { DetalleJugadorPage } from "./pages/DetalleJugadorPage"
+import { EtapasPages } from "./pages/EtapasPages"
+import { LadderPage } from "./pages/LadderPage"
+import { CrearClan } from "./components/CrearClan"
+import { ReclutarPage } from "./pages/reclutarPage"
 
 
 function App() {
@@ -43,6 +47,11 @@ return (
                             <Route path="/registro" element={<RegisterPage />} />
                             <Route path="/detalle-clan/:id" element={<ClanPage />} />
                             <Route path="/detalle-jugador/:id" element={<DetalleJugadorPage />} />
+                            <Route path="/juego/:id" element={<EtapasPages />} />
+                            <Route path="/etapa/:id" element={<LadderPage />} />
+                            <Route path="/crear-clan/:id" element={<CrearClan />} />
+                            <Route path="/reclutar/:clanId/:etapaId" element={<ReclutarPage/>} />
+                            
                         </Routes>
                     
                 </main>

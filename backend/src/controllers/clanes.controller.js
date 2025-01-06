@@ -87,6 +87,29 @@ export const obtenerClanes = async (req, res) => {
     }
 };
 
+export const obtenerClanesPorEtapa = async (req, res) => {
+    try {
+        const { id } = req.params
+        const clanes = await Clan.findAll({
+            order: [["ranking_actual", "ASC"]],
+            where:{
+                id_etapa: id
+            }
+        });
+        res.status(200).json({
+            code: 200,
+            message: "Clanes obtenidos Con éxito",
+            data: clanes,
+        });
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+};
+
 export const obtenerClan = async (req, res) => {
     try {
         const { id } = req.params;

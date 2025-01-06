@@ -50,7 +50,7 @@ export const NavBar = () => {
                         juegos.map((juego) => (
                             <div key={juego.id} className="pl-4">
                                 <p className="cursor-pointer font-semibold text-gray-400 transition-all duration-300 hover:text-slate-600 hover:translate-x-1">
-                                    {juego.nombre}
+                                   <Link to={`/juego/${juego.id}`}> {juego.nombre}</Link>
                                 </p>
                             </div>
                         ))}

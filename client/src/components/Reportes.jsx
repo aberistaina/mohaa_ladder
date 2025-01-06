@@ -15,7 +15,7 @@ export const Reportes = () => {
     const [comentario, setComentario] = useState("");
 
     const getEtapas = async (id) => { 
-        const url = `http://localhost:3000/api/v1/etapas/${id}`;
+        const url = `http://localhost:3000/api/v1/etapas/juego/${id}`;
         const method = "GET";
         const data = await fetchHook(url, method);
         setidJuego(id);

@@ -108,3 +108,26 @@ export const obtenerEtapasPorJuego = async(req, res) =>{
         })
     }
 }
+
+export const obtenerEtapaPorId = async(req, res) =>{
+    try {
+
+        const { id } = req.params
+        const etapa = await Etapa.findOne({
+            where: {
+                id
+            },
+        })
+        res.status(200).json({
+            code:200,
+            message: "Etapa obtenida Con éxito",
+            data: etapa
+        })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}

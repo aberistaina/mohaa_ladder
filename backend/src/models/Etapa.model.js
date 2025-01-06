@@ -24,6 +24,10 @@ export const Etapa = sequelize.define("Etapa", {
             key: "id"
         }
     },
+    multijugador: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+    },
     activo: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,

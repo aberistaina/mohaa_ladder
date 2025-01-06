@@ -1,11 +1,10 @@
 import { formatDate } from "../../utils/formatearFecha";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export const PlayerClanCard = ({ player }) => {
     return (
         <>
-        {/* Información del Equipo */}
+            {/* Información del Equipo */}
             <div className="Hola">
                 <h2 className="text-2xl font-bold mb-4 text-slate-100">
                     Información del Equipo
@@ -33,7 +32,12 @@ export const PlayerClanCard = ({ player }) => {
                                         key={clan.id}
                                     >
                                         <td className="px-4 py-2">
-                                            <Link className= "hover:text-blue-500 hover:underline transition duration-300" to={`/detalle-clan/${clan.id}`}>{clan.nombre}</Link>
+                                            <Link
+                                                className="hover:text-blue-500 hover:underline transition duration-300"
+                                                to={`/detalle-clan/${clan.id}`}
+                                            >
+                                                {clan.nombre}
+                                            </Link>
                                         </td>
                                         <td className="px-4 py-2">
                                             {clan.etapa.nombre}
@@ -47,29 +51,22 @@ export const PlayerClanCard = ({ player }) => {
                                                     clan.PlayerClan.joined_at
                                                 )}
                                         </td>
-                                        {clan &&
+                                        {clan.PlayerClan.rango &&
                                             (clan.PlayerClan.rango ===
                                                 "Lider" ||
                                                 clan.PlayerClan.rango ===
                                                     "Co-Lider") && (
-                                                <td className="px-4 py-2">
-                                                    {clan.PlayerClan.rango ===
-                                                    "Lider" ? (
-                                                        <div className="flex justify-center">
-                                                            <button className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
-                                                                Editar
+                                                <td>
+                                                    <div className="flex justify-center items-center">
+                                                        <button className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                            Editar
+                                                        </button>
+                                                        <Link to={`/reclutar/${clan.id}/${clan.etapa.id}`}>
+                                                            <button className="px-2 py-0 mx-2  bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                                Reclutar
                                                             </button>
-                                                            <button className="px-2 py-0 mx-2  bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
-                                                                Eliminar
-                                                            </button>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="flex justify-center">
-                                                            <button className="px-4 py-0 mx-2  bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
-                                                                Editar
-                                                            </button>
-                                                        </div>
-                                                    )}
+                                                            </Link>
+                                                    </div>
                                                 </td>
                                             )}
                                     </tr>

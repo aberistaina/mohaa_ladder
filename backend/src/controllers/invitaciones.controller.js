@@ -7,19 +7,53 @@ import { Etapa } from "../models/Etapa.model.js";
 export const enviarInvitacion = async(req, res) =>{
     try {
 
-        const { player_id, clan_id, id_etapa } = req.body
+        const { player_id, clan_id, id_etapa, reclutador_id } = req.body
+
+        const rangosPermitidos = ["Lider", "Co-Lider"]
+
+        const reclutador = await    PlayerClan.findOne({
+            where:{
+                player_id: reclutador_id,
+                id_etapa
+            },
+            raw:true
+        })
+        
+
+        if(!rangosPermitidos.includes(reclutador.rango)){
+            return res.status(400).json({
+                code: 400,
+                message: "No tienes un rango permitido para reclutar jugadores",
+            }); 
+        }
 
         const playerDentroDelClan = await PlayerClan.findOne({
             where:{
                 player_id,
                 id_etapa
-            }
+            },
+            raw:true
         })
 
         if(playerDentroDelClan){
             return res.status(400).json({
                 code: 400,
                 message: "El Jugador ya pertenece a un clan en esta Etapa",
+            });  
+        }
+        
+        const invitacionPendiente = await Invitacion.findOne({
+            where:{
+                player_id,
+                clan_id
+            },
+            raw:true
+        })
+
+        if(invitacionPendiente){
+            return res.status(400).json({
+                code: 400,
+                message: "El Jugador ya tiene una invitación pendiente a este clan",
             });  
         }
 
@@ -35,7 +69,7 @@ export const enviarInvitacion = async(req, res) =>{
             data: nuevaInvitacion
         });
     } catch (error) {
-        console.log(error.message);
+        console.log(error)
         res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor",

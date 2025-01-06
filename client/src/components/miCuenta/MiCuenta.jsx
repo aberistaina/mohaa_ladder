@@ -15,6 +15,7 @@ export const MiCuenta = () => {
             const method = "GET";
             const data = await fetchHook(url, method);
             setPlayer(data.data);
+            console.log(data.data);
         };
         getInfoPlayer();
     }, []);

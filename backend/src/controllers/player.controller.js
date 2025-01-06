@@ -29,6 +29,7 @@ export const obtenerPlayerById = async (req, res) => {
     try {
         const { id } = req.params;
         const player = await Player.findOne({
+            attributes: { exclude: ["password"] },
             where: {
                 id,
             },
@@ -45,7 +46,7 @@ export const obtenerPlayerById = async (req, res) => {
                     ],
                 },
             ],
-            raw: false,  // Cambiado a false para manejar correctamente los includes
+            raw: false,  
             nest: true,
         });
 
