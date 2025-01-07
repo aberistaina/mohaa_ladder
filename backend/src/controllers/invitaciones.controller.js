@@ -125,3 +125,21 @@ export const obtenerInvitacionesPorId = async(req, res) =>{
         });
     }
 }
+
+export const aceptarInvitacion = async(req, res) =>{
+    try {
+
+        
+
+        res.status(201).json({
+            code: 200,
+            message: "Invitaciones aceptada con éxito",
+        });
+    } catch (error) {
+        console.log(error.message);
+        res.send(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
