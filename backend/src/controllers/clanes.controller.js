@@ -89,12 +89,12 @@ export const obtenerClanes = async (req, res) => {
 
 export const obtenerClanesPorEtapa = async (req, res) => {
     try {
-        const { id } = req.params
+        const { id } = req.params;
         const clanes = await Clan.findAll({
             order: [["ranking_actual", "ASC"]],
-            where:{
-                id_etapa: id
-            }
+            where: {
+                id_etapa: id,
+            },
         });
         res.status(200).json({
             code: 200,
@@ -117,7 +117,13 @@ export const obtenerClan = async (req, res) => {
             include: [
                 {
                     model: Player,
-                    attributes: ["id","username", "victorias", "derrotas", "volute"],
+                    attributes: [
+                        "id",
+                        "username",
+                        "victorias",
+                        "derrotas",
+                        "volute",
+                    ],
                     as: "players",
                     through: {
                         model: PlayerClan,
@@ -131,7 +137,6 @@ export const obtenerClan = async (req, res) => {
                         {
                             model: Juego,
                             as: "juego",
-                            
                         },
                     ],
                 },
@@ -196,7 +201,7 @@ export const ingresarPlayerClan = async (req, res) => {
         await PlayerClan.create({
             player_id,
             clan_id,
-            rank: "Miembro"
+            rank: "Miembro",
         });
 
         res.status(200).json({
@@ -211,3 +216,94 @@ export const ingresarPlayerClan = async (req, res) => {
         });
     }
 };
+
+export const editarClan = async (req, res) => {
+    try {
+        const clanId = req.params.id
+        const { nombre, tag, players } = req.body;
+
+        await Clan.update(
+            {
+                nombre,
+                tag,
+            },
+            {
+                where: {
+                    id: clanId
+                }
+            }
+        );
+
+        for (const player of players) {
+
+            const jugador = await Player.findOne({
+                attributes: ["id", "username"],
+                raw:true,
+                where: {
+                    id: player.id,
+                },
+                include: [
+                    {
+                        attributes: ["id", "nombre"],
+                        model: Clan,
+                        as: "clanes",
+                        through: {
+                            model: PlayerClan,
+                            attributes: ["rango", "joined_at"],
+                        },
+                    },
+                    
+                ],
+            });
+            
+            if (jugador['clanes.PlayerClan.rango'] !== "Lider") {
+                await PlayerClan.update(
+                    {
+                    rango: player.rango,
+                    },
+                    {
+                        where:{
+                            player_id: player.id,
+                            clan_id: clanId
+                        }
+                    }
+            )
+        }
+    }
+        res.status(200).json({
+            code: 200,
+            message: "Clan modificado correctamente",
+        });
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+};
+export const expulsarJugador = async(req, res) =>{
+    try {
+
+        const {clanId, playerId} = req.body
+
+        await PlayerClan.destroy({
+            where: {
+                player_id: playerId,
+                clan_id: clanId
+            }
+        });
+        
+
+        res.status(200).json({
+            code: 200,
+            message: "Jugador expulsado del clan",
+        });
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+ }

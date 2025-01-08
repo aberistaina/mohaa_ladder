@@ -137,7 +137,7 @@ export const aceptarInvitacion = async(req, res) =>{
         const nuevoPlayer = {
             player_id,
             clan_id,
-            rango: "miembro",
+            rango: "Miembro",
             id_etapa
         }
 

@@ -58,9 +58,11 @@ export const PlayerClanCard = ({ player }) => {
                                                     "Co-Lider") && (
                                                 <td>
                                                     <div className="flex justify-center items-center">
-                                                        <button className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
-                                                            Editar
-                                                        </button>
+                                                        <Link to={`/editar-clan/${clan.id}`}>
+                                                            <button   className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                                Editar
+                                                            </button>
+                                                        </Link>
                                                         <Link to={`/reclutar/${clan.id}/${clan.etapa.id}`}>
                                                             <button className="px-2 py-0 mx-2  bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
                                                                 Reclutar

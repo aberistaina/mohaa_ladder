@@ -19,7 +19,6 @@ export const ReclutarPage = () => {
             id_etapa: etapaId,
             reclutador_id: playerData.id,
         };
-        console.log(body);
 
         const url = `http://localhost:3000/api/v1/invitaciones/`;
         const method = "POST";

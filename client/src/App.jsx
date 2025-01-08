@@ -13,6 +13,7 @@ import { EtapasPages } from "./pages/EtapasPages"
 import { LadderPage } from "./pages/LadderPage"
 import { CrearClan } from "./components/CrearClan"
 import { ReclutarPage } from "./pages/reclutarPage"
+import { EditarClanPage } from "./pages/EditarClanPage"
 
 
 function App() {
@@ -50,6 +51,7 @@ return (
                             <Route path="/juego/:id" element={<EtapasPages />} />
                             <Route path="/etapa/:id" element={<LadderPage />} />
                             <Route path="/crear-clan/:id" element={<CrearClan />} />
+                            <Route path="/editar-clan/:id" element={<EditarClanPage />} />
                             <Route path="/reclutar/:clanId/:etapaId" element={<ReclutarPage/>} />
                             
                         </Routes>
