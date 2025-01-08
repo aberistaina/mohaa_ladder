@@ -2,6 +2,7 @@ import { Invitacion } from "../models/Invitaciones.js";
 import { PlayerClan } from "../models/PlayerClan.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
+import { sequelize } from "../database/database.js";
 
 
 export const enviarInvitacion = async(req, res) =>{
@@ -127,17 +128,68 @@ export const obtenerInvitacionesPorId = async(req, res) =>{
 }
 
 export const aceptarInvitacion = async(req, res) =>{
+
+        const transaction = await sequelize.transaction()
     try {
 
+        const { player_id, clan_id, id_etapa, id_invitacion } = req.body
+
+        const nuevoPlayer = {
+            player_id,
+            clan_id,
+            rango: "miembro",
+            id_etapa
+        }
+
+        await PlayerClan.create(nuevoPlayer)
+
+        await Invitacion.update(
+            { 
+                estado: "aceptada",
+                fecha_aceptacion: new Date()
+            }, 
+            { where: { id: id_invitacion } } 
+        );
+
+        await transaction.commit()
         
 
         res.status(201).json({
+            code: 201,
+            message: "Ingresaste correctamente al clan",
+        });
+
+    } catch (error) {
+        console.log(error);
+        await transaction.rollback();
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
+
+export const rechazarInvitacion = async(req, res) =>{
+    try {
+
+        const { id_invitacion } = req.body
+
+        await Invitacion.update(
+            { 
+                estado: "rechazada",
+                fecha_aceptacion: new Date()
+
+            }, 
+            { where: { id: id_invitacion } } 
+        );
+
+        res.status(200).json({
             code: 200,
-            message: "Invitaciones aceptada con éxito",
+            message: "Invitación Rechazada",
         });
     } catch (error) {
-        console.log(error.message);
-        res.send(500).json({
+        console.log(error);
+        res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor"
         })

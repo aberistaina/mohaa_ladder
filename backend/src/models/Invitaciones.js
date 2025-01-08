@@ -43,7 +43,7 @@ export const Invitacion = sequelize.define('Invitacion', {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
     },
-    fecha_aceptacion: {
+    fecha_respuesta: {
         type: DataTypes.DATE,
         allowNull: true,
     },
