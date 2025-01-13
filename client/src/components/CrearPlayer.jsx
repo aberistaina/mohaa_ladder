@@ -2,10 +2,15 @@ import { useState } from "react";
 import { useSnackbar } from "notistack";
 import { validarEmail } from "../utils/validatiors";
 import { fetchHook } from "../hooks/fetchHook";
+import { useNavigate } from "react-router-dom";
+
+
 export const CrearPlayer = () => {
     const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
+    const [volute, setVolute] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
     const [error, setError] = useState({
@@ -31,13 +36,14 @@ export const CrearPlayer = () => {
                 username,
                 email,
                 password,
+                volute
             };
             const data = await fetchHook(url, method, body);
 
             if (data.code === 201) {
                 enqueueSnackbar(data.message, { variant: "success" });
                 setTimeout(function () {
-                    window.location.href = "/";
+                    navigate("/");
                 }, 1000);
             }else{
                 enqueueSnackbar(data.message, { variant: "error" });
@@ -97,6 +103,24 @@ export const CrearPlayer = () => {
                                 Correo no válido
                             </span>
                         )}
+                    </div>
+
+                    {/* Volute */}
+                    <div>
+                        <label
+                            htmlFor="volute"
+                            className="block text-sm font-semibold text-slate-300"
+                        >
+                            ID Volute
+                        </label>
+                        <input
+                            type="text"
+                            id="volute"
+                            placeholder="Ingresa tu ID Volute"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            onChange={(e) => setVolute(e.target.value)}
+                        />
+                        
                     </div>
 
                     {/* Contraseña */}

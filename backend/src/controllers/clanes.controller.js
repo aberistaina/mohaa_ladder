@@ -8,6 +8,7 @@ import { Juego } from "../models/Juego.model.js";
 export const crearClan = async (req, res) => {
     try {
         const { nombre, tag, id_etapa, id_lider } = req.body;
+        console.log(req.body);
 
         if (!nombre || !tag || !id_etapa || !id_lider) {
             return res.status(400).json({

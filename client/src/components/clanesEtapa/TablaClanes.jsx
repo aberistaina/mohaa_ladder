@@ -54,8 +54,7 @@ export const TablaClanes = ({ clanes }) => {
                                                 ? "🥈 " + clan.ranking_actual
                                                 : clan.ranking_actual === 3
                                                 ? "🥉 " + clan.ranking_actual
-                                                : clan.ranking_actual <
-                                                clan.ultimo_ranking
+                                                : (clan.ultimo_ranking === 0 || clan.ranking_actual < clan.ultimo_ranking)
                                                 ? "⬆️ " + clan.ranking_actual
                                                 : "⬇️ " + clan.ranking_actual}
                                         </td>

@@ -1,79 +1,19 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { fetchHook } from '../hooks/fetchHook';
-import { guardarLocalStorage, obtenerLocalStorage, limpiarLocalStorage } from '../hooks/localStorage';
-import { useState, useEffect } from 'react';
-import {useSnackbar} from 'notistack';
+import { useState, useContext } from 'react';
+import { LoginContext } from '../context/LoginContext';
 
 
 export const Login = () => {
 
-    const { enqueueSnackbar } = useSnackbar();
+    const { login, loginGoogle, logout, player } = useContext(LoginContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [player, setPlayer] = useState({});
 
-    const url = "http://localhost:3000/api/v1/login/google";
-    const method = "POST";
-    
-    const loginGoogle = async (token, name, email) => {
-
-            const body = {
-                token,
-                name,
-                email
-            };
-                const data = await fetchHook(url, method, body);
-
-                if (data.code === 200) {
-                    enqueueSnackbar(data.message, { variant: "success" });
-                    guardarLocalStorage(data.token, data.player);
-                    setTimeout(function () {
-                        window.location.href = "/";
-                    }, 1000);
-                }else{
-                    enqueueSnackbar(data.message, { variant: "error" });
-                }
-                
-            };
-
-    const login = async (e) => {
-        e.preventDefault()
-    
-        const url = "http://localhost:3000/api/v1/login";
-        const method = "POST";
-        const body = {
-            email,
-            password
-        };
-    
-        const data = await fetchHook(url, method, body);
-        if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "success" });
-            guardarLocalStorage(data.token, data.player);
-            setTimeout(function () {
-                window.location.href = "/";
-            }, 1000);
-        }else{
-            enqueueSnackbar(data.message, { variant: "error" });
-        }
-        
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login(email, password);
     };
-
-    const logout = () => {
-        enqueueSnackbar("Sesión Cerrada", { variant: "warning" })
-        setTimeout(function () {
-            window.location.href = "/";
-            limpiarLocalStorage();
-            setPlayer();
-        }, 1000);
-        
-    };
-
-    useEffect(() => {
-        const { playerData } = obtenerLocalStorage()
-        setPlayer(playerData);
-    }, []);
             
 
     return (
@@ -108,7 +48,7 @@ export const Login = () => {
                 </h2>
 
                 {/* Formulario */}
-                <form className="space-y-4" onSubmit= {login}>
+                <form className="space-y-4" onSubmit= {handleLogin}>
                     {/* Email */}
                     <div>
                         <label

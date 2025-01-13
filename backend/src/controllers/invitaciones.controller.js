@@ -46,7 +46,8 @@ export const enviarInvitacion = async(req, res) =>{
         const invitacionPendiente = await Invitacion.findOne({
             where:{
                 player_id,
-                clan_id
+                clan_id,
+                estado: "pendiente"
             },
             raw:true
         })

@@ -3,7 +3,11 @@ import { Op } from "sequelize";
 import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
+import { enviarCorreo } from "../utils/emails.js";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 export const obtenerPlayers = async (req, res) => {
     try {
@@ -22,8 +26,6 @@ export const obtenerPlayers = async (req, res) => {
         });
     }
 };
-
-
 
 export const obtenerPlayerById = async (req, res) => {
     try {
@@ -46,7 +48,7 @@ export const obtenerPlayerById = async (req, res) => {
                     ],
                 },
             ],
-            raw: false,  
+            raw: false,
             nest: true,
         });
 
@@ -56,8 +58,6 @@ export const obtenerPlayerById = async (req, res) => {
                 message: "Jugador no encontrado",
             });
         }
-
-        
 
         res.status(201).json({
             code: 201,
@@ -73,14 +73,13 @@ export const obtenerPlayerById = async (req, res) => {
     }
 };
 
-
-
 export const crearPlayer = async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, volute } = req.body;
+        console.log(req.body);
         const hash = bcrypt.hashSync(password, 10);
 
-        if (!username || !email || !password) {
+        if (!username || !email || !password || !volute) {
             return res.status(400).json({
                 code: 400,
                 message: "Todos los campos son requeridos",
@@ -89,34 +88,45 @@ export const crearPlayer = async (req, res) => {
 
         const usuario = await Player.findOne({
             where: {
-                [Op.or]: [
-                    { username },  
-                    { email}      
-                ]
-            }
+                [Op.or]: [{ username }, { email }],
+            },
         });
 
-        if(usuario){
-            if(usuario.username === username){
+        if (usuario) {
+            if (usuario.username === username) {
                 return res.status(400).json({
                     code: 400,
                     message: "Ya hay un jugador con ese nombre",
                 });
-            } 
-    
-            if(usuario.email === email){
+            }
+
+            if (usuario.email === email) {
                 return res.status(400).json({
                     code: 400,
                     message: "Ya hay un jugador registrado con ese email",
                 });
             }
-        };
+        }
 
         const nuevoUsario = await Player.create({
             username,
             email,
+            volute,
             password: hash,
         });
+
+        const usuarioLegible = nuevoUsario.toJSON();
+        
+        const secret = process.env.SECRET;
+        const token = jwt.sign(
+            {
+                data: usuarioLegible.email,
+            },
+            secret,
+            { expiresIn: "1h" }
+        );
+
+        enviarCorreo(email, "Nuevo Usuario", token);
 
         res.status(201).json({
             code: 201,
@@ -132,7 +142,6 @@ export const crearPlayer = async (req, res) => {
     }
 };
 
-
 export const obtenerClanPorEtapa = async (req, res) => {
     try {
         const { idUser, idEtapa } = req.params;
@@ -143,7 +152,6 @@ export const obtenerClanPorEtapa = async (req, res) => {
                 id: idUser,
             },
             include: [
-                
                 {
                     attributes: ["id", "nombre"],
                     model: Clan,
@@ -153,32 +161,59 @@ export const obtenerClanPorEtapa = async (req, res) => {
                         id_etapa: idEtapa,
                     },
                 },
-                
             ],
         });
 
         if (players == null) {
             return res.status(400).json({
-                 code: 400,
-                 message: "Debes estar en un clan en esta etapa para poder reportar",
-             });
-         }
+                code: 400,
+                message:
+                    "Debes estar en un clan en esta etapa para poder reportar",
+            });
+        }
 
         const datosPlayer = {
             id: players.id,
             username: players.username,
             clanes: players.clanes[0].id,
             rango: players.clanes[0].PlayerClan.rango,
-        }
+        };
 
-
-        res.status(201).json({
+        res.status(200).json({
             code: 200,
             message: "Playes encontrados Con éxito",
             data: datosPlayer,
         });
     } catch (error) {
         console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+};
+
+export const validarCuenta = async (req, res) => {
+    try {
+        const { email } = req.params;
+
+        await Player.update(
+            {
+                validado: true,
+            },
+            {
+                where: {
+                    email
+                },
+            }
+        );
+
+        res.status(200).json({
+            code: 200,
+            message: "Usuario Validado",
+        });
+    } catch (error) {
+        console.log(error);
         res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor",

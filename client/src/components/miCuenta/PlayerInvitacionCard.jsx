@@ -2,17 +2,22 @@ import { formatDate } from "../../utils/formatearFecha";
 import { useEffect, useState } from "react";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 export const PlayerInvitacionCard = ({ player }) => {
     const [invitaciones, setInvitaciones] = useState();
     const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate()
 
-    useEffect(() => {
+    
+
+    useEffect(() => {   
         const getInvitationsPlayer = async () => {
             const url = `http://localhost:3000/api/v1/invitaciones/${player.id}`;
             const method = "GET";
             const data = await fetchHook(url, method);
             setInvitaciones(data.data);
+            console.log(player.id);
         };
         getInvitationsPlayer();
     }, [player.id]);
@@ -35,9 +40,7 @@ export const PlayerInvitacionCard = ({ player }) => {
 
         if (data.code === 201) {
             enqueueSnackbar(data.message, { variant: "success" });
-            setTimeout(function () {
-                location.reload();
-            }, 1000);
+            navigate("/")
         } else {
             enqueueSnackbar(data.message, { variant: "error" });
         }
@@ -53,9 +56,7 @@ export const PlayerInvitacionCard = ({ player }) => {
 
         if (data.code === 200) {
             enqueueSnackbar(data.message, { variant: "warning" });
-            setTimeout(function () {
-                location.reload();
-            }, 1000);
+            navigate("/")
         } else {
             enqueueSnackbar(data.message, { variant: "error" });
         }

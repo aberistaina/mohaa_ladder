@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate()
     const [clan, setClan] = useState({});
     const { id } = useParams();
     const rangos = ["Lider", "Co-Lider", "Capitán", "Miembro"];
@@ -26,7 +28,7 @@ export const FormularioEditarClan = () => {
         setForm((prevForm) => {
             const updatedPlayers = prevForm.players.map((player, i) => {
                 if (i === index) {
-                    // eslint-disable-next-line no-unused-vars
+
                     const { victorias,derrotas,PlayerClan,volute,username,...rest} = player;
                     return {
                         ...rest,
@@ -40,20 +42,23 @@ export const FormularioEditarClan = () => {
         });
     };
 
+    const getInfoClan = async () => {
+        const url = `http://localhost:3000/api/v1/clanes/${id}`;
+        const method = "GET";
+        const data = await fetchHook(url, method);
+        setClan(data.data);
+        setForm({
+            nombre: data.data.nombre,
+            tag: data.data.tag,
+            players: data.data.players,
+        });
+    };
+
     useEffect(() => {
-        const getInfoClan = async () => {
-            const url = `http://localhost:3000/api/v1/clanes/${id}`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setClan(data.data);
-            setForm({
-                nombre: data.data.nombre,
-                tag: data.data.tag,
-                players: data.data.players,
-            });
-        };
         getInfoClan();
-    }, [id]);
+    }, []);
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -63,9 +68,7 @@ export const FormularioEditarClan = () => {
 
         if (data.code === 200) {
             enqueueSnackbar(data.message, { variant: "success" });
-            setTimeout(function () {
-                window.location.href = "/";
-            }, 2000);
+            getInfoClan();
         } else {
             enqueueSnackbar(data.message, { variant: "error" });
         }
@@ -86,8 +89,8 @@ export const FormularioEditarClan = () => {
                 enqueueSnackbar(data.message, { variant: "success" });
                 
                 setTimeout(function () {
-                    location.reload();
-                }, 2000);
+                    navigate(`/editar-clan/${clanId}`);
+                }, 1000);
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });
             }
