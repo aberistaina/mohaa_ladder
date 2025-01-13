@@ -9,7 +9,7 @@ export const login = (req, res) =>{
 
         res.status(200).json({
             code:200,
-            message: "Login exitoso",
+            message: "Login exitoso ",
             player: req.player,
             token: req.token
         })
