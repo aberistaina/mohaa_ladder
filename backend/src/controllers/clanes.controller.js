@@ -221,12 +221,13 @@ export const ingresarPlayerClan = async (req, res) => {
 export const editarClan = async (req, res) => {
     try {
         const clanId = req.params.id
-        const { nombre, tag, players } = req.body;
+        const { nombre, tag, players, imagen } = req.body;
 
         await Clan.update(
             {
                 nombre,
                 tag,
+                imagen
             },
             {
                 where: {

@@ -40,6 +40,10 @@ export const Player = sequelize.define('Player', {
         type: DataTypes.BOOLEAN,
         defaultValue: false
     },
+    imagen:{
+        type: DataTypes.STRING,
+        defaultValue: "https://st3.depositphotos.com/9468312/12912/v/450/depositphotos_129128076-stock-illustration-gray-man-avatar.jpg"
+    },
     created_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,

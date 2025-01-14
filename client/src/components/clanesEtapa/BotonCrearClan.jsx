@@ -11,8 +11,12 @@ export const BotonCrearClan = () => {
 
     useEffect(() => {
         const getEtapa = async () => {
-            const data = await fetchHook(url, method);
-            setEtapa(data.data);
+            try {
+                const data = await fetchHook(url, method);
+                setEtapa(data.data);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getEtapa();
     }, [])

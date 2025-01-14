@@ -14,6 +14,7 @@ export const FormularioEditarClan = () => {
     const [form, setForm] = useState({
         nombre: "",
         tag: "",
+        imagen:"",
         players: [],
     });
 
@@ -43,15 +44,20 @@ export const FormularioEditarClan = () => {
     };
 
     const getInfoClan = async () => {
-        const url = `http://localhost:3000/api/v1/clanes/${id}`;
-        const method = "GET";
-        const data = await fetchHook(url, method);
-        setClan(data.data);
-        setForm({
-            nombre: data.data.nombre,
-            tag: data.data.tag,
-            players: data.data.players,
-        });
+        try {
+            const url = `http://localhost:3000/api/v1/clanes/${id}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
+            setClan(data.data);
+            setForm({
+                nombre: data.data.nombre,
+                tag: data.data.tag,
+                imagen:data.data.imagen,
+                players: data.data.players,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
@@ -61,39 +67,47 @@ export const FormularioEditarClan = () => {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const url = `http://localhost:3000/api/v1/clanes/editar/${id}`;
-        const method = "POST";
-        const data = await fetchHook(url, method, form);
-
-        if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "success" });
-            getInfoClan();
-        } else {
-            enqueueSnackbar(data.message, { variant: "error" });
+        try {
+            e.preventDefault();
+            const url = `http://localhost:3000/api/v1/clanes/editar/${id}`;
+            const method = "POST";
+            const data = await fetchHook(url, method, form);
+    
+            if (data.code === 200) {
+                enqueueSnackbar(data.message, { variant: "success" });
+                navigate("/micuenta")
+            } else {
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 
     const expulsarJugador = async(playerId, clanId) =>{
-        const url = `http://localhost:3000/api/v1/clanes/eliminar`;
-        const method = "DELETE";
-        const body = {
-            playerId,
-            clanId
-        }
-        const confirmed = window.confirm('¿Estás seguro de que quieres Expulsar a este jugador?');
-        if(confirmed){
-            const data = await fetchHook(url, method, body);
-
-            if (data.code === 200) {
-                enqueueSnackbar(data.message, { variant: "success" });
-                
-                setTimeout(function () {
-                    navigate(`/editar-clan/${clanId}`);
-                }, 1000);
-            } else {
-                enqueueSnackbar(data.message, { variant: "error" });
+        try {
+            const url = `http://localhost:3000/api/v1/clanes/eliminar`;
+            const method = "DELETE";
+            const body = {
+                playerId,
+                clanId
             }
+            const confirmed = window.confirm('¿Estás seguro de que quieres Expulsar a este jugador?');
+            if(confirmed){
+                const data = await fetchHook(url, method, body);
+
+                if (data.code === 200) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                    
+                    setTimeout(function () {
+                        navigate(`/editar-clan/${clanId}`);
+                    }, 1000);
+                } else {
+                    enqueueSnackbar(data.message, { variant: "error" });
+                }
+            }
+        } catch (error) {
+            console.log(error);
         }
         
     }
@@ -132,6 +146,24 @@ export const FormularioEditarClan = () => {
                         name="tag"
                         value={form.tag}
                         placeholder="Ingresa el tag del clan"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="imagen"
+                        className="block text-sm font-semibold text-slate-300"
+                    >
+                        Logo del Clan
+                    </label>
+                    <input
+                        type="text"
+                        id="imagen"
+                        name="imagen"
+                        value={form.imagen}
+                        placeholder="Ingresa el logo del clan"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                         onChange={handleChange}
                     />

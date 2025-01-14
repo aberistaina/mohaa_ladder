@@ -8,7 +8,7 @@ export const PlayerInfoCard = ({ player }) => {
                 <div className="w-full md:w-1/3 md:pr-6 mb-6 md:mb-0">
                     {/* Imagen del Jugador */}
                     <img
-                        src="https://st3.depositphotos.com/9468312/12912/v/450/depositphotos_129128076-stock-illustration-gray-man-avatar.jpg"
+                        src={player.imagen}
                         alt="Jugador"
                         className="rounded-full w-32 h-32 md:w-full md:h-full object-cover mx-auto"
                     />

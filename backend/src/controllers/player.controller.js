@@ -220,3 +220,48 @@ export const validarCuenta = async (req, res) => {
         });
     }
 };
+
+export const editarPlayer = async(req, res) =>{
+    try {
+        const { id } = req.params
+        const {username, imagen} = req.body
+
+        const usernameRepetido = await Player.findOne({
+            where:{
+                username,
+                id: {
+                    [Op.not]: id
+                }
+            }
+        })
+
+        if(usernameRepetido){
+            return res.status(400).json({
+                code: 400,
+                message: "Ya existe un jugador con ese nombre"
+            });
+        }
+
+        await Player.update(
+            {
+                username,
+                imagen
+            },
+            {
+                where: {
+                    id
+                },
+            }
+        );
+        res.status(200).json({
+            code: 200,
+            message: "Jugador Modificado con éxito",
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+}

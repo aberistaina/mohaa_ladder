@@ -13,52 +13,58 @@ export const PlayerInvitacionCard = ({ player }) => {
 
     useEffect(() => {   
         const getInvitationsPlayer = async () => {
-            const url = `http://localhost:3000/api/v1/invitaciones/${player.id}`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setInvitaciones(data.data);
-            console.log(player.id);
+            try {
+                const url = `http://localhost:3000/api/v1/invitaciones/${player.id}`;
+                const method = "GET";
+                const data = await fetchHook(url, method);
+                setInvitaciones(data.data);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getInvitationsPlayer();
     }, [player.id]);
 
-    const aceptarInvitacion = async (
-        idPlayer,
-        idEtapa,
-        idClan,
-        invitacionId
-    ) => {
-        const body = {
-            player_id: idPlayer,
-            clan_id: idClan,
-            id_etapa: idEtapa,
-            id_invitacion: invitacionId,
-        };
-        const url = `http://localhost:3000/api/v1/invitaciones/aceptar`;
-        const method = "POST";
-        const data = await fetchHook(url, method, body);
-
-        if (data.code === 201) {
-            enqueueSnackbar(data.message, { variant: "success" });
-            navigate("/")
-        } else {
-            enqueueSnackbar(data.message, { variant: "error" });
+    const aceptarInvitacion = async (idPlayer, idEtapa, idClan, invitacionId) => {
+        try {
+            const body = {
+                player_id: idPlayer,
+                clan_id: idClan,
+                id_etapa: idEtapa,
+                id_invitacion: invitacionId,
+            };
+            const url = `http://localhost:3000/api/v1/invitaciones/aceptar`;
+            const method = "POST";
+            const data = await fetchHook(url, method, body);
+    
+            if (data.code === 201) {
+                enqueueSnackbar(data.message, { variant: "success" });
+                navigate("/")
+            } else {
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 
     const rechazarInvitacion = async (idInvitacion) => {
-        const body = {
-            id_invitacion: idInvitacion,
-        };
-        const url = `http://localhost:3000/api/v1/invitaciones/rechazar`;
-        const method = "POST";
-        const data = await fetchHook(url, method, body);
-
-        if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "warning" });
-            navigate("/")
-        } else {
-            enqueueSnackbar(data.message, { variant: "error" });
+        try {
+            const body = {
+                id_invitacion: idInvitacion,
+            };
+            const url = `http://localhost:3000/api/v1/invitaciones/rechazar`;
+            const method = "POST";
+            const data = await fetchHook(url, method, body);
+    
+            if (data.code === 200) {
+                enqueueSnackbar(data.message, { variant: "warning" });
+                navigate("/")
+            } else {
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 

@@ -17,6 +17,10 @@ export const Clan = sequelize.define("Clan", {
         allowNull: false,
         unique: true
     },
+    imagen:{
+        type: DataTypes.STRING,
+        defaultValue: "https://st3.depositphotos.com/9468312/12912/v/450/depositphotos_129128076-stock-illustration-gray-man-avatar.jpg"
+    },
     id_etapa: {
         type: DataTypes.INTEGER,
         references: {

@@ -14,8 +14,12 @@ export const ClanesEtapa = () => {
 
     useEffect(() => {
         const getClanes = async () => {
-            const data = await fetchHook(url, method);
-            setClanes(data.data);
+            try {
+                const data = await fetchHook(url, method);
+                setClanes(data.data);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getClanes();
     }, [id])

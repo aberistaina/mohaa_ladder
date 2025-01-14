@@ -12,10 +12,14 @@ export const DetalleClan = () => {
     
         useEffect(() => {
             const getInfoClan = async () => {
-                const url = `http://localhost:3000/api/v1/clanes/${id}`;
-                const method = "GET";
-                const data = await fetchHook(url, method);
-                setClan(data.data);
+                try {
+                    const url = `http://localhost:3000/api/v1/clanes/${id}`;
+                    const method = "GET";
+                    const data = await fetchHook(url, method);
+                    setClan(data.data);
+                } catch (error) {
+                    console.log(error);
+                }
             };
             getInfoClan();
         }, [id]);

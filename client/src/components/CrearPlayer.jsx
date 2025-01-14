@@ -20,34 +20,38 @@ export const CrearPlayer = () => {
     });
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const newError = {
-            email: !validarEmail(email),
-            password: password !== repeatPassword,
-            username: username.length === 0,
-        };
-        setError(newError);
-        if (newError.email || newError.password || newError.username) {
-            return;
-        } else {
-            const url = "http://localhost:3000/api/v1/players";
-            const method = "POST";
-            const body = {
-                username,
-                email,
-                password,
-                volute
+        try {
+            e.preventDefault();
+            const newError = {
+                email: !validarEmail(email),
+                password: password !== repeatPassword,
+                username: username.length === 0,
             };
-            const data = await fetchHook(url, method, body);
+            setError(newError);
+            if (newError.email || newError.password || newError.username) {
+                return;
+            } else {
+                const url = "http://localhost:3000/api/v1/players";
+                const method = "POST";
+                const body = {
+                    username,
+                    email,
+                    password,
+                    volute
+                };
+                const data = await fetchHook(url, method, body);
 
-            if (data.code === 201) {
-                enqueueSnackbar(data.message, { variant: "success" });
-                setTimeout(function () {
-                    navigate("/");
-                }, 1000);
-            }else{
-                enqueueSnackbar(data.message, { variant: "error" });
+                if (data.code === 201) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                    setTimeout(function () {
+                        navigate("/");
+                    }, 1000);
+                }else{
+                    enqueueSnackbar(data.message, { variant: "error" });
+                }
             }
+        } catch (error) {
+            console.log(error);
         }
     };
 

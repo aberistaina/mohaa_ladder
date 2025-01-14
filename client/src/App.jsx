@@ -15,6 +15,8 @@ import { ReclutarPage } from "./pages/reclutarPage"
 import { EditarClanPage } from "./pages/EditarClanPage"
 import { LoginProvider } from "./context/LoginContext"
 import { CrearClanpage } from "./pages/CrearClanpage"
+import { EditarMiCuenta } from "./components/editarMiCuenta/EditarMiCuenta"
+import { JugadoresPages } from "./pages/JugadoresPages"
 
 
 function App() {
@@ -56,6 +58,8 @@ return (
                                 <Route path="/crear-clan/:id" element={<CrearClanpage />} />
                                 <Route path="/editar-clan/:id" element={<EditarClanPage />} />
                                 <Route path="/reclutar/:clanId/:etapaId" element={<ReclutarPage/>} />
+                                <Route path="/editar-micuenta/:id" element={<EditarMiCuenta />} />
+                                <Route path="/jugadores" element={<JugadoresPages />} />
                                 
                             </Routes>
                         

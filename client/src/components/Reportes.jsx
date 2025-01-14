@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchHook } from "../hooks/fetchHook";
 import { obtenerLocalStorage } from "../hooks/localStorage";
 import {useSnackbar} from 'notistack';
+import { useNavigate } from "react-router-dom";
 
 export const Reportes = () => {
     const { enqueueSnackbar } = useSnackbar();
@@ -13,43 +14,56 @@ export const Reportes = () => {
     const [idClanGanador, setIdClanGanador] = useState("");
     const [clanPerdedor, setClanPerdedor] = useState({});
     const [comentario, setComentario] = useState("");
+    const navigate = useNavigate()
 
     const getEtapas = async (id) => { 
-        const url = `http://localhost:3000/api/v1/etapas/juego/${id}`;
-        const method = "GET";
-        const data = await fetchHook(url, method);
-        setidJuego(id);
-        setEtapas(data.data);
-    };
-
-    const getClanes = async (idEtapa, idClanPerdedor) => { 
-        const url = `http://localhost:3000/api/v1/clanes/obtenerCLanReporte/${idEtapa}/${idClanPerdedor}`;
-        const method = "GET";
-        const data = await fetchHook(url, method);
-
-        if (data.code === 200) {
-            setClanes(data.data);
-        }else{
-            enqueueSnackbar(data.message, { variant: "error" });
+        try {
+            const url = `http://localhost:3000/api/v1/etapas/juego/${id}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
+            setidJuego(id);
+            setEtapas(data.data);
+        } catch (error) {
+            console.log(error);
         }
         
     };
 
-    const getClanPerdedor = async (idEtapa) => { 
-        setidEtapa(idEtapa);
-        const { playerData } = obtenerLocalStorage()
-        const idJugador = playerData.id;
-        const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
-        const method = "GET";
-        const data = await fetchHook(url, method);
+    const getClanes = async (idEtapa, idClanPerdedor) => { 
+        try {
+            const url = `http://localhost:3000/api/v1/clanes/obtenerCLanReporte/${idEtapa}/${idClanPerdedor}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
 
-        if (data.code === 200) {
-            setClanPerdedor(data.data);
-            const idClanPerdedor = data.data.clanes;
-            const rango = data.data.rango;
-            getClanes(idEtapa, idClanPerdedor, rango);
-        }else{
-            enqueueSnackbar(data.message, { variant: "error" });
+            if (data.code === 200) {
+                setClanes(data.data);
+            }else{
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
+        }  
+    };
+
+    const getClanPerdedor = async (idEtapa) => { 
+        try {
+            setidEtapa(idEtapa);
+            const { playerData } = obtenerLocalStorage()
+            const idJugador = playerData.id;
+            const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
+            const method = "GET";
+            const data = await fetchHook(url, method);
+
+            if (data.code === 200) {
+                setClanPerdedor(data.data);
+                const idClanPerdedor = data.data.clanes;
+                const rango = data.data.rango;
+                getClanes(idEtapa, idClanPerdedor, rango);
+            }else{
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
         }
 
         
@@ -58,11 +72,14 @@ export const Reportes = () => {
     useEffect(() => {
         
         const getJuegos = async () => {
-            const url = `http://localhost:3000/api/v1/juegos`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setJuegos(data.data);
-
+            try {
+                const url = `http://localhost:3000/api/v1/juegos`;
+                const method = "GET";
+                const data = await fetchHook(url, method);
+                setJuegos(data.data);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getJuegos();
     }, []);
@@ -70,24 +87,29 @@ export const Reportes = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        getClanPerdedor(idEtapa);
+        try {
+            getClanPerdedor(idEtapa);
 
-        const url = `http://localhost:3000/api/v1/ladder`;
-        const method = "POST";
-        const body = {
-            id_clan_ganador: idClanGanador,
-            id_clan_perdedor: clanPerdedor.clanes,
-            id_etapa: idEtapa,
-            id_juego: idJuego,
-            comentario: comentario,
-            rango: clanPerdedor.rango
-        };
+            const url = `http://localhost:3000/api/v1/ladder`;
+            const method = "POST";
+            const body = {
+                id_clan_ganador: idClanGanador,
+                id_clan_perdedor: clanPerdedor.clanes,
+                id_etapa: idEtapa,
+                id_juego: idJuego,
+                comentario: comentario,
+                rango: clanPerdedor.rango
+            };
 
-        const data = await fetchHook(url, method, body);
-        if (data.code === 200) {
-            enqueueSnackbar(data.message, { variant: "success" });
-        }else{
-            enqueueSnackbar(data.message, { variant: "error" });
+            const data = await fetchHook(url, method, body);
+            if (data.code === 200) {
+                enqueueSnackbar(data.message, { variant: "success" });
+                navigate(`/etapa/${idEtapa}`)
+            }else{
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
         }
     }
 

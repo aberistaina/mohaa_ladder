@@ -10,13 +10,17 @@ export const DetalleJugador = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const getInfoPlayer = async () => {
-            const url = `http://localhost:3000/api/v1/players/${id}`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setPlayer(data.data);
-        };
-        getInfoPlayer();
+        try {
+            const getInfoPlayer = async () => {
+                const url = `http://localhost:3000/api/v1/players/${id}`;
+                const method = "GET";
+                const data = await fetchHook(url, method);
+                setPlayer(data.data);
+            };
+            getInfoPlayer();
+        } catch (error) {
+            console.log(error);
+        }
     }, [id]);
 
     return (

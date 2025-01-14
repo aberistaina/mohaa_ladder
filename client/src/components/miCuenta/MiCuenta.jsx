@@ -4,17 +4,23 @@ import { fetchHook } from "../../hooks/fetchHook";
 import { PlayerInfoCard } from "./PlayerInfoCard";
 import { PlayerClanCard } from "./PlayerClanCard";
 import { PlayerInvitacionCard } from "./PlayerInvitacionCard";
+import { BotonEditarCuenta } from "./BotonEditarCuenta";
 
 export const MiCuenta = () => {
     const [player, setPlayer] = useState({});
 
     useEffect(() => {
         const getInfoPlayer = async () => {
-            const { playerData } = obtenerLocalStorage();
-            const url = `http://localhost:3000/api/v1/players/${playerData.id}`;
-            const method = "GET";
-            const data = await fetchHook(url, method);
-            setPlayer(data.data);
+            try {
+                const { playerData } = obtenerLocalStorage();
+                const url = `http://localhost:3000/api/v1/players/${playerData.id}`;
+                const method = "GET";
+                const data = await fetchHook(url, method);
+                setPlayer(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+            
         };
         getInfoPlayer();
     }, []);
@@ -23,6 +29,7 @@ export const MiCuenta = () => {
         <>
             <div className="max-w-4xl mx-auto p-6 border border-slate-500 bg-slate-900 rounded shadow-md">
                 <PlayerInfoCard player={player} />
+                <BotonEditarCuenta />
                 <PlayerClanCard player={player} />
                 <PlayerInvitacionCard player={player} />
             </div>
