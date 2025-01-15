@@ -40,7 +40,7 @@ export const CrearClan = () => {
             if (data.code === 201) {
                 enqueueSnackbar(data.message, { variant: "success" });
                 setTimeout(function () {
-                    navigate("/micuenta");
+                    navigate("/ladder/micuenta");
                 }, 1000);
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });

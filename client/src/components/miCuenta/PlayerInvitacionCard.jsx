@@ -39,7 +39,7 @@ export const PlayerInvitacionCard = ({ player }) => {
     
             if (data.code === 201) {
                 enqueueSnackbar(data.message, { variant: "success" });
-                navigate("/")
+                navigate("/ladder")
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });
             }
@@ -59,7 +59,7 @@ export const PlayerInvitacionCard = ({ player }) => {
     
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "warning" });
-                navigate("/")
+                navigate("/ladder")
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });
             }

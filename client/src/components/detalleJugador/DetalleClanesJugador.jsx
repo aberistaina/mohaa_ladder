@@ -29,7 +29,7 @@ export const DetalleClanesJugador = ({ player }) => {
                                         <td className="px-4 py-2">
                                             <Link
                                                 className="hover:text-blue-500 hover:underline transition duration-300"
-                                                to={`/detalle-clan/${clan.id}`}
+                                                to={`/ladder/detalle-clan/${clan.id}`}
                                             >
                                                 {clan.nombre}
                                             </Link>

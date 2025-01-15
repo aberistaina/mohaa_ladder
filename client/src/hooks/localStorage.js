@@ -8,7 +8,12 @@ export const limpiarLocalStorage = () => {
 }
 
 export const obtenerLocalStorage = () => { 
-    const token = localStorage.getItem("token")
-    const playerData = JSON.parse(localStorage.getItem("player"))
-    return {token, playerData}
+    try {
+        const token = localStorage.getItem("token")
+        const playerData = JSON.parse(localStorage.getItem("player"))
+        return {token, playerData}
+    } catch (error) {
+        return { playerData: null, token: null }
+    }
+    
 }

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { obtenerLocalStorage } from "../../hooks/localStorage";
+import { useEffect, useState, useContext } from "react";
+import { LoginContext } from "../../context/LoginContext";
 import { fetchHook } from "../../hooks/fetchHook";
 import { PlayerInfoCard } from "./PlayerInfoCard";
 import { PlayerClanCard } from "./PlayerClanCard";
@@ -7,31 +7,39 @@ import { PlayerInvitacionCard } from "./PlayerInvitacionCard";
 import { BotonEditarCuenta } from "./BotonEditarCuenta";
 
 export const MiCuenta = () => {
-    const [player, setPlayer] = useState({});
+    
+    const [ userData , userSetData ] = useState({})
+    const { player } = useContext(LoginContext);
+
 
     useEffect(() => {
-        const getInfoPlayer = async () => {
-            try {
-                const { playerData } = obtenerLocalStorage();
-                const url = `http://localhost:3000/api/v1/players/${playerData.id}`;
-                const method = "GET";
-                const data = await fetchHook(url, method);
-                setPlayer(data.data);
-            } catch (error) {
-                console.log(error);
-            }
-            
-        };
-        getInfoPlayer();
-    }, []);
+        if (player && player.id) {
+            const id = player.id;
+            const getInfoPlayer = async () => {
+                try {
+                    const url = `http://localhost:3000/api/v1/players/${id}`;
+                    const method = "GET";
+                    const data = await fetchHook(url, method);
+                    userSetData(data.data);
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+            getInfoPlayer();
+        }
+    }, [player]);
+    
+    if (!player) {
+        return <div>Loading...</div>; 
+    }
 
     return (
         <>
             <div className="max-w-4xl mx-auto p-6 border border-slate-500 bg-slate-900 rounded shadow-md">
-                <PlayerInfoCard player={player} />
+                <PlayerInfoCard player={userData} />
                 <BotonEditarCuenta />
-                <PlayerClanCard player={player} />
-                <PlayerInvitacionCard player={player} />
+                <PlayerClanCard player={userData} />
+                <PlayerInvitacionCard player={userData} />
             </div>
         </>
     );

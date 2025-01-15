@@ -75,7 +75,7 @@ export const FormularioEditarClan = () => {
     
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "success" });
-                navigate("/micuenta")
+                navigate("/ladder/micuenta")
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });
             }
@@ -100,7 +100,7 @@ export const FormularioEditarClan = () => {
                     enqueueSnackbar(data.message, { variant: "success" });
                     
                     setTimeout(function () {
-                        navigate(`/editar-clan/${clanId}`);
+                        navigate(`/ladder/editar-clan/${clanId}`);
                     }, 1000);
                 } else {
                     enqueueSnackbar(data.message, { variant: "error" });

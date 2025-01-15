@@ -44,7 +44,7 @@ export const CrearPlayer = () => {
                 if (data.code === 201) {
                     enqueueSnackbar(data.message, { variant: "success" });
                     setTimeout(function () {
-                        navigate("/");
+                        navigate("/ladder");
                     }, 1000);
                 }else{
                     enqueueSnackbar(data.message, { variant: "error" });

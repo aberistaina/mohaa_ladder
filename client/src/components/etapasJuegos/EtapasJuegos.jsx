@@ -50,7 +50,7 @@ export const EtapasJuegos = () => {
                                             {etapa.juego}
                                         </td>
                                         <td className="px-10 py-4">
-                                            <Link to={`/etapa/${etapa.id}`}>
+                                            <Link to={`/ladder/etapa/${etapa.id}`}>
                                                 <button className="px-3 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
                                                     Ver Más
                                                 </button>

@@ -6,11 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const { id } = useParams();
     const [form, setForm] = useState({
         username: "",
         imagen: "",
+        twitch: "",
+        youtube: ""
     });
 
     const handleChange = (e) => {
@@ -26,6 +28,8 @@ export const FormularioEditarCuenta = () => {
             setForm({
                 username: data.data.username,
                 imagen: data.data.imagen,
+                twitch: data.data.twitch,
+                youtube: data.data.youtube
             });
         } catch (error) {
             console.log(error);
@@ -42,6 +46,7 @@ export const FormularioEditarCuenta = () => {
 
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "success" });
+                navigate("/ladder/micuenta")
             } else {
                 enqueueSnackbar(data.message, { variant: "error" });
             }
@@ -88,6 +93,42 @@ export const FormularioEditarCuenta = () => {
                         name="imagen"
                         value={form.imagen}
                         placeholder="Ingresa tu imagen de perfil"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="twitch"
+                        className="block text-sm font-semibold text-slate-300"
+                    >
+                        Link Twitch
+                    </label>
+                    <input
+                        type="text"
+                        id="twitch"
+                        name="twitch"
+                        value={form.twitch}
+                        placeholder="Ingresa tu link de twitch"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="youtube"
+                        className="block text-sm font-semibold text-slate-300"
+                    >
+                        Link Youtube
+                    </label>
+                    <input
+                        type="text"
+                        id="youtube"
+                        name="youtube"
+                        value={form.youtube}
+                        placeholder="Ingresa tu link de youtube"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                         onChange={handleChange}
                     />

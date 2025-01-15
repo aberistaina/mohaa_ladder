@@ -104,7 +104,7 @@ export const Reportes = () => {
             const data = await fetchHook(url, method, body);
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "success" });
-                navigate(`/etapa/${idEtapa}`)
+                navigate(`/ladder/etapa/${idEtapa}`)
             }else{
                 enqueueSnackbar(data.message, { variant: "error" });
             }

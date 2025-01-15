@@ -11,7 +11,9 @@ dotenv.config();
 
 export const obtenerPlayers = async (req, res) => {
     try {
-        const players = await Player.findAll();
+        const players = await Player.findAll({
+            attributes:{ exclude: ["password"] }
+        });
 
         res.status(201).json({
             code: 201,
@@ -224,7 +226,7 @@ export const validarCuenta = async (req, res) => {
 export const editarPlayer = async(req, res) =>{
     try {
         const { id } = req.params
-        const {username, imagen} = req.body
+        const {username, imagen, twitch, youtube} = req.body
 
         const usernameRepetido = await Player.findOne({
             where:{
@@ -245,7 +247,9 @@ export const editarPlayer = async(req, res) =>{
         await Player.update(
             {
                 username,
-                imagen
+                imagen,
+                twitch,
+                youtube
             },
             {
                 where: {

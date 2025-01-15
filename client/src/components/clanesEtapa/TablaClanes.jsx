@@ -59,7 +59,7 @@ export const TablaClanes = ({ clanes }) => {
                                                 : "⬇️ " + clan.ranking_actual}
                                         </td>
                                         <td className="px-4 py-2 font-semibold text-slate-50">
-                                            <Link to={`/detalle-clan/${clan.id}`}>{clan.nombre}</Link>
+                                            <Link to={`/ladder/detalle-clan/${clan.id}`}>{clan.nombre}</Link>
                                         </td>
                                         <td className="px-4 py-2 text-center">
                                             {clan.triunfos}

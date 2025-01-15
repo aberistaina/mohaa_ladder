@@ -39,7 +39,7 @@ export const LoginProvider = ({ children }) => {
                 guardarLocalStorage(data.token, data.player);
                 setPlayer(data.player);
                 enqueueSnackbar('Sesión iniciada correctamente', { variant: 'success' });
-                navigate('/');
+                navigate('/ladder');
             } else {
                 enqueueSnackbar(data.message, { variant: 'error' });
             }
@@ -71,7 +71,7 @@ export const LoginProvider = ({ children }) => {
                 guardarLocalStorage(data.token, data.player);
                 setPlayer(data.player);
                 enqueueSnackbar('Sesión iniciada correctamente con Google', { variant: 'success' });
-                navigate('/');
+                navigate('/ladder');
             } else {
                 enqueueSnackbar(data.message, { variant: 'error' });
             }
@@ -85,7 +85,7 @@ export const LoginProvider = ({ children }) => {
         limpiarLocalStorage();
         setPlayer(null);
         enqueueSnackbar('Sesión cerrada', { variant: 'warning' });
-        navigate('/');
+        navigate('/ladder');
     };
 
     return (
