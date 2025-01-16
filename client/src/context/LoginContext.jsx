@@ -40,7 +40,10 @@ export const LoginProvider = ({ children }) => {
                 setPlayer(data.player);
                 enqueueSnackbar('Sesión iniciada correctamente', { variant: 'success' });
                 navigate('/ladder');
-            } else {
+            } else if(data.code === 403) {
+                enqueueSnackbar(data.message, { variant: 'warning' });
+                navigate('/ladder/validar-cuenta');
+            }else{
                 enqueueSnackbar(data.message, { variant: 'error' });
             }
         } catch (error) {

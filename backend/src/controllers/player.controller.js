@@ -1,13 +1,11 @@
 import bcrypt from "bcrypt";
-import { Op } from "sequelize";
+import { Op, where } from "sequelize";
 import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
 import { enviarCorreo } from "../utils/emails.js";
-import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import { crearNuevoToken } from "../utils/validarCuentasYRecuperarPassword.js";
 
-dotenv.config();
 
 export const obtenerPlayers = async (req, res) => {
     try {
@@ -78,7 +76,6 @@ export const obtenerPlayerById = async (req, res) => {
 export const crearPlayer = async (req, res) => {
     try {
         const { username, email, password, volute } = req.body;
-        console.log(req.body);
         const hash = bcrypt.hashSync(password, 10);
 
         if (!username || !email || !password || !volute) {
@@ -119,15 +116,8 @@ export const crearPlayer = async (req, res) => {
 
         const usuarioLegible = nuevoUsario.toJSON();
         
-        const secret = process.env.SECRET;
-        const token = jwt.sign(
-            {
-                data: usuarioLegible.email,
-            },
-            secret,
-            { expiresIn: "1h" }
-        );
-
+        const token = crearNuevoToken(usuarioLegible, "48h")
+        
         enviarCorreo(email, "Nuevo Usuario", token);
 
         res.status(201).json({
@@ -199,6 +189,20 @@ export const validarCuenta = async (req, res) => {
     try {
         const { email } = req.params;
 
+        const player = await Player.findOne({
+            where:{
+                email
+            }
+        })
+
+        if(player.validado){
+            return res.status(400).json({
+                code: 400,
+                message:
+                    "Este usuario ya está validado",
+            }); 
+        }
+
         await Player.update(
             {
                 validado: true,
@@ -222,6 +226,51 @@ export const validarCuenta = async (req, res) => {
         });
     }
 };
+
+export const enviarNuevoEmailValidacion = async(req, res) =>{
+    try {
+
+        const { email } = req.params
+
+        const player = await Player.findOne(
+            {
+                where:{
+                    email
+                }
+            }  
+        );
+
+        if(!player){
+            return res.status(400).json({
+                code: 400,
+                message:
+                    "No existe ninguna cuenta vinculada a ese correo electrónico",
+            });
+        }
+
+        if(player.validado){
+            return res.status(400).json({
+                code: 400,
+                message:
+                    "Tu cuenta ya está validada",
+            });
+        }
+
+        const token = crearNuevoToken(email, "10m")
+        enviarCorreo(email, "Validar Usuario", token);
+
+        res.status(200).json({
+            code: 200,
+            message: "Correo enviado con éxito",
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+}
 
 export const editarPlayer = async(req, res) =>{
     try {
@@ -267,5 +316,78 @@ export const editarPlayer = async(req, res) =>{
             code: 500,
             message: "Hubo un error interno en el servidor",
         });
+    }
+}
+
+export const recuperarContraseña = async(req, res) =>{
+
+    try {
+        const { email } = req.body
+
+        const player = await Player.findOne(
+            {
+                where:{
+                    email
+                }
+            }  
+        );
+
+        if(!player){
+            return res.status(400).json({
+                code: 400,
+                message:
+                    "No existe ninguna cuenta vinculada a ese correo electrónico",
+            });
+        }
+        
+        const token = crearNuevoToken(email, "10m")
+        enviarCorreo(email, "Recuperar Contraseña", token);
+
+        res.status(200).json({
+            code: 200,
+            message: "Email de recuperación Enviado",
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        }); 
+    }
+}
+
+export const cambiarContraseña = async(req, res) =>{
+
+    try {
+        const { password, repeatPassword } = req.body
+        const { email } = req.params
+
+        if(password != repeatPassword){
+            return res.status(400).json({
+                code: 400,
+                message: "Las contraseñas no coinciden",
+            });
+        }
+
+        const hash = bcrypt.hashSync(password, 10); 
+
+        await Player.update({
+            password: hash,
+        },
+        {
+            where: {
+                email
+            },
+        })
+        res.status(200).json({
+            code: 200,
+            message: "Contraseña modificada con éxito",
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        }); 
     }
 }

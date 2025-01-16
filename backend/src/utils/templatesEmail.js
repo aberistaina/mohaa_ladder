@@ -58,7 +58,7 @@ export const crearTemplateHtml = (asunto, token, email) =>{
                             <div class="content">
                                 <p>¡Hola!</p>
                                 <p>Gracias por registrarte en <strong>Mohaa.cl</strong>. Para completar tu registro y activar tu cuenta, por favor haz clic en el siguiente botón:</p>
-                                <a href="http://localhost:3000/api/v1/players/validar/${email}?token=${token}" class="button">Validar Cuenta</a>
+                                <a href="http://localhost:5173/ladder/validar-cuenta/?email=${email}&token=${token}" class="button">Validar Cuenta</a>
                                 <p>tu token es : ${token}</p>
                                 <p>Si no te registraste en Mohaa.cl, por favor ignora este correo.</p>
                             </div>

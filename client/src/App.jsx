@@ -16,6 +16,10 @@ import { JugadoresPages } from "./pages/JugadoresPages";
 import { LadderLayout } from "./layouts/LadderLayout";
 import { LoginProvider } from "./context/LoginContext";
 import { HomePageLayout } from "./layouts/HomePageLayout";
+import { ValidarCuenta } from "./pages/ValidarCuenta";
+import { RecuperarPassword } from "./pages/RecuperarPassword";
+import { ModificarPassword } from "./pages/ModificarPassword";
+
 
 function App() {
     return (
@@ -62,6 +66,9 @@ function App() {
                             element={<EditarMiCuenta />}
                         />
                         <Route path="jugadores" element={<JugadoresPages />} />
+                        <Route path="validar-cuenta" element={<ValidarCuenta />} />
+                        <Route path="recuperar-password" element={<RecuperarPassword />} />
+                        <Route path="modificar-password/:email" element={<ModificarPassword />} />
                     </Route>
 
             </Routes>

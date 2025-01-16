@@ -39,7 +39,8 @@ export const loginGoogle = async(req, res) =>{
             const nuevoUsario = await Player.create({
                 username: name,
                 email, 
-                password: hash
+                password: hash,
+                activado: true
             })
             
             res.status(201).json({

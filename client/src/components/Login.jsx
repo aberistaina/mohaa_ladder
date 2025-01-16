@@ -92,7 +92,7 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
                     </div>
-                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <a className="underline" href="/registro">Aquí</a></p>
+                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <a className="underline" href="ladder/registro">Aquí</a></p>
                 </form>
 
                 {/* Divider */}
