@@ -15004,3 +15004,93 @@
 2024-12-28 20:39:08 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id`;
 2024-12-28 20:39:08 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
 >>>>>>> e33acd0283973d6ed08e4e55856c792954265e45
+2024-12-28 20:45:06 info: Executing (default): SELECT 1+1 AS result
+2024-12-28 20:45:06 info: Conexión a la base de datos establecida correctamente.
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `juego`
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `etapa`
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `clan`
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `player`
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `player_clan`
+2024-12-28 20:45:06 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2024-12-28 20:45:06 info: Executing (default): SHOW INDEX FROM `ladder`
+2024-12-28 20:45:06 info: Modelos sincronizados correctamente.
+2024-12-28 20:45:06 info: Servidor escuchando en el puerto: 3000
+2024-12-28 20:45:15 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `Player`.`password`, `Player`.`email`, `Player`.`victorias`, `Player`.`derrotas`, `Player`.`admin`, `Player`.`created_at`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes`.`tag` AS `clanes.tag`, `clanes`.`id_etapa` AS `clanes.id_etapa`, `clanes`.`ranking_actual` AS `clanes.ranking_actual`, `clanes`.`ultimo_ranking` AS `clanes.ultimo_ranking`, `clanes`.`mejor_ranking` AS `clanes.mejor_ranking`, `clanes`.`triunfos` AS `clanes.triunfos`, `clanes`.`derrotas` AS `clanes.derrotas`, `clanes`.`juegos` AS `clanes.juegos`, `clanes`.`porcentaje_triunfos` AS `clanes.porcentaje_triunfos`, `clanes`.`racha_actual` AS `clanes.racha_actual`, `clanes`.`mejor_racha` AS `clanes.mejor_racha`, `clanes`.`peor_racha` AS `clanes.peor_racha`, `clanes`.`dias_inactivos` AS `clanes.dias_inactivos`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->etapa`.`id` AS `clanes.etapa.id`, `clanes->etapa`.`nombre` AS `clanes.etapa.nombre`, `clanes->etapa`.`id_juego` AS `clanes.etapa.id_juego`, `clanes->etapa`.`activo` AS `clanes.etapa.activo`, `clanes->etapa`.`fecha_creacion` AS `clanes.etapa.fecha_creacion` FROM `player` AS `Player` LEFT OUTER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` LEFT OUTER JOIN `etapa` AS `clanes->etapa` ON `clanes`.`id_etapa` = `clanes->etapa`.`id` WHERE `Player`.`id` = '1';
+2024-12-28 20:45:15 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:15 info: Executing (default): SELECT `Player`.`id`, `Player`.`username`, `Player`.`password`, `Player`.`email`, `Player`.`victorias`, `Player`.`derrotas`, `Player`.`admin`, `Player`.`created_at`, `clanes`.`id` AS `clanes.id`, `clanes`.`nombre` AS `clanes.nombre`, `clanes`.`tag` AS `clanes.tag`, `clanes`.`id_etapa` AS `clanes.id_etapa`, `clanes`.`ranking_actual` AS `clanes.ranking_actual`, `clanes`.`ultimo_ranking` AS `clanes.ultimo_ranking`, `clanes`.`mejor_ranking` AS `clanes.mejor_ranking`, `clanes`.`triunfos` AS `clanes.triunfos`, `clanes`.`derrotas` AS `clanes.derrotas`, `clanes`.`juegos` AS `clanes.juegos`, `clanes`.`porcentaje_triunfos` AS `clanes.porcentaje_triunfos`, `clanes`.`racha_actual` AS `clanes.racha_actual`, `clanes`.`mejor_racha` AS `clanes.mejor_racha`, `clanes`.`peor_racha` AS `clanes.peor_racha`, `clanes`.`dias_inactivos` AS `clanes.dias_inactivos`, `clanes->PlayerClan`.`id` AS `clanes.PlayerClan.id`, `clanes->PlayerClan`.`joined_at` AS `clanes.PlayerClan.joined_at`, `clanes->PlayerClan`.`rango` AS `clanes.PlayerClan.rango`, `clanes->etapa`.`id` AS `clanes.etapa.id`, `clanes->etapa`.`nombre` AS `clanes.etapa.nombre`, `clanes->etapa`.`id_juego` AS `clanes.etapa.id_juego`, `clanes->etapa`.`activo` AS `clanes.etapa.activo`, `clanes->etapa`.`fecha_creacion` AS `clanes.etapa.fecha_creacion` FROM `player` AS `Player` LEFT OUTER JOIN ( `player_clan` AS `clanes->PlayerClan` INNER JOIN `clan` AS `clanes` ON `clanes`.`id` = `clanes->PlayerClan`.`clan_id`) ON `Player`.`id` = `clanes->PlayerClan`.`player_id` LEFT OUTER JOIN `etapa` AS `clanes->etapa` ON `clanes`.`id_etapa` = `clanes->etapa`.`id` WHERE `Player`.`id` = '1';
+2024-12-28 20:45:15 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:22 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:22 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:45:22 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:22 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:45:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:37 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id`;
+2024-12-28 20:45:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:37 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id`;
+2024-12-28 20:45:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:45:37 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:04 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:04 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:46:04 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:04 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:46:43 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:43 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:46:43 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:43 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:46:47 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:47 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:47 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id`;
+2024-12-28 20:46:47 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:47 info: Executing (default): SELECT `Etapa`.`id`, `Etapa`.`nombre`, `juego`.`nombre` AS `juego.nombre` FROM `etapa` AS `Etapa` LEFT OUTER JOIN `juego` AS `juego` ON `Etapa`.`id_juego` = `juego`.`id`;
+2024-12-28 20:46:47 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:52 info: Executing (e1ff91cf-aa5f-4293-9de5-fc2d40700230): START TRANSACTION;
+2024-12-28 20:46:52 info: Executing (default): SELECT `id`, `nombre`, `ranking_actual` FROM `clan` AS `Clan` WHERE `Clan`.`id` = '3';
+2024-12-28 20:46:52 info: Executing (default): SELECT `id`, `nombre`, `ranking_actual` FROM `clan` AS `Clan` WHERE `Clan`.`id` = 1;
+2024-12-28 20:46:52 info: Executing (default): UPDATE `clan` SET `ranking_actual`=?,`ultimo_ranking`=? WHERE `id` = ?
+2024-12-28 20:46:52 info: Executing (default): UPDATE `clan` SET `ultimo_ranking`=ranking_actual WHERE `ranking_actual` BETWEEN 5 AND 6 AND `id` != '3'
+2024-12-28 20:46:52 info: Executing (default): UPDATE `clan` SET `ranking_actual`=ranking_actual + 1 WHERE `ranking_actual` BETWEEN 5 AND 6 AND `id` != '3'
+2024-12-28 20:46:52 info: Executing (default): UPDATE `clan` SET `triunfos`=triunfos + 1,`juegos`=juegos + 1,`racha_actual`=
+                    CASE 
+                        WHEN racha_actual <= 0 THEN 1
+                        ELSE racha_actual + 1
+                    END
+                 WHERE `id` = ?
+2024-12-28 20:46:52 info: Executing (default): UPDATE `clan` SET `derrotas`=derrotas + 1,`juegos`=juegos + 1,`racha_actual`=
+                    CASE 
+                        WHEN racha_actual > 0 THEN 0
+                        ELSE racha_actual - 1
+                    END
+                 WHERE `id` = ?
+2024-12-28 20:46:52 info: Executing (e1ff91cf-aa5f-4293-9de5-fc2d40700230): COMMIT;
+2024-12-28 20:46:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:59 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2024-12-28 20:46:59 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2024-12-28 20:46:59 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-09 02:51:56 info: Executing (default): SELECT 1+1 AS result
+2025-01-09 02:51:56 info: Conexión a la base de datos establecida correctamente.
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'juego' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `juego`
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'etapa' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `etapa`
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `clan`
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `player`
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'player_clan' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `player_clan`
+2025-01-09 02:51:56 info: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ladder' AND TABLE_SCHEMA = 'mohaa'
+2025-01-09 02:51:56 info: Executing (default): SHOW INDEX FROM `ladder`
+2025-01-09 02:51:56 info: Modelos sincronizados correctamente.
+2025-01-09 02:51:56 info: Servidor escuchando en el puerto: 3000
+2025-01-09 02:52:09 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-09 02:52:09 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-09 02:52:09 info: Executing (default): SELECT `id`, `nombre` FROM `juego` AS `Juego`;
+2025-01-09 02:52:09 info: Executing (default): SELECT `id`, `nombre`, `tag`, `id_etapa`, `ranking_actual`, `ultimo_ranking`, `mejor_ranking`, `triunfos`, `derrotas`, `juegos`, `porcentaje_triunfos`, `racha_actual`, `mejor_racha`, `peor_racha`, `dias_inactivos` FROM `clan` AS `Clan` ORDER BY `Clan`.`ranking_actual` ASC;
+2025-01-09 02:52:28 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'alejandro_beristain@hotmail.com';
+2025-01-09 02:52:38 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'alejandro_beristain@hotmail.com';
+2025-01-09 02:53:57 info: Executing (default): SELECT `id`, `username`, `email`, `admin`, `password` FROM `player` AS `Player` WHERE `Player`.`email` = 'alejandro_beristain@hotmail.com';
