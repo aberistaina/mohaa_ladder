@@ -2,6 +2,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
+import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
@@ -92,7 +93,7 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
                     </div>
-                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <a className="underline" href="ladder/registro">Aquí</a></p>
+                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <Link className="underline" to="/ladder/registro">Aquí</Link></p>
                 </form>
 
                 {/* Divider */}
