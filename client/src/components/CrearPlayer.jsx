@@ -3,6 +3,7 @@ import { useSnackbar } from "notistack";
 import { validarEmail } from "../utils/validatiors";
 import { fetchHook } from "../hooks/fetchHook";
 import { useNavigate } from "react-router-dom";
+import { IoMdEye } from "react-icons/io";
 
 
 export const CrearPlayer = () => {
@@ -13,6 +14,7 @@ export const CrearPlayer = () => {
     const [volute, setVolute] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
+    const [viewPassword, setViewPassword] = useState(false)
     const [error, setError] = useState({
         username: false,
         email: false,
@@ -73,19 +75,20 @@ export const CrearPlayer = () => {
                         >
                             Nombre de Usuario
                         </label>
-                        <input
-                            type="username"
-                            id="username"
-                            placeholder="Ingresa tu nombre de usuario"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
+                        
+                            <input
+                                type="username"
+                                id="username"
+                                placeholder="Ingresa tu nombre de usuario"
+                                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
                         {error.username && (
                             <span className="text-red-500">
                                 Nombre de usuario es obligatorio
                             </span>
                         )}
-                    </div>
 
                     {/* Email */}
                     <div>
@@ -124,7 +127,6 @@ export const CrearPlayer = () => {
                             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                             onChange={(e) => setVolute(e.target.value)}
                         />
-                        
                     </div>
 
                     {/* Contraseña */}
@@ -135,13 +137,16 @@ export const CrearPlayer = () => {
                         >
                             Contraseña
                         </label>
+                        <div className="flex justify-center items-center space-x-2">
                         <input
-                            type="password"
+                            type={viewPassword ? "text" : "password"}
                             id="password"
                             placeholder="Ingresa tu contraseña"
                             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        <IoMdEye className="text-4xl fill-[#FFFFFF] cursor-pointer" onClick={() => setViewPassword(!viewPassword)} />
+                        </div>
                     </div>
 
                     {/* Repite Contraseña */}
@@ -152,13 +157,16 @@ export const CrearPlayer = () => {
                         >
                             Repite tu Contraseña
                         </label>
-                        <input
-                            type="repeatPassword"
-                            id="repeatPassword"
-                            placeholder="Ingresa tu contraseña"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
-                            onChange={(e) => setRepeatPassword(e.target.value)}
-                        />
+                        <div className="flex justify-center items-center space-x-2">
+                            <input
+                                type={viewPassword ? "text" : "password"}
+                                id="repeatPassword"
+                                placeholder="Ingresa tu contraseña"
+                                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                                onChange={(e) => setRepeatPassword(e.target.value)}
+                            />
+                            <IoMdEye className="text-4xl fill-[#FFFFFF] cursor-pointer" onClick={() => setViewPassword(!viewPassword)} />
+                        </div>
                         {password !== repeatPassword && (
                             <span className="text-red-500">
                                 Las contraseñas no coinciden

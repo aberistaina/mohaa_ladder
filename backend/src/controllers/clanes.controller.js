@@ -1,4 +1,4 @@
-import { Op } from "sequelize";
+import { Op, where } from "sequelize";
 import { Clan } from "../models/Clan.model.js";
 import { Player } from "../models/Player.model.js";
 import { PlayerClan } from "../models/PlayerClan.model.js";
@@ -8,8 +8,7 @@ import { Juego } from "../models/Juego.model.js";
 export const crearClan = async (req, res) => {
     try {
         const { nombre, tag, id_etapa, id_lider } = req.body;
-        console.log(req.body);
-
+        
         if (!nombre || !tag || !id_etapa || !id_lider) {
             return res.status(400).json({
                 code: 400,
@@ -39,6 +38,21 @@ export const crearClan = async (req, res) => {
             return res.status(400).json({
                 code: 400,
                 message: "Ya perteneces a un clan en esta etapa",
+            });
+        }
+
+        const clanExistente = await Clan.findOne({
+            raw: true,
+            where: {
+                nombre,
+                id_etapa
+            }
+        });
+
+        if(clanExistente){
+            return res.status(400).json({
+                code: 400,
+                message: "Ya existe un clan con ese nombre en la etapa",
             });
         }
 

@@ -18,26 +18,15 @@ const transporter = nodemailer.createTransport({
 
 export const crearMailOptions = (email, asunto, token) =>{
 
-    let mailOptions = ""
-    if(asunto === "validacion"){
-        mailOptions = {
-            from: "tu_correo@gmail.com", // Dirección del remitente
-            to: `${email}`, // Dirección del destinatario
-            subject: "Validación Usuario Mohaa.cl", // Asunto del correo
-            text: "Este es el cuerpo del correo en texto plano", // Cuerpo del correo en texto plano
-            html: crearTemplateHtml(asunto, token, email), // Cuerpo del correo en HTML (opcional)
-        };
-    }else{
-        mailOptions = {
+
+    const mailOptions = {
             from: "tu_correo@gmail.com", // Dirección del remitente
             to: `${email}`, // Dirección del destinatario
             subject: "Recuperación Contraseña Mohaa.cl", // Asunto del correo
             text: "Este es el cuerpo del correo en texto plano", // Cuerpo del correo en texto plano
             html: crearTemplateHtml(asunto, token, email), // Cuerpo del correo en HTML (opcional)
         };
-    }
 
-    
     return mailOptions
 }
 

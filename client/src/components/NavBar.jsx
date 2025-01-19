@@ -36,6 +36,9 @@ export const NavBar = () => {
                         <h4 className="cursor-pointer font-bold text-lg text-slate-100 transition-all duration-300 hover:text-slate-500 hover:translate-x-1">
                             <NavLink to={`/ladder/micuenta`}>» Mi Cuenta</NavLink>
                         </h4>
+                        <p className="ps-4 cursor-pointer font-semibold text-gray-400 transition-all duration-300 hover:text-slate-600 hover:translate-x-1">
+                                    <NavLink to={`/ladder/modificar-password/${player.email}`}>Modificar mi Contraseña</NavLink>
+                        </p>
                     </div>
                 )}
                 {player && (

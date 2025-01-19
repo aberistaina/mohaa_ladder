@@ -13,7 +13,7 @@ router.get("/:id", obtenerPlayerById)
 router.get("/obtenerCLanEtapa/:idUser/:idEtapa", obtenerClanPorEtapa)
 router.get("/validar/:email",verificarToken, validarCuenta)
 router.get("/reenviar-validacion/:email", enviarNuevoEmailValidacion)
-router.put("/editar/:id", editarPlayer)
+router.put("/editar/:id", verificarToken,  editarPlayer)
 router.post("/recuperar-password", recuperarContraseña)
 router.post("/modificar-password/:email", verificarToken, cambiarContraseña)
 

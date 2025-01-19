@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
+    const { token } = useContext(LoginContext)
     const { id } = useParams();
     const [form, setForm] = useState({
         username: "",
@@ -40,7 +42,7 @@ export const FormularioEditarCuenta = () => {
         e.preventDefault();
         
         try {
-            const url = `http://localhost:3000/api/v1/players/editar/${id}`;
+            const url = `http://localhost:3000/api/v1/players/editar/${id}?token=${token}`;
             const method = "PUT";
             const data = await fetchHook(url, method, form);
 

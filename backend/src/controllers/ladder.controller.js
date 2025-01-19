@@ -60,7 +60,7 @@ export const calcularNuevoRanking = async(req, res) =>{
             nuevoRankingGanador = await nuevoRankingCLanUnranked()
         }
         //Si el clan ganador tiene peor ranking pero más de un lugar de diferencia se calcula el nuevo lugar
-        else if(rankingGanador - rankingPerdedor > 1){
+        else if(rankingGanador - rankingPerdedor > 1 && rankingPerdedor != 0){
             nuevoRankingGanador = await calcularAscensoRanking(rankingGanador, rankingPerdedor)
         }
         //si el clan ganador solo tiene un lugar de diferencia, automáticamente sube un lugar y el otro clan baja uno

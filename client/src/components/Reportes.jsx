@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { fetchHook } from "../hooks/fetchHook";
 import { obtenerLocalStorage } from "../hooks/localStorage";
 import {useSnackbar} from 'notistack';
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
 
 export const Reportes = () => {
+    const { token } = useContext(LoginContext)
     const { enqueueSnackbar } = useSnackbar();
     const [etapas, setEtapas] = useState([]);
     const [juegos, setJuegos] = useState([]);
@@ -90,7 +92,7 @@ export const Reportes = () => {
         try {
             getClanPerdedor(idEtapa);
 
-            const url = `http://localhost:3000/api/v1/ladder`;
+            const url = `http://localhost:3000/api/v1/ladder?token=${token}`;
             const method = "POST";
             const body = {
                 id_clan_ganador: idClanGanador,

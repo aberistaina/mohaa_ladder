@@ -29,7 +29,7 @@ export const JugadoresClan = ({ clan }) => {
                                         key={player.id}
                                     >
                                         <td className="px-4 py-2">
-                                        <Link className= "hover:text-blue-500 hover:underline transition duration-300" to={`/ladder/detalle-jugador/${player.id}`}>{player.username}</Link>
+                                        <Link className= "hover:text-blue-500 transition duration-300" to={`/ladder/detalle-jugador/${player.id}`}>{clan.tag} {player.username}</Link>
                                         </td>
                                         <td className="px-4 py-2">
                                             {formatDate(player.PlayerClan?.joined_at)}

@@ -3,6 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import { Link } from 'react-router-dom';
+import { IoMdEye } from "react-icons/io";
 
 
 export const Login = () => {
@@ -10,6 +11,7 @@ export const Login = () => {
     const { login, loginGoogle, logout, player } = useContext(LoginContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [viewPassword, setViewPassword] = useState(false)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -56,12 +58,12 @@ export const Login = () => {
                             htmlFor="email"
                             className="block text-sm font-semibold text-slate-300"
                         >
-                            Correo Electrónico
+                            Email o Username
                         </label>
                         <input
-                            type="email"
+                            type="text"
                             id="email"
-                            placeholder="Ingresa tu correo"
+                            placeholder="Ingresa tu email o Username"
                             className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -75,13 +77,16 @@ export const Login = () => {
                         >
                             Contraseña
                         </label>
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Ingresa tu contraseña"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <div className="flex justify-center items-center space-x-2">
+                            <input
+                                type={viewPassword ? "text" : "password"}
+                                id="password"
+                                placeholder="Ingresa tu contraseña"
+                                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <IoMdEye className="text-4xl fill-[#FFFFFF] cursor-pointer" onClick={() => setViewPassword(!viewPassword)} />
+                        </div>
                     </div>
 
                     {/* Botón de iniciar sesión */}
@@ -93,7 +98,9 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
                     </div>
-                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <Link className="underline" to="/ladder/registro">Aquí</Link></p>
+                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <Link className="underline" to="/ladder/registro">Aquí</Link>
+                    </p>
+                    <p className='text-slate-200 font-semibold text-center'><Link to="/ladder/recuperar-password">¿Olvidaste tu Contraseña?</Link></p>
                 </form>
 
                 {/* Divider */}
