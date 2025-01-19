@@ -14,13 +14,13 @@ export const emitirToken = async(req, res, next) =>{
         let {email, password } = req.body
 
         let player = await Player.findOne({
-            attributes: ["id", "username", "email", "admin", "password"],
+            attributes: ["id", "username", "email", "admin", "password", "validado"],
             where:{
                 email
             }
         })
 
-        console.log(player);
+        
         if (!player){
             return res.json({code:400, message: "email o Password Incorrecto",})
         }
@@ -30,6 +30,10 @@ export const emitirToken = async(req, res, next) =>{
         
         if(!validacionPassword){
             return res.json({code:400, message: "email o Password Incorrecto",})
+        }
+
+        if(!player.validado){
+            return res.json({code:403, message: "Debes validar tu cuenta para iniciar sesión",})
         }
 
         const { password: _, ...usuarioSinPassword } = player.toJSON();

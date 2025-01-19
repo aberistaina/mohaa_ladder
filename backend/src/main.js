@@ -6,6 +6,7 @@ import clanesRoutes  from "./routes/clanes.routes.js"
 import ladderRoutes  from "./routes/ladder.routes.js"
 import playersRoutes  from "./routes/players.routes.js"
 import loginRoutes  from "./routes/login.routes.js"
+import invitacionesRoutes  from "./routes/invitaciones.routes.js"
 
 
 import * as path from "path";
@@ -27,6 +28,7 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use("/api/v1/juegos", juegosRoutes)
 app.use("/api/v1/etapas", etapasRoutes)
 app.use("/api/v1/clanes", clanesRoutes)
+app.use("/api/v1/invitaciones", invitacionesRoutes)
 app.use("/api/v1/ladder", ladderRoutes)
 app.use("/api/v1/players", playersRoutes)
 app.use("/api/v1/login", loginRoutes)

@@ -1,48 +1,79 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Banner } from "./components/Banner"
-import { NavBar } from "./components/NavBar"
-import { HomePage } from "./pages/HomePage"
-import { Login } from "./components/Login"
-import { MiCuenta } from "./components/MiCuenta"
-import { Reportes } from "./components/Reportes"
+import { HomePage } from "./pages/HomePage";
+import { Reportes } from "./components/Reportes";
+import { RegisterPage } from "./pages/RegisterPage";
+import { UserPage } from "./pages/UserPage";
+import { ClanPage } from "./pages/ClanPage";
+import { DetalleJugadorPage } from "./pages/DetalleJugadorPage";
+import { EtapasPages } from "./pages/EtapasPages";
+import { LadderPage } from "./pages/LadderPage";
+import { ReclutarPage } from "./pages/reclutarPage";
+import { EditarClanPage } from "./pages/EditarClanPage";
+import { CrearClanpage } from "./pages/CrearClanpage";
+import { EditarMiCuenta } from "./components/editarMiCuenta/EditarMiCuenta";
+import { JugadoresPages } from "./pages/JugadoresPages";
+import { LadderLayout } from "./layouts/LadderLayout";
+import { LoginProvider } from "./context/LoginContext";
+import { HomePageLayout } from "./layouts/HomePageLayout";
+import { ValidarCuenta } from "./pages/ValidarCuenta";
+import { RecuperarPassword } from "./pages/RecuperarPassword";
+import { ModificarPassword } from "./pages/ModificarPassword";
 
 
 function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                {/* Página principal */}
+                <Route path="/" element={<HomePageLayout />} />
 
-return (
-    <>
-        <div className="bg-slate-700">
-            <div className="container mx-auto grid grid-cols-1 bg-gradient-to-r from-slate-800 to-slate-900 lg:grid-cols-12 min-h-screen">
-                {/* Banner */}
-                <header className="col-span-12 text-white flex items-center justify-center text-2xl px-4">
-                    <Banner />
-                </header>
+                {/* Rutas Ladder */}
 
-                {/* Login + Navbar */}
-                <aside className="lg:col-span-3 flex flex-col lg:min-h-[calc(100vh-64px)]">
-                    <div className="flex items-center justify-center p-4">
-                        <Login />
-                    </div>
-                    <div className="p-4">
-                        <NavBar />
-                    </div>
-                </aside>
+                    <Route
+                        path="ladder"
+                        element={
+                            <LoginProvider>
+                                <LadderLayout />
+                            </LoginProvider>
+                        }
+                    >
+                        
+                        <Route path="micuenta" element={<UserPage />} />
+                        <Route path="reportes" element={<Reportes />} />
+                        <Route path="registro" element={<RegisterPage />} />
+                        <Route path="detalle-clan/:id" element={<ClanPage />} />
+                        <Route
+                            path="detalle-jugador/:id"
+                            element={<DetalleJugadorPage />}
+                        />
+                        <Route path="juego/:id" element={<EtapasPages />} />
+                        <Route path="etapa/:id" element={<LadderPage />} />
+                        <Route
+                            path="crear-clan/:id"
+                            element={<CrearClanpage />}
+                        />
+                        <Route
+                            path="editar-clan/:id"
+                            element={<EditarClanPage />}
+                        />
+                        <Route
+                            path="reclutar/:clanId/:etapaId"
+                            element={<ReclutarPage />}
+                        />
+                        <Route
+                            path="editar-micuenta/:id"
+                            element={<EditarMiCuenta />}
+                        />
+                        <Route path="jugadores" element={<JugadoresPages />} />
+                        <Route path="validar-cuenta" element={<ValidarCuenta />} />
+                        <Route path="recuperar-password" element={<RecuperarPassword />} />
+                        <Route path="modificar-password/:email" element={<ModificarPassword />} />
+                    </Route>
 
-                {/* Body */}
-                <main className="lg:col-span-9 flex items-start justify-center text-2xl p-4">
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route path="/micuenta" element={<MiCuenta />} />
-                            <Route path="/reportes" element={<Reportes />} />
-                        </Routes>
-                    </BrowserRouter>
-                </main>
-            </div>
-        </div>
-    </>
+            </Routes>
+        </BrowserRouter>
     );
-};
+}
 
 export default App;

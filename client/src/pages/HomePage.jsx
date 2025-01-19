@@ -1,9 +1,11 @@
-import { TablaClanes } from "../components/TablaClanes"
+
 
 export const HomePage = () => {
   return (
     <>
-        <TablaClanes />
+        <div className="bg-[url('public/background2.svg')] bg-cover bg-center w-full h-screen">
+
+        </div>
     </>
   )
 }

@@ -1,55 +1,55 @@
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { fetchHook } from '../hooks/fetchHook';
-import { guardarLocalStorage } from '../hooks/localStorage';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { LoginContext } from '../context/LoginContext';
+import { Link } from 'react-router-dom';
 
 
 export const Login = () => {
 
+    const { login, loginGoogle, logout, player } = useContext(LoginContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const url = "http://localhost:3000/api/v1/login/google";
-    const method = "POST";
-    
-    const loginGoogle = async (token, name, email) => {
-
-            const body = {
-                token,
-                name,
-                email
-            };
-                const data = await fetchHook(url, method, body);
-                
-                guardarLocalStorage(data.token, data.player);
-            };
-
-    const login = async (e) => {
-        e.preventDefault()
-    
-        const url = "http://localhost:3000/api/v1/login";
-        const method = "POST";
-        const body = {
-            email,
-            password
-        };
-    
-        const data = await fetchHook(url, method, body);
-        guardarLocalStorage(data.token, data.player);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login(email, password);
     };
             
 
     return (
-        <div className="flex items-center justify-center bg-slate-900">
-            <div className="w-full max-w-md p-6 border border-slate-500 rounded">
+        <div>
+            { player 
+            ? (<div className="flex flex-col items-center justify-center">
+                {player ? (
+                    <div className="flex flex-col items-center">
+                        <h1 className="text-3xl font-bold text-center text-slate-100">Bienvenid@</h1>
+                        <h3 className="text-xl font-bold text-center text-slate-300 mb-1">{player.username}</h3>
+                        <h3 className="text-lg font-bold text-center text-slate-300 mb-2">ID: {player.id}</h3>
+                        <button
+                            className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
+                            onClick={() => {logout()}}
+                            
+                        >
+                            Cerrar Sesión
+                        </button>
+                    </div>
+                ) : (
+                    <h1 className="text-2xl font-bold text-center text-slate-100">No hay jugador</h1>
+                )}
+            </div>
+            
+            ) 
+            : 
+            (
+                <div className="w-full max-w-md p-6 border border-slate-500 rounded">
                 {/* Título */}
                 <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">
                     Iniciar Sesión
                 </h2>
 
                 {/* Formulario */}
-                <form className="space-y-4" onSubmit= {login}>
+                <form className="space-y-4" onSubmit= {handleLogin}>
                     {/* Email */}
                     <div>
                         <label
@@ -93,6 +93,7 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
                     </div>
+                    <p className='text-slate-200 font-semibold'>¿No tienes cuenta?, Regístrate <Link className="underline" to="/ladder/registro">Aquí</Link></p>
                 </form>
 
                 {/* Divider */}
@@ -116,6 +117,9 @@ export const Login = () => {
                     />
                 </div>
             </div>
+
+            )}
+            
         </div>
     );
 };

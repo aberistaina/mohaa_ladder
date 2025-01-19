@@ -9,7 +9,7 @@ export const login = (req, res) =>{
 
         res.status(200).json({
             code:200,
-            message: "Login exitoso",
+            message: "Login exitoso ",
             player: req.player,
             token: req.token
         })
@@ -39,7 +39,8 @@ export const loginGoogle = async(req, res) =>{
             const nuevoUsario = await Player.create({
                 username: name,
                 email, 
-                password: hash
+                password: hash,
+                activado: true
             })
             
             res.status(201).json({
