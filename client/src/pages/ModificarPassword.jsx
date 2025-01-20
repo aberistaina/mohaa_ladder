@@ -34,6 +34,7 @@ export const ModificarPassword = () => {
                 return
             } else {
             const token = params.get("token") || contextToken
+            
             const url = `http://localhost:3000/api/v1/players/modificar-password/${email}?token=${token}`;
             const method = "POST";
 

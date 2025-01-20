@@ -4,7 +4,7 @@ import { LoginContext } from "../context/LoginContext";
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
-    const [juegos, setJuegos] = useState("");
+    const [juegos, setJuegos] = useState([]);
     const { player } = useContext(LoginContext);
 
     ;
@@ -15,9 +15,14 @@ export const NavBar = () => {
                 const url = "http://localhost:3000/api/v1/juegos";
                 const method = "GET"
                 const data = await fetchHook(url, method);
-                setJuegos(data.data);
+                if(data?.data){
+                    setJuegos(data.data)
+                }else{
+                    setJuegos([])
+                }
             } catch (error) {
                 console.log(error);
+                setJuegos([]);
             }
             
         };

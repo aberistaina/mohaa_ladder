@@ -118,7 +118,7 @@ export const crearPlayer = async (req, res) => {
         
         const token = crearNuevoToken(usuarioLegible, "48h")
         
-        enviarCorreo(email, "Nuevo Usuario", token);
+        enviarCorreo(email, "validar", token);
 
         res.status(201).json({
             code: 201,
@@ -257,7 +257,7 @@ export const enviarNuevoEmailValidacion = async(req, res) =>{
         }
 
         const token = crearNuevoToken(email, "10m")
-        enviarCorreo(email, "Validar Usuario", token);
+        enviarCorreo(email, "nuevaValidacion", token);
 
         res.status(200).json({
             code: 200,
@@ -341,7 +341,7 @@ export const recuperarContraseña = async(req, res) =>{
         }
         
         const token = crearNuevoToken(email, "10m")
-        enviarCorreo(email, "Recuperar Contraseña", token);
+        enviarCorreo(email, "recuperarPassword", token);
 
         res.status(200).json({
             code: 200,
@@ -361,6 +361,7 @@ export const cambiarContraseña = async(req, res) =>{
     try {
         const { password, repeatPassword } = req.body
         const { email } = req.params
+        const { token } = req.query
 
         if(password != repeatPassword){
             return res.status(400).json({
@@ -368,8 +369,11 @@ export const cambiarContraseña = async(req, res) =>{
                 message: "Las contraseñas no coinciden",
             });
         }
-
+        
         const hash = bcrypt.hashSync(password, 10); 
+
+        const playerInfo = await Player.findOne({ where: { email }, raw: true });
+        const playerName = playerInfo.username;
 
         await Player.update({
             password: hash,
@@ -379,6 +383,10 @@ export const cambiarContraseña = async(req, res) =>{
                 email
             },
         })
+
+        console.log(playerName)
+
+        enviarCorreo(email, "passwordModificada", token, playerName)
         res.status(200).json({
             code: 200,
             message: "Contraseña modificada con éxito",

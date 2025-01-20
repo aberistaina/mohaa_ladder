@@ -1,9 +1,11 @@
 export const guardarLocalStorage = (token, playerData) => {
+    console.log("Guardando token en localStorage", token)
     localStorage.setItem("token", token)
     localStorage.setItem("player", JSON.stringify(playerData))
 }
 
 export const limpiarLocalStorage = () => {
+    
     localStorage.clear()
 }
 

@@ -9,7 +9,16 @@ export const fetchHook = async(url, method, body ) => {
             body: body ? JSON.stringify(body) : null
 
         })
+        
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status} - ${response.statusText}`);
+        }
+
         const data = await response.json()
+        if (!data) {
+            throw new Error("Respuesta JSON vacía o inválida");
+        }
+
         return data
     } catch (error) {
         console.log(error)
