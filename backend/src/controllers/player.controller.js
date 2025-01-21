@@ -1,8 +1,10 @@
 import bcrypt from "bcrypt";
-import { Op, where } from "sequelize";
+import { Op } from "sequelize";
+import { sequelize } from "../database/database.js";
 import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Etapa } from "../models/Etapa.model.js";
+import { PlayerClan } from "../models/PlayerClan.model.js";
 import { enviarCorreo } from "../utils/emails.js";
 import { crearNuevoToken } from "../utils/validarCuentasYRecuperarPassword.js";
 
@@ -275,7 +277,7 @@ export const enviarNuevoEmailValidacion = async(req, res) =>{
 export const editarPlayer = async(req, res) =>{
     try {
         const { id } = req.params
-        const {username, imagen, twitch, youtube} = req.body
+        const {username, volute, imagen, twitch, youtube} = req.body
 
         const usernameRepetido = await Player.findOne({
             where:{
@@ -296,6 +298,7 @@ export const editarPlayer = async(req, res) =>{
         await Player.update(
             {
                 username,
+                volute,
                 imagen,
                 twitch,
                 youtube
@@ -384,8 +387,6 @@ export const cambiarContraseña = async(req, res) =>{
             },
         })
 
-        console.log(playerName)
-
         enviarCorreo(email, "passwordModificada", token, playerName)
         res.status(200).json({
             code: 200,
@@ -397,5 +398,52 @@ export const cambiarContraseña = async(req, res) =>{
             code: 500,
             message: "Hubo un error interno en el servidor",
         }); 
+    }
+}
+
+export const abandonarClan = async(req, res) =>{
+    try {
+        const { playerId, clanId} = req.body
+        console.log(clanId);
+        console.log(playerId);
+
+        const players = await PlayerClan.findAll({
+            where: {
+                clan_id: clanId,
+                player_id: { [Op.ne]: playerId }
+            },
+        })
+
+        if (players.length === 0) {
+            await PlayerClan.destroy({ where: { clan_id: clanId }, })
+            await Clan.destroy({ where: { id: clanId }, });
+            return res.status(200).json({
+                code: 200,
+                message: "Clan Eliminado",
+            });
+        }
+
+        const otroLider = players.some(player => player.rango === "Lider");
+
+        if (!otroLider) {
+            return res.status(400).json({
+                code: 400,
+                message: "No puedes abandonar el clan sin dejar a otro líder",
+            });
+        }
+
+        await PlayerClan.destroy({ where: { player_id:playerId, clan_id: clanId  }})
+
+
+        res.status(200).json({
+            code: 200,
+            message: "Abandonaste el clan exitosamente",
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });  
     }
 }

@@ -7,7 +7,7 @@ import { Juego } from "../models/Juego.model.js";
 
 export const crearClan = async (req, res) => {
     try {
-        const { nombre, tag, id_etapa, id_lider } = req.body;
+        const { nombre, tag, id_etapa, id_lider, imagen } = req.body;
         
         if (!nombre || !tag || !id_etapa || !id_lider) {
             return res.status(400).json({
@@ -34,7 +34,7 @@ export const crearClan = async (req, res) => {
             ],
         });
 
-        if (playerClan !== null) {
+        if (playerClan) {
             return res.status(400).json({
                 code: 400,
                 message: "Ya perteneces a un clan en esta etapa",
@@ -60,6 +60,7 @@ export const crearClan = async (req, res) => {
             nombre,
             tag,
             id_etapa,
+            imagen
         });
 
         await PlayerClan.create({

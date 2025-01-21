@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
 import { Login } from "../components/Login";
 import { Banner } from "../components/Banner";
+import { ChatBot } from "../components/ChatBot";
 
 export const LadderLayout = () => {
     return (
@@ -27,6 +28,7 @@ export const LadderLayout = () => {
                     <Outlet />
                 </main>
             </div>
+            <ChatBot />
         </div>
     );
 };

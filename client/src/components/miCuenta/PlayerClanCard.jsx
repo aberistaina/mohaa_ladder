@@ -1,7 +1,44 @@
 import { formatDate } from "../../utils/formatearFecha";
+import { useContext } from "react";
+import { LoginContext } from "../../context/LoginContext";
 import { Link } from "react-router-dom";
+import { fetchHook } from "../../hooks/fetchHook";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
+
 
 export const PlayerClanCard = ({ player }) => {
+    const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate()
+    const { token } = useContext(LoginContext)
+
+    const abandonarClan = async(playerId, clanId, nombreClan) =>{
+        try {
+            const confirmed = window.confirm(`¿Estás seguro de que quieres abandonar el clan ${nombreClan}?`);
+            
+            if(confirmed){
+                const url = `http://localhost:3000/api/v1/players/dejar-clan?token=${token}`
+                const method = "DELETE"
+                const body = {
+                    playerId,
+                    clanId
+                }
+
+                const data = await fetchHook(url, method, body);
+                if (data.code === 200) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                    navigate(`/ladder`);
+                }else if(data.code === 400) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                } else {
+                    enqueueSnackbar(data.message, { variant: "error" });
+                }
+            }
+                        
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <>
             {/* Información del Equipo */}
@@ -17,6 +54,7 @@ export const PlayerClanCard = ({ player }) => {
                                 <th className="px-4 py-2">Etapa</th>
                                 <th className="px-4 py-2">Rango</th>
                                 <th className="px-4 py-2">Fecha de Ingreso</th>
+                                <th className="px-4 py-2">Abandonar Clan</th>
                                 {player.clanes?.some(
                                     (clan) =>
                                         clan.PlayerClan.rango === "Lider" ||
@@ -50,6 +88,13 @@ export const PlayerClanCard = ({ player }) => {
                                                 formatDate(
                                                     clan.PlayerClan.joined_at
                                                 )}
+                                        </td>
+                                        <td className="px-4 py-2">
+                                        <button className=" px-1 py-1 mx-2   bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
+                                        onClick={(e) =>{abandonarClan(player.id, clan.id, clan.nombre)}}
+                                        >
+                                                                Dejar Clan
+                                                            </button>
                                         </td>
                                         {clan.PlayerClan.rango &&
                                             (clan.PlayerClan.rango ===

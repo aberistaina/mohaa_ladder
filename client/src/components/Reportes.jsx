@@ -91,6 +91,7 @@ export const Reportes = () => {
         
         try {
             getClanPerdedor(idEtapa);
+            console.log(token);
 
             const url = `http://localhost:3000/api/v1/ladder?token=${token}`;
             const method = "POST";
@@ -107,6 +108,9 @@ export const Reportes = () => {
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "success" });
                 navigate(`/ladder/etapa/${idEtapa}`)
+                
+            }else if(data.code === 400){
+                enqueueSnackbar(data.message, { variant: "warning" });
             }else{
                 enqueueSnackbar(data.message, { variant: "error" });
             }

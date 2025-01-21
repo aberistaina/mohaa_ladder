@@ -81,8 +81,7 @@ export const verificarToken = async(req, res, next) =>{
         let {authorization} = req.headers
         let {token} = req.query
         let dataToken;
-        console.log(token);
-    
+
         if(authorization){
             let token = authorization.split(" ")[1]
             dataToken = await verificacionToken(token)

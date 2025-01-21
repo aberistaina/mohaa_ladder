@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGamepad, FaServer } from "react-icons/fa";
 import { GiTalk, GiTrophy } from "react-icons/gi";
 
 export const NavBarHome = () => {
@@ -34,13 +34,13 @@ export const NavBarHome = () => {
                 {/* Logo */}
                 <div className="mx-auto md:mx-0">
                     <Link to="/">
-                    <img src="/logoMohaa.png" alt="Logo MOHAA" className="h-16 w-auto" />
+                    <img src="/MOHAAX.png" alt="Logo MOHAA" className="h-16 w-auto" />
                     </Link>
                 </div>
 
                 {/* Desktop menu */}
                 <div className="hidden md:flex flex-row space-x-8">
-                    <div className="flex justify-between items-center ">
+                    <div className="flex items-center ">
                         <IoHome className={` hover:text-yellow-400 transition-colors ${
                                 location.pathname === "/" ? "fill-red-950 font-bold" : "fill-white"
                             }`} /> 
@@ -51,6 +51,20 @@ export const NavBarHome = () => {
                             to="/"
                         >
                             Home
+                        </Link>
+                    </div>
+
+                    <div className="flex justify-between items-center ">
+                        <FaServer className={` hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/servidores" ? "fill-red-950 font-bold" : "fill-white"
+                            }`} /> 
+                        <Link
+                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/servidores" ? "text-red-950 font-bold" : "text-white"
+                            }`}
+                            to="/servidores"
+                        >
+                            Servidores
                         </Link>
                     
                     </div>
@@ -87,11 +101,11 @@ export const NavBarHome = () => {
 
                     <div className="flex justify-between items-center ">
                         <FaDownload className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "fill-red-950 font-bold" : "fill-white"
+                                location.pathname === "/descargas" ? "fill-red-950 font-bold" : "fill-white"
                             }`} /> 
                         <Link
                             className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "text-red-950 font-bold" : "text-white"
+                                location.pathname === "/descargas" ? "text-red-950 font-bold" : "text-white"
                             }`}
                             to="/descargas"
                         >
@@ -99,6 +113,24 @@ export const NavBarHome = () => {
                         </Link>
                     
                     </div>
+
+                    <div className="flex justify-between items-center ">
+                        <FaGamepad className={` hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/volver-a-jugar" ? "fill-red-950 font-bold" : "fill-white"
+                            }`} /> 
+                        <Link
+                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/volver-a-jugar" ? "text-red-950 font-bold" : "text-white"
+                            }`}
+                            to="/volver-a-jugar"
+                        >
+                            Guía Para Jugar
+                        </Link>
+                    
+                    </div>
+
+                    
+
                 </div>
             </div>
 

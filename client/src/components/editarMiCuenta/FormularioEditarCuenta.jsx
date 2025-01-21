@@ -13,6 +13,7 @@ export const FormularioEditarCuenta = () => {
     const [form, setForm] = useState({
         username: "",
         imagen: "",
+        volute: "",
         twitch: "",
         youtube: ""
     });
@@ -30,6 +31,7 @@ export const FormularioEditarCuenta = () => {
             setForm({
                 username: data.data.username,
                 imagen: data.data.imagen,
+                volute: data.data.volute,
                 twitch: data.data.twitch,
                 youtube: data.data.youtube
             });
@@ -76,6 +78,24 @@ export const FormularioEditarCuenta = () => {
                         id="username"
                         name="username"
                         value={form.username}
+                        placeholder="Ingresa tu nombre de usuario"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="volute"
+                        className="block text-sm font-semibold text-slate-300"
+                    >
+                        ID Volute
+                    </label>
+                    <input
+                        type="text"
+                        id="volute"
+                        name="volute"
+                        value={form.volute}
                         placeholder="Ingresa tu nombre de usuario"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                         onChange={handleChange}

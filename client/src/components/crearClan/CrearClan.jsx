@@ -34,6 +34,7 @@ export const CrearClan = () => {
             const method = "POST";
             formCrearClan.id_lider = player.id
             const body = formCrearClan;
+            console.log(token);
 
             const data = await fetchHook(url, method, body);
 
