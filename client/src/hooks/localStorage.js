@@ -4,6 +4,7 @@ export const guardarLocalStorage = (token, playerData) => {
 }
 
 export const limpiarLocalStorage = () => {
+    
     localStorage.clear()
 }
 

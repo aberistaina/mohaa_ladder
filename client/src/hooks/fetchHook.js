@@ -10,6 +10,7 @@ export const fetchHook = async(url, method, body ) => {
 
         })
         const data = await response.json()
+
         return data
     } catch (error) {
         console.log(error)

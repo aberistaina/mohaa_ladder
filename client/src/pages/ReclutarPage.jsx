@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { fetchHook } from "../hooks/fetchHook";
 import { obtenerLocalStorage } from "../hooks/localStorage";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import { LoginContext } from "../context/LoginContext";
 
 export const ReclutarPage = () => {
     const {clanId, etapaId } = useParams();
     const [playerId, setPlayerId] = useState("");
     const { enqueueSnackbar } = useSnackbar();
+    const { token } = useContext(LoginContext)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +22,7 @@ export const ReclutarPage = () => {
             reclutador_id: playerData.id,
         };
 
-        const url = `http://localhost:3000/api/v1/invitaciones/`;
+        const url = `http://localhost:3000/api/v1/invitaciones/?token=${token}`;
         const method = "POST";
         const data = await fetchHook(url, method, body);
 

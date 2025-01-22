@@ -2,7 +2,11 @@ import { Outlet } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
 import { Login } from "../components/Login";
 import { Banner } from "../components/Banner";
+<<<<<<< HEAD
 import { Footer } from "../components/Footer";
+=======
+import { ChatBot } from "../components/ChatBot";
+>>>>>>> 34cb455b4b2f6f1c07562054476c697abe064636
 
 export const LadderLayout = () => {
     return (
@@ -28,6 +32,7 @@ export const LadderLayout = () => {
                     <Outlet />
                 </main>
             </div>
+<<<<<<< HEAD
             
             <div>
                 {/* Footer */}
@@ -35,6 +40,9 @@ export const LadderLayout = () => {
                     <Footer />
                 </footer>
             </div>
+=======
+            <ChatBot />
+>>>>>>> 34cb455b4b2f6f1c07562054476c697abe064636
         </div>
     );
 };

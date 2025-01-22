@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import { Player } from "../models/Player.model.js";
+import { Op } from "sequelize";
 import dotenv from "dotenv"
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -16,7 +17,10 @@ export const emitirToken = async(req, res, next) =>{
         let player = await Player.findOne({
             attributes: ["id", "username", "email", "admin", "password", "validado"],
             where:{
-                email
+                [Op.or]: [
+                    { email },
+                    { username: email }
+                ]
             }
         })
 
@@ -77,7 +81,7 @@ export const verificarToken = async(req, res, next) =>{
         let {authorization} = req.headers
         let {token} = req.query
         let dataToken;
-    
+
         if(authorization){
             let token = authorization.split(" ")[1]
             dataToken = await verificacionToken(token)

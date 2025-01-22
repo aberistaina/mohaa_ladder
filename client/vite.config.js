@@ -6,6 +6,9 @@ export default defineConfig({
   plugins: [react()],
   "rules": {
   "react/prop-types": "off"
-}
+},
+build: {
+    sourcemap: true, // Habilita los source maps para depuración en producción
+  },
 
 })

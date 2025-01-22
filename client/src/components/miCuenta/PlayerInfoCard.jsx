@@ -43,13 +43,7 @@ export const PlayerInfoCard = ({ player }) => {
                         <div className="flex justify-between">
                             <p className="font-semibold">ID Volute:</p>
                             <span className="font-normal text-slate-300">
-                                65874
-                            </span>
-                        </div>
-                        <div className="flex justify-between">
-                            <p className="font-semibold">Email:</p>
-                            <span className="font-normal text-slate-300">
-                                {player.email}
+                                {player.volute}
                             </span>
                         </div>
                         <div className="flex justify-between">

@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { fetchHook } from "../hooks/fetchHook";
 import { obtenerLocalStorage } from "../hooks/localStorage";
 import {useSnackbar} from 'notistack';
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
 
 export const Reportes = () => {
+    const { token } = useContext(LoginContext)
     const { enqueueSnackbar } = useSnackbar();
     const [etapas, setEtapas] = useState([]);
     const [juegos, setJuegos] = useState([]);
@@ -89,8 +91,9 @@ export const Reportes = () => {
         
         try {
             getClanPerdedor(idEtapa);
+            console.log(token);
 
-            const url = `http://localhost:3000/api/v1/ladder`;
+            const url = `http://localhost:3000/api/v1/ladder?token=${token}`;
             const method = "POST";
             const body = {
                 id_clan_ganador: idClanGanador,
@@ -105,6 +108,9 @@ export const Reportes = () => {
             if (data.code === 200) {
                 enqueueSnackbar(data.message, { variant: "success" });
                 navigate(`/ladder/etapa/${idEtapa}`)
+                
+            }else if(data.code === 400){
+                enqueueSnackbar(data.message, { variant: "warning" });
             }else{
                 enqueueSnackbar(data.message, { variant: "error" });
             }

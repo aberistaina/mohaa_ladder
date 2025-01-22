@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
+    const { token } = useContext(LoginContext)
     const { id } = useParams();
     const [form, setForm] = useState({
         username: "",
         imagen: "",
+        volute: "",
         twitch: "",
         youtube: ""
     });
@@ -28,6 +31,7 @@ export const FormularioEditarCuenta = () => {
             setForm({
                 username: data.data.username,
                 imagen: data.data.imagen,
+                volute: data.data.volute,
                 twitch: data.data.twitch,
                 youtube: data.data.youtube
             });
@@ -40,7 +44,7 @@ export const FormularioEditarCuenta = () => {
         e.preventDefault();
         
         try {
-            const url = `http://localhost:3000/api/v1/players/editar/${id}`;
+            const url = `http://localhost:3000/api/v1/players/editar/${id}?token=${token}`;
             const method = "PUT";
             const data = await fetchHook(url, method, form);
 
@@ -74,6 +78,24 @@ export const FormularioEditarCuenta = () => {
                         id="username"
                         name="username"
                         value={form.username}
+                        placeholder="Ingresa tu nombre de usuario"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="volute"
+                        className="block text-sm font-semibold text-slate-300"
+                    >
+                        ID Volute
+                    </label>
+                    <input
+                        type="text"
+                        id="volute"
+                        name="volute"
+                        value={form.volute}
                         placeholder="Ingresa tu nombre de usuario"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
                         onChange={handleChange}

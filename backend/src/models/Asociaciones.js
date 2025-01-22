@@ -65,6 +65,7 @@ Player.belongsToMany(Clan, {
     onDelete: 'CASCADE',  
 });
 
+
 Clan.belongsToMany(Player, {
     through: PlayerClan,
     foreignKey: "clan_id",

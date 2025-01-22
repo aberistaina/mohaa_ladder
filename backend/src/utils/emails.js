@@ -16,35 +16,35 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-export const crearMailOptions = (email, asunto, token) =>{
+export const crearMailOptions = (email, asunto, token, username) =>{
 
-    let mailOptions = ""
-    if(asunto === "validacion"){
-        mailOptions = {
-            from: "tu_correo@gmail.com", // Dirección del remitente
-            to: `${email}`, // Dirección del destinatario
-            subject: "Validación Usuario Mohaa.cl", // Asunto del correo
-            text: "Este es el cuerpo del correo en texto plano", // Cuerpo del correo en texto plano
-            html: crearTemplateHtml(asunto, token, email), // Cuerpo del correo en HTML (opcional)
-        };
+    let asuntoCorreo
+    if(asunto === "validar"){
+        asuntoCorreo = "Bienvenido a la Comunidad Mohaax Chile"
+    }else if(asunto === "nuevaValidacion"){
+        asuntoCorreo = "Enlace de validación Comunidad Mohaax Chile"
+    }else if(asunto === "recuperarPassword"){
+        asuntoCorreo = "Enlace de recuperación de contraseña Comunidad Mohaax Chile"
     }else{
-        mailOptions = {
-            from: "tu_correo@gmail.com", // Dirección del remitente
-            to: `${email}`, // Dirección del destinatario
-            subject: "Recuperación Contraseña Mohaa.cl", // Asunto del correo
-            text: "Este es el cuerpo del correo en texto plano", // Cuerpo del correo en texto plano
-            html: crearTemplateHtml(asunto, token, email), // Cuerpo del correo en HTML (opcional)
-        };
+        asuntoCorreo = "Contraseña de Comunidad Mohaax Chile Modificada exitosamente"
     }
 
-    
+
+    const mailOptions = {
+            from: "Comunidad Mohaax Chile", // Dirección del remitente
+            to: `${email}`, // Dirección del destinatario
+            subject: asuntoCorreo, // Asunto del correo
+            text: "", 
+            html: crearTemplateHtml(email, asunto, token, username ), // Cuerpo del correo en HTML (opcional)
+        };
+
     return mailOptions
 }
 
 
-export const enviarCorreo = (email, asunto, token, ) =>{
+export const enviarCorreo = (email, asunto, token , username ) =>{
     
-    const mailOptions = crearMailOptions(email, asunto, token)
+    const mailOptions = crearMailOptions(email, asunto, token, username)
     
     // Enviar el correo
 transporter.sendMail(mailOptions, (error, info) => {

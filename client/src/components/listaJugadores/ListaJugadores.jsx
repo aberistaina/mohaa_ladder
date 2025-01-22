@@ -3,7 +3,7 @@ import { fetchHook } from '../../hooks/fetchHook'
 import { TablaJugadores } from './TablaJugadores'
 
 export const ListaJugadores = () => {
-    const [ jugadores, setJugadores ] = useState("")
+    const [ jugadores, setJugadores ] = useState([])
 
     
 
@@ -13,11 +13,15 @@ export const ListaJugadores = () => {
                 const url = "http://localhost:3000/api/v1/players/"
                 const method = "GET"
                 const data = await fetchHook(url, method)
-                setJugadores(data.data)
-                console.log(data.data);
+                if(data?.data){
+                    setJugadores(data.data)
+                }else{
+                    setJugadores([])
+                }
 
             } catch (error) {
                 console.log(error);
+                setJugadores([])
             }
             
         }

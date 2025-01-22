@@ -19,6 +19,9 @@ import { HomePageLayout } from "./layouts/HomePageLayout";
 import { ValidarCuenta } from "./pages/ValidarCuenta";
 import { RecuperarPassword } from "./pages/RecuperarPassword";
 import { ModificarPassword } from "./pages/ModificarPassword";
+import { DescargasPages } from "./pages/DescargasPages";
+import { VolverAJugar } from "./pages/VolverAJugar";
+import { ServidoresPages } from "./pages/ServidoresPages";
 
 
 function App() {
@@ -26,7 +29,10 @@ function App() {
         <BrowserRouter>
             <Routes>
                 {/* Página principal */}
-                <Route path="/" element={<HomePageLayout />} />
+                <Route path="/" element={<HomePageLayout><HomePage /></HomePageLayout>} />
+                <Route path="/descargas" element={<HomePageLayout><DescargasPages /></HomePageLayout>} />
+                <Route path="/volver-a-jugar" element={<HomePageLayout><VolverAJugar /></HomePageLayout>} />
+                <Route path="/servidores" element={<HomePageLayout><ServidoresPages /></HomePageLayout>} />
 
                 {/* Rutas Ladder */}
 

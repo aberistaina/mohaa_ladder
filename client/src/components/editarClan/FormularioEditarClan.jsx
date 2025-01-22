@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
+    const { token } = useContext(LoginContext)
     const [clan, setClan] = useState({});
     const { id } = useParams();
     const rangos = ["Lider", "Co-Lider", "Capitán", "Miembro"];
@@ -69,7 +71,7 @@ export const FormularioEditarClan = () => {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            const url = `http://localhost:3000/api/v1/clanes/editar/${id}`;
+            const url = `http://localhost:3000/api/v1/clanes/editar/${id}?token=${token}`;
             const method = "POST";
             const data = await fetchHook(url, method, form);
     
@@ -86,7 +88,7 @@ export const FormularioEditarClan = () => {
 
     const expulsarJugador = async(playerId, clanId) =>{
         try {
-            const url = `http://localhost:3000/api/v1/clanes/eliminar`;
+            const url = `http://localhost:3000/api/v1/clanes/eliminar?token=${token}`;
             const method = "DELETE";
             const body = {
                 playerId,

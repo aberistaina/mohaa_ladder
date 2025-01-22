@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchHook } from "../../hooks/fetchHook";
@@ -30,10 +30,11 @@ export const CrearClan = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = "http://localhost:3000/api/v1/clanes";
+            const url = `http://localhost:3000/api/v1/clanes?token=${token}`;
             const method = "POST";
             formCrearClan.id_lider = player.id
             const body = formCrearClan;
+            console.log(token);
 
             const data = await fetchHook(url, method, body);
 

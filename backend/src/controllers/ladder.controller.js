@@ -1,9 +1,11 @@
 import { sequelize } from "../database/database.js";
 import { Op } from "sequelize";
 import { Juego } from "../models/Juego.model.js";
+import { Player } from "../models/Player.model.js";
 import { Clan } from "../models/Clan.model.js";
 import { Ladder } from "../models/Ladder.model.js";
 import { calcularAscensoRanking, nuevoRankingCLanUnranked, obtenerRankingActual } from "../utils/rankings.js";
+import { PlayerClan } from "../models/PlayerClan.model.js";
 
 
 export const obtenerLadders = async(req, res) =>{
@@ -60,7 +62,7 @@ export const calcularNuevoRanking = async(req, res) =>{
             nuevoRankingGanador = await nuevoRankingCLanUnranked()
         }
         //Si el clan ganador tiene peor ranking pero más de un lugar de diferencia se calcula el nuevo lugar
-        else if(rankingGanador - rankingPerdedor > 1){
+        else if(rankingGanador - rankingPerdedor > 1 && rankingPerdedor != 0){
             nuevoRankingGanador = await calcularAscensoRanking(rankingGanador, rankingPerdedor)
         }
         //si el clan ganador solo tiene un lugar de diferencia, automáticamente sube un lugar y el otro clan baja uno
@@ -82,7 +84,8 @@ export const calcularNuevoRanking = async(req, res) =>{
                     where: {
                         id: id_clan_ganador
                     }
-                }
+                },
+                transaction
             )
 
             await Clan.update(
@@ -96,6 +99,7 @@ export const calcularNuevoRanking = async(req, res) =>{
                             [Op.ne]: id_clan_ganador
                         },
                     },
+                    transaction
                 }
             );
 
@@ -110,6 +114,7 @@ export const calcularNuevoRanking = async(req, res) =>{
                             [Op.ne]: id_clan_ganador
                         },
                     },
+                    transaction
                 }
             );
 
@@ -131,7 +136,8 @@ export const calcularNuevoRanking = async(req, res) =>{
             {
                 where: {
                     id: id_clan_ganador
-                }
+                },
+                transaction
             }
         )
         
@@ -151,9 +157,32 @@ export const calcularNuevoRanking = async(req, res) =>{
             {
                 where: {
                     id: id_clan_perdedor
-                }
+                },
+                transaction
             }
         )
+
+        //Actualizar victorias de los jugadores del clan ganador
+
+        const playersGanadores = await PlayerClan.findAll({where: {clan_id: id_clan_ganador}})
+
+        for (const jugador of playersGanadores) {
+            await Player.update(
+                { victorias: sequelize.literal('victorias + 1') }, 
+                { where: { id: jugador.player_id }, transaction } 
+            );
+        }
+
+        //Actualizar derrotas de los jugadores del clan perdedor
+
+        const playersPerdedores = await PlayerClan.findAll({where: {clan_id: id_clan_perdedor}})
+
+        for (const jugador of playersPerdedores) {
+            await Player.update(
+                { derrotas: sequelize.literal('derrotas + 1') }, 
+                { where: { id: jugador.player_id }, transaction } 
+            );
+        }
 
         //Crear la entrada en la tabla de Ladders
 
@@ -163,7 +192,10 @@ export const calcularNuevoRanking = async(req, res) =>{
             id_clan_perdedor,
             id_etapa,
             comentario
-        })
+        }, transaction)
+
+        
+        
         await transaction.commit() 
 
 
@@ -173,7 +205,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         })
     } catch (error) {
         console.log(error.message);
-        await transaction.rollback();
+        if (transaction) await transaction.rollback();
         res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor"

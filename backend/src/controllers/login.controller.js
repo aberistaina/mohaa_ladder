@@ -1,6 +1,7 @@
 import crypto from 'crypto'
 import bcrypt from "bcrypt"
 import { Player } from "../models/Player.model.js"
+import { crearNuevoToken } from "../utils/validarCuentasYRecuperarPassword.js";
 
 
 
@@ -24,7 +25,7 @@ export const login = (req, res) =>{
 
 export const loginGoogle = async(req, res) =>{
     try {
-        const { name, email, token } = req.body
+        const { name, email} = req.body
 
         const player = await Player.findOne({
             attributes: ["id", "username", "email", "admin"],
@@ -40,25 +41,29 @@ export const loginGoogle = async(req, res) =>{
                 username: name,
                 email, 
                 password: hash,
-                activado: true
+                activado: true,
+                volute: "0000"
             })
             
-            res.status(201).json({
-                code:201,
+            res.status(200).json({
+                code:200,
                 message: "Usuario Creado Con éxito",
                 data: nuevoUsario
             })  
         }else{
+            
+            const tokenJwt = crearNuevoToken(player, "1h")
+
             res.status(200).json({
                 code:200,
                 message: "Login exitoso",
                 player: player,
-                token: token
+                token: tokenJwt
             })
         }
         
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
         res.status(500).json({
             code: 500,
             message: "Hubo un problema en el proceso de autenticación"
