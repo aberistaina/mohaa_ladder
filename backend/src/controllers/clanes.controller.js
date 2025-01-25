@@ -1,4 +1,4 @@
-import { Op, where } from "sequelize";
+import { Op } from "sequelize";
 import { Clan } from "../models/Clan.model.js";
 import { Player } from "../models/Player.model.js";
 import { PlayerClan } from "../models/PlayerClan.model.js";
