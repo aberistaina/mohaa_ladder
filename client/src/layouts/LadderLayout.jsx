@@ -5,7 +5,6 @@ import { Banner } from "../components/Banner";
 import { Footer } from "../components/Footer";
 import { ChatBot } from "../components/ChatBot";
 
-
 export const LadderLayout = () => {
     return (
         <div className="bg-slate-800">
@@ -37,7 +36,6 @@ export const LadderLayout = () => {
                 </main>
             </div>
 
-            
             <div>
                 {/* Footer */}
                 <footer className="w-full">

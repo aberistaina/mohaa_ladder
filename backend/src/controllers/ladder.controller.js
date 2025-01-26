@@ -84,8 +84,7 @@ export const calcularNuevoRanking = async(req, res) =>{
                     where: {
                         id: id_clan_ganador
                     }
-                },
-                transaction
+                }
             )
 
             await Clan.update(
@@ -98,8 +97,7 @@ export const calcularNuevoRanking = async(req, res) =>{
                         id: {
                             [Op.ne]: id_clan_ganador
                         },
-                    },
-                    transaction
+                    }
                 }
             );
 
@@ -113,8 +111,7 @@ export const calcularNuevoRanking = async(req, res) =>{
                         id: {
                             [Op.ne]: id_clan_ganador
                         },
-                    },
-                    transaction
+                    }
                 }
             );
 
@@ -131,13 +128,14 @@ export const calcularNuevoRanking = async(req, res) =>{
                         ELSE racha_actual + 1
                     END
                 `),
-                ultimo_registro: `Derrotó a ${nombreClanPerdeor.nombre}`
+                ultimo_registro: `Derrotó a ${nombreClanPerdeor.nombre}`,
+                dias_inactivos: 0,
+                fecha_ultima_actividad: new Date()
             },
             {
                 where: {
                     id: id_clan_ganador
-                },
-                transaction
+                }
             }
         )
         
@@ -152,13 +150,15 @@ export const calcularNuevoRanking = async(req, res) =>{
                         ELSE racha_actual - 1
                     END
                 `),
-                ultimo_registro: `Perdió Contra ${nombreClanGanador.nombre}`
+                ultimo_registro: `Perdió Contra ${nombreClanGanador.nombre}`,
+                dias_inactivos: 0,
+                fecha_ultima_actividad: new Date()
             },
             {
                 where: {
                     id: id_clan_perdedor
                 },
-                transaction
+        
             }
         )
 
@@ -169,7 +169,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         for (const jugador of playersGanadores) {
             await Player.update(
                 { victorias: sequelize.literal('victorias + 1') }, 
-                { where: { id: jugador.player_id }, transaction } 
+                { where: { id: jugador.player_id } } 
             );
         }
 
@@ -180,7 +180,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         for (const jugador of playersPerdedores) {
             await Player.update(
                 { derrotas: sequelize.literal('derrotas + 1') }, 
-                { where: { id: jugador.player_id }, transaction } 
+                { where: { id: jugador.player_id } } 
             );
         }
 
@@ -192,7 +192,7 @@ export const calcularNuevoRanking = async(req, res) =>{
             id_clan_perdedor,
             id_etapa,
             comentario
-        }, transaction)
+        })
 
         
         
@@ -205,7 +205,7 @@ export const calcularNuevoRanking = async(req, res) =>{
         })
     } catch (error) {
         console.log(error.message);
-        if (transaction) await transaction.rollback();
+        await transaction.rollback();
         res.status(500).json({
             code: 500,
             message: "Hubo un error interno en el servidor"

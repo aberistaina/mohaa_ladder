@@ -91,7 +91,6 @@ export const Reportes = () => {
         
         try {
             getClanPerdedor(idEtapa);
-            console.log(token);
 
             const url = `http://localhost:3000/api/v1/ladder?token=${token}`;
             const method = "POST";

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { crearClan, editarClan, expulsarJugador, ingresarPlayerClan, obtenerClan, obtenerClanes, obtenerClanesParaReporte, obtenerClanesPorEtapa } from "../controllers/clanes.controller.js";
+import { crearClan, editarClan, eliminarClan, expulsarJugador, ingresarPlayerClan, obtenerClan, obtenerClanes, obtenerClanesParaReporte, obtenerClanesPorEtapa } from "../controllers/clanes.controller.js";
 import { verificarToken } from "../middlewares/login.middleware.js";
 
 
@@ -15,6 +15,7 @@ router.post("/", verificarToken, crearClan)
 router.post("/ingresarClan", verificarToken, ingresarPlayerClan)
 router.post("/editar/:id", verificarToken,  editarClan)
 router.delete("/eliminar", verificarToken, expulsarJugador)
+router.delete("/eliminar/clan/", verificarToken, eliminarClan)
 
 
 
