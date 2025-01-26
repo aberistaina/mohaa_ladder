@@ -28,13 +28,11 @@ export const JugadoresClan = ({ clan }) => {
                                         className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800"
                                         key={player.id}
                                     >
-<<<<<<< HEAD
+
                                         <td className="px-4 py-2">
                                         <Link className= "hover:text-slate-500 transition duration-300" to={`/ladder/detalle-jugador/${player.id}`}>{clan.tag} {player.username}</Link>
-=======
-                                        <td className="px-4 py-2 justify-start">
-                                        <Link className= "hover:text-blue-500 transition duration-300" to={`/ladder/detalle-jugador/${player.id}`}>{clan.tag} {player.username}</Link>
->>>>>>> 34cb455b4b2f6f1c07562054476c697abe064636
+
+
                                         </td>
                                         <td className="px-4 py-2">
                                             {formatDate(player.PlayerClan?.joined_at)}
