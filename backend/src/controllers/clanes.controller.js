@@ -323,4 +323,53 @@ export const expulsarJugador = async(req, res) =>{
             message: "Hubo un error interno en el servidor",
         });
     }
- }
+}
+
+export const eliminarClan = async(req, res) =>{
+    try {
+        const {clanId, playerId} = req.body
+
+        const player = await PlayerClan.findOne({
+            where: {
+                clan_id: clanId,
+                player_id: playerId
+            }
+        });
+
+        if(player.rango !== "Lider"){
+            return res.status(400).json({
+                code: 400,
+                message: "Solo el Lider puede eliminar el clan",
+            });
+        }
+
+        await Clan.destroy({
+            where: {
+                id: clanId
+            }
+        });
+
+        res.status(200).json({
+            code: 200,
+            message: "Clan eliminado correctamente",
+        });
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+}
+
+export const descensoPorInactividad = async(req, res) =>{
+    try {
+
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor",
+        });
+    }
+}

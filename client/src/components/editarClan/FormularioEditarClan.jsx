@@ -8,7 +8,7 @@ import { LoginContext } from "../../context/LoginContext";
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    const { token } = useContext(LoginContext)
+    const { token, player } = useContext(LoginContext)
     const [clan, setClan] = useState({});
     const { id } = useParams();
     const rangos = ["Lider", "Co-Lider", "Capitán", "Miembro"];
@@ -24,6 +24,31 @@ export const FormularioEditarClan = () => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
     };
+
+    const eliminarCLan = async() =>{
+        try {
+            const url = `http://localhost:3000/api/v1/clanes/eliminar/clan?token=${token}`;
+            const method = "DELETE";
+            const body = { 
+                clanId: id, 
+                playerId: player.id 
+            };
+            
+            const confirmed = window.confirm('¿Estás seguro de que quieres eliminar el clan, esta acción no se puede revertir?');
+
+            if(confirmed){
+                const data = await fetchHook(url, method, body);
+                if (data.code === 200) {
+                    enqueueSnackbar(data.message, { variant: "success" });
+                    navigate("/ladder/micuenta")
+                } else {
+                    enqueueSnackbar(data.message, { variant: "error" });
+                }
+            } 
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const handleChangeRango = (e, index) => {
         const { value } = e.target;
@@ -228,7 +253,16 @@ export const FormularioEditarClan = () => {
                 >
                     Actualizar Clan
                 </button>
+
+                <button
+                    type="button"
+                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-red-700 rounded-lg transition-all duration-300 hover:bg-red-900"
+                    onClick={eliminarCLan}
+                >
+                    Eliminar Clan
+                </button>
             </form>
+            
         </>
     );
 };

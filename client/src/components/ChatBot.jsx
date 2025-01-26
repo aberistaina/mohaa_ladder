@@ -42,7 +42,7 @@ export const ChatBot = () => {
             <div>
                 {/* Botón para abrir el chat */}
                 <img
-                    className={`right-0 w-24 fixed bottom-12 md:bottom-5 md:w-36 md:right-6 cursor-pointer hover:scale-110 transition-transform duration-700 ${
+                    className={`right-0 w-24 fixed bottom-12 md:bottom-5 md:w-36 md:right-6 cursor-pointer hover:scale-110 transition-transform duration-700 sm: mb-4  ${
                         !isOpen ? "block" : "hidden"
                     } `}
                     src="/bot.png"

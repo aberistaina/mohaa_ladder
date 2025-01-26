@@ -15,7 +15,6 @@ export const Clan = sequelize.define("Clan", {
     tag: {
         type: DataTypes.STRING(20),
         allowNull: false,
-        unique: true
     },
     imagen:{
         type: DataTypes.STRING,
@@ -77,6 +76,10 @@ export const Clan = sequelize.define("Clan", {
     dias_inactivos: {
         type: DataTypes.INTEGER,
         defaultValue: 0
+    },
+    fecha_ultima_actividad: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
     },
     created_at: {
         type: DataTypes.DATE,

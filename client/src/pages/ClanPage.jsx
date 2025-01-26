@@ -1,8 +1,5 @@
-import { DetalleClan } from "../components/detalleClan/DetalleClan"
+import { DetalleClan } from "../components/detalleClan/DetalleClan";
 
 export const ClanPage = () => {
-  return (
-    
-    <DetalleClan />
-  )
-}
+    return <DetalleClan />;
+};
