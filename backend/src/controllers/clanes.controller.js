@@ -364,7 +364,7 @@ export const eliminarClan = async(req, res) =>{
 
 export const descensoPorInactividad = async(req, res) =>{
     try {
-
+        console.log("hola");
     } catch (error) {
         console.log(error.message);
         res.status(500).json({
