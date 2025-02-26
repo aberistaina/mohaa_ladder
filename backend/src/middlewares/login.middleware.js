@@ -81,6 +81,7 @@ export const verificarToken = async(req, res, next) =>{
         let {authorization} = req.headers
         let {token} = req.query
         let dataToken;
+        
 
         if(authorization){
             let token = authorization.split(" ")[1]
@@ -91,7 +92,7 @@ export const verificarToken = async(req, res, next) =>{
         }else{
             return res.status(401).json({code:401, message: error})
         }
-
+        console.log(token);
         req.player = dataToken.data
         next()
         

@@ -29,6 +29,7 @@ export const ModificarPassword = () => {
             const newError = {password: password !== repeatPassword,};
             setError(newError);
 
+
             if (newError.password) {
                 enqueueSnackbar("Las Contraseñas No Coinciden", { variant: "error" })
                 return
