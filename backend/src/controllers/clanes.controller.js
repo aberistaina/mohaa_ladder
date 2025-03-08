@@ -161,6 +161,21 @@ export const obtenerClan = async (req, res) => {
                 id,
             },
         });
+
+        if (clan && clan.players) {
+            const ordenRango = {
+                "Lider": 1,
+                "Co-Lider": 2,
+                "Capitan": 3,
+                "Miembro": 4,
+            };
+
+            clan.players.sort((a, b) => {
+                const rangoA = ordenRango[a.PlayerClan.rango] || 4; 
+                const rangoB = ordenRango[b.PlayerClan.rango] || 4
+                return rangoA - rangoB;
+            });
+        }
         res.status(200).json({
             code: 200,
             message: "Clan obtenido Con éxito",

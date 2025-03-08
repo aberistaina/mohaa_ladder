@@ -20,7 +20,7 @@ export const LoginProvider = ({ children }) => {
             setPlayer(playerData)
             setToken(token)
         }
-    }, [player]);
+    }, []);
 
     // Login tradicional
     const login = async (email, password) => {
