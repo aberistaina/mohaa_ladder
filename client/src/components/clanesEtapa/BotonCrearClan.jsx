@@ -28,7 +28,7 @@ export const BotonCrearClan = () => {
             etapa.multijugador 
             ? (
                 <Link to={`/ladder/crear-clan/${id}`}>
-                    <button className="mb-10 px-4 py-4 mx-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                    <button className="mb-2 p-1 text-base mx-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 md:p-4 md:text-lg md:mb-10">
                         Crear Nuevo Clan
                     </button>
                 </Link>

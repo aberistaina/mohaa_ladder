@@ -83,7 +83,7 @@ export const NavBar = () => {
             </section>
 
             {/* NavBar Movile */}
-            <section className="md:hidden">
+            <section className="md:hidden min-w-max">
                 {/* Botón hamburguesa */}
                 <button
                     className="text-white"

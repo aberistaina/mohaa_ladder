@@ -8,11 +8,16 @@ import { ChatBot } from "../components/ChatBot";
 export const LadderLayout = () => {
     return (
         <div className="bg-slate-800">
-            <div className="container mx-auto grid grid-cols-1 bg-gradient-to-r from-slate-900 to-slate-950 lg:grid-cols-12 min-h-[calc(100vh-57px)] lg:min-h-screen">
+            <div className="container mx-auto grid grid-cols-1 bg-gradient-to-r from-slate-900 to-slate-950 min-h-[calc(100vh-57px)] lg:grid-cols-12 lg:min-h-screen">
                 
-                {/* Navbar Movile */}
-                <div className="p-4 lg:hidden">
-                    <NavBar />
+                {/* Login + Navbar Movile */}
+                <div className="lg:hidden col-span-12">
+                    <section className="p-4">
+                        <NavBar />
+                    </section>
+                    <section className="p-4">
+                        <Login />
+                    </section>
                 </div>
 
                 {/* Banner */}
@@ -21,9 +26,11 @@ export const LadderLayout = () => {
                 </header>
 
                 {/* Login + Navbar */}
-                <aside className="lg:col-span-3 lg:flex flex-col lg:min-h-[calc(100vh-64px)] ml-8 mb-4 lg:ml-0 lg:mb-0">
-                    <div className="flex items-center justify-center p-4">
-                        <Login />
+                <aside className="flex-col ml-8 mb-4 lg:ml-0 lg:mb-0 lg:flex lg:col-span-3 lg:min-h-[calc(100vh-64px)]">
+                    <div className="hidden lg:block">
+                        <div className="flex items-center justify-center p-4">
+                            <Login />
+                        </div>
                     </div>
                     <div className="p-4 hidden lg:block">
                         <NavBar />
