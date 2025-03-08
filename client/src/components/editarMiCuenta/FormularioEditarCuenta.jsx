@@ -4,11 +4,14 @@ import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    const { token } = useContext(LoginContext)
+    /* const { token } = useContext(LoginContext) */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
     const { id } = useParams();
     const [form, setForm] = useState({
         username: "",

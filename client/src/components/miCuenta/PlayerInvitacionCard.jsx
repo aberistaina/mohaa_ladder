@@ -4,11 +4,13 @@ import { fetchHook } from "../../hooks/fetchHook";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const PlayerInvitacionCard = ({ player }) => {
     const [invitaciones, setInvitaciones] = useState();
     const { enqueueSnackbar } = useSnackbar();
-    const { token } = useContext(LoginContext)
+    /* const { token } = useContext(LoginContext) */
+    const token = useSelector((state) => state.auth.token);
     const navigate = useNavigate()
 
     

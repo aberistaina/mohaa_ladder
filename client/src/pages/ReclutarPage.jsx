@@ -4,12 +4,14 @@ import { obtenerLocalStorage } from "../hooks/localStorage";
 import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { LoginContext } from "../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const ReclutarPage = () => {
     const {clanId, etapaId } = useParams();
     const [playerId, setPlayerId] = useState("");
     const { enqueueSnackbar } = useSnackbar();
-    const { token } = useContext(LoginContext)
+    /* const { token } = useContext(LoginContext) */
+    const token = useSelector((state) => state.auth.token);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

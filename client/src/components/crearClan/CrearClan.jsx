@@ -3,9 +3,12 @@ import { LoginContext } from "../../context/LoginContext";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useSnackbar } from "notistack";
+import { useSelector } from 'react-redux';
 
 export const CrearClan = () => {
-    const { player, token } = useContext(LoginContext);
+    /* const { player, token } = useContext(LoginContext); */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
     const { id } = useParams();
 
     const { enqueueSnackbar } = useSnackbar();
@@ -55,8 +58,8 @@ export const CrearClan = () => {
 
     return (
         <>
-            <div>
-                <h1 className="text-3xl text-center font-bold text-white mb-8">
+            <div className="mr-8 mb-6 md:mr-0 md:mb-0">
+                <h1 className="text-xl text-center font-bold text-white mb-4 md:mb-8 md:text-3xl">
                     Crear Nuevo Clan
                 </h1>
                 <form
@@ -75,7 +78,7 @@ export const CrearClan = () => {
                             id="nombre"
                             name="nombre"
                             placeholder="Ingresa el Nombre"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm  focus:outline-none focus:ring focus:ring-indigo-300 text-base md:text-2xl"
                             value={formCrearClan.nombre}
                             onChange={(e) => handleChange(e)}
                         />
@@ -93,7 +96,7 @@ export const CrearClan = () => {
                             name="tag"
                             id="tag"
                             placeholder="Ingresa el tag"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-base md:text-2xl"
                             value={formCrearClan.tag}
                             onChange={(e) => handleChange(e)}
                         />
@@ -111,7 +114,7 @@ export const CrearClan = () => {
                             id="imagen"
                             name="imagen"
                             placeholder="Ingresa el imagen"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-base md:text-2xl"
                             value={formCrearClan.imagen}
                             onChange={(e) => handleChange(e)}
                         />
@@ -120,7 +123,7 @@ export const CrearClan = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full px-4 py-2 text-slate-200 font-semibold bg-blue-700 rounded-lg transition-all duration-300 hover:bg-blue-900"
+                            className="w-full px-4 py-2 text-slate-200 font-semibold bg-blue-700 rounded-lg transition-all duration-300 hover:bg-blue-900 text-base md:text-2xl"
                         >
                             Crear Clan
                         </button>

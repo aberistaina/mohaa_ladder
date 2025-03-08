@@ -2,10 +2,14 @@ import { useEffect, useState, useContext } from "react";
 import { fetchHook } from "../hooks/fetchHook";
 import { LoginContext } from "../context/LoginContext";
 import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 export const NavBar = () => {
     const [juegos, setJuegos] = useState([]);
-    const { player } = useContext(LoginContext);
+    /* const { player } = useContext(LoginContext); */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
+
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -83,7 +87,7 @@ export const NavBar = () => {
             </section>
 
             {/* NavBar Movile */}
-            <section className="md:hidden">
+            <section className="md:hidden min-w-max">
                 {/* Botón hamburguesa */}
                 <button
                     className="text-white"

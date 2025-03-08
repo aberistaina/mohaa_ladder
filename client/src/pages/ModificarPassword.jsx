@@ -6,11 +6,14 @@ import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
 import { IoMdEye } from "react-icons/io";
+import { useSelector } from 'react-redux';
 
 export const ModificarPassword = () => {
     const { enqueueSnackbar } = useSnackbar()
     const navigate = useNavigate()
-    const { token: contextToken } = useContext(LoginContext)
+    const player = useSelector((state) => state.auth.player);
+    const contextToken = useSelector((state) => state.auth.token);
+    /* const { token: contextToken } = useContext(LoginContext) */
     
     const [viewPassword, setViewPassword] = useState(false)
     const { email } = useParams()

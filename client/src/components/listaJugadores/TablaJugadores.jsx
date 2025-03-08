@@ -75,7 +75,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                             <td>
                                                 <div className="px-4 py-2 flex justify-center">
                                                     <Link
-                                                        to={`https://www.twitch.tv/${jugador.volute}`}
+                                                        to={`https://www.twitch.tv/${jugador.twitch}`}
                                                     >
                                                         <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-colors duration-300" />
                                                     </Link>
@@ -96,7 +96,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                         <td>
                                             <div className="px-4 py-2 flex justify-center">
                                                 <Link
-                                                    to={`https://volute.io/users/${jugador.volute}`}
+                                                    to={`https://volute.io/users/${jugador.youtube}`}
                                                 >
                                                     <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-colors duration-300" />
                                                 </Link>

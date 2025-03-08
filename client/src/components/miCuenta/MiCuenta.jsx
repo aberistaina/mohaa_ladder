@@ -5,11 +5,14 @@ import { PlayerInfoCard } from "./PlayerInfoCard";
 import { PlayerClanCard } from "./PlayerClanCard";
 import { PlayerInvitacionCard } from "./PlayerInvitacionCard";
 import { BotonEditarCuenta } from "./BotonEditarCuenta";
+import { useSelector } from 'react-redux';
 
 export const MiCuenta = () => {
     
     const [ userData , userSetData ] = useState({})
-    const { player } = useContext(LoginContext);
+    /* const { player } = useContext(LoginContext); */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
 
 
     useEffect(() => {

@@ -46,7 +46,7 @@ export const emitirToken = async(req, res, next) =>{
             data: usuarioSinPassword,
         },
         secret,
-        {expiresIn : "1h"}
+        {expiresIn : "20d"}
         )
 
         req.token = token

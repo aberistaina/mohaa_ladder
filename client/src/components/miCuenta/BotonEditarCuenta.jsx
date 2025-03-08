@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const BotonEditarCuenta = () => {
-    const { player } = useContext(LoginContext);
+    /* const { player } = useContext(LoginContext); */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
     return (
         <div className="flex justify-end">
             <Link to={`/ladder/editar-micuenta/${player.id}`}>

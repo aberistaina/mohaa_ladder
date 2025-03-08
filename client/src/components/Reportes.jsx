@@ -4,9 +4,12 @@ import { obtenerLocalStorage } from "../hooks/localStorage";
 import {useSnackbar} from 'notistack';
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const Reportes = () => {
-    const { token } = useContext(LoginContext)
+    /* const { token } = useContext(LoginContext) */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
     const { enqueueSnackbar } = useSnackbar();
     const [etapas, setEtapas] = useState([]);
     const [juegos, setJuegos] = useState([]);

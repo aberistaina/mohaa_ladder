@@ -4,11 +4,14 @@ import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
+import { useSelector } from 'react-redux';
 
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    const { token, player } = useContext(LoginContext)
+    /* const { token, player } = useContext(LoginContext) */
+    const player = useSelector((state) => state.auth.player);
+    const token = useSelector((state) => state.auth.token);
     const [clan, setClan] = useState({});
     const { id } = useParams();
     const rangos = ["Lider", "Co-Lider", "Capitán", "Miembro"];

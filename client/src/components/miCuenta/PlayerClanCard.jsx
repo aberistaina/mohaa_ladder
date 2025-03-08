@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 import { fetchHook } from "../../hooks/fetchHook";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 
 export const PlayerClanCard = ({ player }) => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    const { token } = useContext(LoginContext)
+    /* const { token } = useContext(LoginContext) */
+    const token = useSelector((state) => state.auth.token);
 
     const abandonarClan = async(playerId, clanId, nombreClan) =>{
         try {

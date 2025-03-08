@@ -212,3 +212,40 @@ export const calcularNuevoRanking = async(req, res) =>{
         })
     }
 }
+
+export const obtenerPartidosJugadosPorClan = async(req, res) => {
+    try {
+        const { id } = req.params
+        const partidos = await Ladder.findAll({
+            where: {
+                [Op.or]: [
+                    { id_clan_ganador: id },
+                    { id_clan_perdedor: id }
+                ]
+            },
+            include: [
+                {
+                    attributes: ["id", "nombre"],
+                    model: Clan,
+                    as: "ganador",
+                },
+                {
+                    attributes: ["id", "nombre"],
+                    model: Clan,
+                    as: "perdedor",
+                },
+            ],
+        })
+        res.status(200).json({
+            code:200,
+            message: "Partidos encontrados",
+            data: partidos
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            code: 500,
+            message: "Hubo un error interno en el servidor"
+        })
+    }
+}
