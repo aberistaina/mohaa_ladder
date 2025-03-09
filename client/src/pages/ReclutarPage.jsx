@@ -36,7 +36,7 @@ export const ReclutarPage = () => {
     };
 
     return (
-        <div className="w-full max-w-md p-6 border border-slate-500 rounded">
+        <div className="w-full max-w-md p-6 border border-slate-500 rounded mr-3 mb-10 md:mb-0 md:mr-0">
             <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">
                 Reclutar Jugador
             </h2>
@@ -45,7 +45,7 @@ export const ReclutarPage = () => {
                 <div>
                     <label
                         htmlFor="idJugador"
-                        className="block text-sm font-semibold text-slate-300"
+                        className="block text-sm font-semibold text-slate-300 md:text-base"
                     >
                         Id del Jugador
                     </label>
@@ -53,14 +53,14 @@ export const ReclutarPage = () => {
                         type="text"
                         id="idJugador"
                         placeholder="Ingresa La Id del Jugador"
-                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={(e) => setPlayerId(e.target.value)}
                     />
                 </div>
                 <div>
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 text-slate-200 font-semibold bg-indigo-800 rounded-lg transition-all duration-300 hover:bg-indigo-900"
+                        className="w-full px-4 py-2 text-slate-200 font-semibold bg-indigo-800 rounded-lg transition-all duration-300 hover:bg-indigo-900 text-xl"
                     >
                         Reclutar
                     </button>

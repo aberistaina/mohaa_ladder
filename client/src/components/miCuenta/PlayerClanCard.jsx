@@ -92,7 +92,7 @@ export const PlayerClanCard = ({ player }) => {
                                                 )}
                                         </td>
                                         <td className="px-4 py-2">
-                                        <button className=" px-1 py-1 mx-2   bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
+                                        <button className="px-1 py-1 mx-2 bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 text-sm md:text-lg"
                                         onClick={(e) =>{abandonarClan(player.id, clan.id, clan.nombre)}}
                                         >
                                                                 Dejar Clan

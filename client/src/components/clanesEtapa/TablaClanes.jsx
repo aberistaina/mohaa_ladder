@@ -6,7 +6,7 @@ export const TablaClanes = ({ clanes }) => {
             <div className="overflow-x-auto w-80 mr-5 mb-6 rounded border border-slate-500 md:w-auto md:mr-0 md:mb-0">
                 <table className="table-auto bg-slate-900 rounded-lg shadow-md">
                     <thead className="bg-slate-950 border-b border-slate-500">
-                        <tr className="text-slate-100 text-sm md:text-xl">
+                        <tr className="text-slate-100 text-xl">
                             <th className="px-4 py-2 text-left font-semibold">
                                 Lugar
                             </th>
@@ -39,7 +39,7 @@ export const TablaClanes = ({ clanes }) => {
                                 .filter((clan) => clan.ranking_actual !== 0)
                                 .map((clan) => (
                                     <tr
-                                        className="text-slate-300 text-base transition-all duration-300 hover:bg-slate-800 md:text-lg"
+                                        className="text-slate-300 transition-all duration-300 hover:bg-slate-800 text-lg"
                                         key={clan.id}
                                     >
                                         <td className="px-4 py-2">

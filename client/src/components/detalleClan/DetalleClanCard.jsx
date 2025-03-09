@@ -17,7 +17,7 @@ export const DetalleClanCard = ({ clan }) => {
                     <h2 className="text-2xl font-bold mb-4 text-slate-100">
                         Información del Clan
                     </h2>
-                    <div className="space-y-2 text-slate-100 text-lg">
+                    <div className="space-y-2 text-slate-100 text-base md:text-lg">
                         <div className="flex justify-between">
                             <p className="font-semibold">ID:</p>
                             <span className="font-normal text-slate-300">
@@ -39,19 +39,19 @@ export const DetalleClanCard = ({ clan }) => {
                         </div>
 
                         <div className="flex justify-between">
-                            <p className="font-semibold">Juego</p>
+                            <p className="font-semibold">Juego:</p>
                             <span className="font-normal text-slate-300">
                             {clan.etapa?.juego.nombre}
                             </span>
                         </div>
                         <div className="flex justify-between">
-                            <p className="font-semibold">Etapa</p>
+                            <p className="font-semibold">Etapa:</p>
                             <span className="font-normal text-slate-300">
                             {clan.etapa?.nombre}
                             </span>
                         </div>
                         <div className="flex justify-between">
-                            <p className="font-semibold">Fecha Creación</p>
+                            <p className="font-semibold">Fecha Creación:</p>
                             <span className="font-normal text-slate-300">
                                 {formatDate(clan.created_at)}
                             </span>

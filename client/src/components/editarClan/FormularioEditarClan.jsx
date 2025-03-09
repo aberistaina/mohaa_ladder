@@ -144,7 +144,7 @@ export const FormularioEditarClan = () => {
 
     return (
         <>
-            <form className="space-y-4 w-2/4" onSubmit={(e) => handleSubmit(e)}>
+            <form className="space-y-4 w-80 mr-7 mb-10 md:mb-0 md:mr-0 md:w-2/4" onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label
                         htmlFor="nombre"
@@ -158,7 +158,7 @@ export const FormularioEditarClan = () => {
                         name="nombre"
                         value={form.nombre}
                         placeholder="Ingresa el nombre del clan"
-                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
                 </div>
@@ -176,7 +176,7 @@ export const FormularioEditarClan = () => {
                         name="tag"
                         value={form.tag}
                         placeholder="Ingresa el tag del clan"
-                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
                 </div>
@@ -194,7 +194,7 @@ export const FormularioEditarClan = () => {
                         name="imagen"
                         value={form.imagen}
                         placeholder="Ingresa el logo del clan"
-                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                        className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
                 </div>
@@ -209,7 +209,7 @@ export const FormularioEditarClan = () => {
                             className="flex justify-between items-center"
                         >
                             <p
-                                className="me-10 w-36 text-white"
+                                className="me-10 w-36 text-white text-lg md:text-xl"
                                 data-id={player.id}
                             >
                                 {player.username}
@@ -217,7 +217,7 @@ export const FormularioEditarClan = () => {
                             <select
                                 name={`rango-${index}`}
                                 id={`rango-${index}`}
-                                className="mt-1 w-36 block px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
+                                className="mt-1 w-36 block px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500 text-base md:text-xl"
                                 onChange={(e) => handleChangeRango(e, index)}
                             >
                                 <option value={player.PlayerClan?.rango}>
@@ -236,7 +236,7 @@ export const FormularioEditarClan = () => {
                             </select>
                             <button 
                                 type="button" 
-                                className={`px-2 py-2 mx-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 ${
+                                className={`px-2 py-2 mx-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 text-lg md:text-xl ${
                                     player.PlayerClan?.rango === "Lider"
                                         ? "opacity-50 cursor-not-allowed"
                                         : ""
@@ -252,14 +252,14 @@ export const FormularioEditarClan = () => {
 
                 <button
                     type="submit"
-                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-green-800 rounded-lg transition-all duration-300 hover:bg-green-900"
+                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-green-800 rounded-lg transition-all duration-300 hover:bg-green-900 text-xl"
                 >
                     Actualizar Clan
                 </button>
 
                 <button
                     type="button"
-                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-red-700 rounded-lg transition-all duration-300 hover:bg-red-900"
+                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-red-700 rounded-lg transition-all duration-300 hover:bg-red-900 text-xl"
                     onClick={eliminarCLan}
                 >
                     Eliminar Clan
