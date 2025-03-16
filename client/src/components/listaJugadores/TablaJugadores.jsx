@@ -6,7 +6,7 @@ import { FaYoutube } from "react-icons/fa6";
 export const TablaJugadores = ({ jugadores }) => {
     return (
         <>
-            <div className="overflow-x-auto w-80 mr-3 mb-10 rounded border border-slate-500 md:w-auto md: md:mb-0">
+            <div className="overflow-x-auto w-80 mr-3 mb-10 rounded border border-slate-500 md:w-auto md: md:mb-0 md:mt-1">
                 <table className="min-w-[80%] table-auto bg-slate-900 rounded-lg shadow-md">
                     <thead className="bg-slate-950 border-b border-slate-500">
                         <tr className="text-slate-100 text-xl">
