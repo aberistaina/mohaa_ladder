@@ -38,7 +38,7 @@ export const MiCuenta = () => {
 
     return (
         <>
-            <div className="w-80 mr-7 mb-10 p-6 border border-slate-500 bg-slate-900 rounded shadow-md md:w-full md:max-w-4xl md:mx-auto md:mb-0">
+            <div className="w-96 mr-2 mb-10 p-6 border border-slate-500 bg-slate-900 rounded shadow-md md:w-full md:max-w-5xl md:mx-auto md:mb-0 md:mt-2">
                 <PlayerInfoCard player={userData} />
                 <BotonEditarCuenta />
                 <PlayerClanCard player={userData} />

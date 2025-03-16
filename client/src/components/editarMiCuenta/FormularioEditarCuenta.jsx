@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { MdOutlineBrowserUpdated } from "react-icons/md";
+
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
@@ -68,7 +71,7 @@ export const FormularioEditarCuenta = () => {
 
     return (
         <>
-            <form className="space-y-4 w-auto mr-14 mb-10 md:mb-0 md:mr-0 md:w-2/4" onSubmit={(e) => handleSubmit(e)}>
+            <form className="space-y-4 w-auto mr-14 mb-10 md:mb-0 md:mr-0 md:w-2/4 md:mt-2" onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label
                         htmlFor="nombre"
@@ -160,7 +163,8 @@ export const FormularioEditarCuenta = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <button className="px-2 py-1 mx-2 text-xl bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                    <button className="px-2 py-1 mx-2 text-xl bg-blue-700 text-white font-bold rounded-lg shadow-md hover:bg-blue-900 transition-all duration-300 hover:-translate-x-1 hover:text-slate-500">
+                    <MdOutlineBrowserUpdated className="inline-block mb-1 mr-1" />
                     Actualizar Mi Cuenta
                     </button>
                 </div>

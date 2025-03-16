@@ -6,6 +6,9 @@ import { useSnackbar } from "notistack";
 import { LoginContext } from "../context/LoginContext";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { IoPersonAddOutline } from "react-icons/io5";
+
 export const ReclutarPage = () => {
     const {clanId, etapaId } = useParams();
     const [playerId, setPlayerId] = useState("");
@@ -36,7 +39,7 @@ export const ReclutarPage = () => {
     };
 
     return (
-        <div className="w-full max-w-md p-6 border border-slate-500 rounded mr-3 mb-10 md:mb-0 md:mr-0">
+        <div className="w-full max-w-md p-6 border border-slate-500 rounded mr-3 mb-10 md:mb-0 md:mr-0 md:mt-2">
             <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">
                 Reclutar Jugador
             </h2>
@@ -60,8 +63,9 @@ export const ReclutarPage = () => {
                 <div>
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 text-slate-200 font-semibold bg-indigo-800 rounded-lg transition-all duration-300 hover:bg-indigo-900 text-xl"
+                        className="w-full px-4 py-2 text-slate-200 font-semibold bg-green-600 rounded-lg transition-all duration-300 hover:-translate-x-1 hover:text-slate-400 hover:bg-green-800 text-xl"
                     >
+                        <IoPersonAddOutline className="inline-block mb-1 mr-1" />
                         Reclutar
                     </button>
                 </div>

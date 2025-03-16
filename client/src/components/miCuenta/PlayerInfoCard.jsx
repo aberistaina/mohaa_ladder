@@ -68,7 +68,7 @@ export const PlayerInfoCard = ({ player }) => {
                                         to={`${player.twitch}`}
                                         target="_blank"
                                     >
-                                        <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-colors duration-300" />
+                                        <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-all duration-500 hover:scale-150" />
                                     </Link>
                                 </div>
                             ) : (
@@ -83,7 +83,7 @@ export const PlayerInfoCard = ({ player }) => {
                                         to={`${player.youtube}`}
                                         target="_blank"
                                     >
-                                        <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-colors duration-300" />
+                                        <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-all duration-500 hover:scale-150" />
                                     </Link>
                                 </div>
                             ) : (

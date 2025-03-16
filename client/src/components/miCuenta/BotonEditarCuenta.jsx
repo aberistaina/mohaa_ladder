@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { MdOutlineBrowserUpdated } from "react-icons/md";
+
 export const BotonEditarCuenta = () => {
     /* const { player } = useContext(LoginContext); */
     const player = useSelector((state) => state.auth.player);
@@ -10,7 +13,8 @@ export const BotonEditarCuenta = () => {
     return (
         <div className="flex justify-end mb-10 md:mb-0">
             <Link to={`/ladder/editar-micuenta/${player.id}`}>
-                <button className="px-2 py-1 mx-2 text-lg bg-blue-700 text-white font-bold rounded-lg shadow-md hover:bg-blue-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                <button className="flex justify-center items-center gap-x-1 px-2 py-1 text-lg bg-blue-700 text-white font-bold rounded-lg shadow-md  transition-all duration-300 hover:text-slate-400 hover:-translate-x-1 hover:bg-blue-900">
+                <MdOutlineBrowserUpdated />
                 Editar Mi Cuenta
                 </button>
             </Link>

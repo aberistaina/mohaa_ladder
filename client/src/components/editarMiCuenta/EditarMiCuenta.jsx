@@ -7,6 +7,6 @@ export const EditarMiCuenta = () => {
     
 
   return (
-      <FormularioEditarCuenta />
+    <FormularioEditarCuenta />
   )
 }

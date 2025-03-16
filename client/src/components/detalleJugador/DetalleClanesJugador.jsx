@@ -23,12 +23,12 @@ export const DetalleClanesJugador = ({ player }) => {
                             {player.clanes &&
                                 player.clanes.map((clan) => (
                                     <tr
-                                        className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800"
+                                        className="text-slate-300 text-lg"
                                         key={clan.id}
                                     >
                                         <td className="px-4 py-2">
                                             <Link
-                                                className="hover:text-blue-500 hover:underline transition duration-300"
+                                                className="text-slate-50 underline hover:text-slate-500 transition-all duration-300"
                                                 to={`/ladder/detalle-clan/${clan.id}`}
                                             >
                                                 {clan.nombre}

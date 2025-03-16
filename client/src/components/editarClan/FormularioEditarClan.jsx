@@ -6,6 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { MdOutlineBrowserUpdated } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
+import { CiLogout } from "react-icons/ci";
+
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
@@ -144,7 +149,7 @@ export const FormularioEditarClan = () => {
 
     return (
         <>
-            <form className="space-y-4 w-80 mr-7 mb-10 md:mb-0 md:mr-0 md:w-2/4" onSubmit={(e) => handleSubmit(e)}>
+            <form className="space-y-4 w-80 mr-7 mb-10 md:mb-0 md:mr-0 md:w-2/4 md:mt-2" onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <label
                         htmlFor="nombre"
@@ -236,7 +241,7 @@ export const FormularioEditarClan = () => {
                             </select>
                             <button 
                                 type="button" 
-                                className={`px-2 py-2 mx-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300 text-lg md:text-xl ${
+                                className={`px-2 py-2 mx-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:-translate-x-1 hover:text-slate-400 hover:bg-red-700 transition-all duration-300 text-lg md:text-xl ${
                                     player.PlayerClan?.rango === "Lider"
                                         ? "opacity-50 cursor-not-allowed"
                                         : ""
@@ -244,6 +249,7 @@ export const FormularioEditarClan = () => {
                                 disabled={player.PlayerClan?.rango === "Lider"}
                                 onClick={() => expulsarJugador(player.id, clan.id)}
                             >
+                                <CiLogout className="inline-block mb-1 mr-1" />
                                 Expulsar
                             </button>
                         </div>
@@ -252,16 +258,18 @@ export const FormularioEditarClan = () => {
 
                 <button
                     type="submit"
-                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-green-800 rounded-lg transition-all duration-300 hover:bg-green-900 text-xl"
+                    className="w-full px-4 py-2 text-slate-200 font-semibold hover:translate-y-1 bg-blue-700 rounded-lg transition-all duration-300 hover:bg-blue-900 hover:text-slate-400 text-xl"
                 >
+                    <MdOutlineBrowserUpdated className="inline-block mb-1 mr-1" />
                     Actualizar Clan
                 </button>
 
                 <button
                     type="button"
-                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-red-700 rounded-lg transition-all duration-300 hover:bg-red-900 text-xl"
+                    className="w-full px-4 py-2 text-slate-200 font-semibold bg-red-700 hover:translate-y-1 rounded-lg transition-all duration-300 hover:bg-red-900 hover:text-slate-400 text-xl"
                     onClick={eliminarCLan}
                 >
+                    <MdDeleteOutline className="inline-block mb-1 mr-1" />
                     Eliminar Clan
                 </button>
             </form>

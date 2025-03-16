@@ -53,7 +53,7 @@ export const TablaClanes = ({ clanes }) => {
                                                 ? "⬆️ " + clan.ranking_actual
                                                 : "⬇️ " + clan.ranking_actual}
                                         </td>
-                                        <td className="px-4 py-2 font-semibold text-slate-50 hover:text-slate-400 transition-all duration-300">
+                                        <td className="px-4 py-2 font-semibold text-slate-50 underline hover:text-slate-400 transition-all duration-300">
                                             <Link to={`/ladder/detalle-clan/${clan.id}`}>{clan.nombre}</Link>
                                         </td>
                                         <td className="px-4 py-2 text-center">
