@@ -6,7 +6,7 @@ import { FaYoutube } from "react-icons/fa6";
 export const TablaJugadores = ({ jugadores }) => {
     return (
         <>
-            <div className="overflow-x-auto w-80 mr-8 mb-10 rounded border border-slate-500 md:w-auto md:mb-0">
+            <div className="overflow-x-auto w-80 mr-3 mb-10 rounded border border-slate-500 md:w-auto md: md:mb-0">
                 <table className="min-w-[80%] table-auto bg-slate-900 rounded-lg shadow-md">
                     <thead className="bg-slate-950 border-b border-slate-500">
                         <tr className="text-slate-100 text-xl">
@@ -46,7 +46,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                     <td className="px-4 py-2 font-semibold text-slate-50 text-center">
                                         {jugador.id}
                                     </td>
-                                    <td className="px-4 py-2 font-semibold text-slate-50 text-center hover:text-slate-500 transition-colors duration-500">
+                                    <td className="px-4 py-2 font-semibold text-slate-50 text-center hover:text-slate-500 transition-colors duration-500 underline">
                                         <Link
                                             to={`/ladder/detalle-jugador/${jugador.id}`}
                                         >
@@ -77,7 +77,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                                     <Link
                                                         to={`https://www.twitch.tv/${jugador.twitch}`}
                                                     >
-                                                        <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-colors duration-300" />
+                                                        <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-all duration-500 hover:scale-125" />
                                                     </Link>
                                                 </div>
                                             </td>
@@ -98,7 +98,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                                 <Link
                                                     to={`https://volute.io/users/${jugador.youtube}`}
                                                 >
-                                                    <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-colors duration-300" />
+                                                    <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-all duration-500 hover:scale-125" />
                                                 </Link>
                                             </div>
                                         </td>)

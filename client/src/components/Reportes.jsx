@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { FaCheck } from "react-icons/fa6";
+
 export const Reportes = () => {
     /* const { token } = useContext(LoginContext) */
     const player = useSelector((state) => state.auth.player);
@@ -207,7 +210,7 @@ export const Reportes = () => {
                                 type="text"
                                 name="comentario"
                                 id="comentario"
-                                className="mt-1 text-xl block w-full px-4 py-2 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
+                                className="mt-1 text-base block w-full p-4 border border-gray-400 rounded-md text-gray-900 bg-white focus:ring-indigo-500 focus:border-indigo-500"
                                 onChange={(e) => setComentario(e.target.value)}
                             />
                         </div>
@@ -215,8 +218,9 @@ export const Reportes = () => {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full py-2 px-4 font-semibold bg-indigo-600 text-white rounded-md hover:bg-indigo-900 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors duration-300"
+                                className="w-full py-2 px-4 font-semibold bg-green-600 text-white rounded-md hover:bg-green-800 transition-all duration-300 hover:-translate-y-1 hover:text-slate-400 text-lg"
                             >
+                                <FaCheck className="inline-block mb-1 mr-1" />
                                 Reportar
                             </button>
                         </div>

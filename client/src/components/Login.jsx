@@ -2,11 +2,14 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from 'jwt-decode';
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoMdEye } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
+
+// Iconos
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { IoMdEye } from "react-icons/io";
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -85,15 +88,19 @@ export const Login = () => {
             {isAuthenticated ? (
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="text-3xl font-bold text-center text-slate-100">
-                        Bienvenid@
+                        ¡Bienvenid@!
                     </h1>
                     <h3 className="text-xl font-bold text-center text-slate-300 mb-1">
                         {player.username}
                     </h3>
+                    <div className="bg-slate-800 w-24 h-24 rounded-full overflow-hidden mt-1 transition-all duration-300 hover:scale-110">
+                        <img alt="Avatar" src={`https://robohash.org/${player.username}`} />
+                    </div>
                     <button
-                        className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-red-800"
+                        className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md  transition-all duration-500 hover:text-slate-400 hover:bg-red-700 hover:-translate-x-1"
                         onClick={() => dispatch(logout())} // Cerrar sesión con Redux
                     >
+                        <RiLogoutBoxLine className="inline-block mb-1 mr-1" />
                         Cerrar Sesión
                     </button>
                 </div>

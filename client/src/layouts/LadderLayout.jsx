@@ -1,4 +1,7 @@
 import { Outlet } from "react-router-dom";
+import "../index.css";
+
+// Componentes
 import { NavBar } from "../components/NavBar";
 import { Login } from "../components/Login";
 import { Banner } from "../components/Banner";
@@ -7,8 +10,8 @@ import { ChatBot } from "../components/ChatBot";
 
 export const LadderLayout = () => {
     return (
-        <div className="bg-slate-800">
-            <div className="container mx-auto grid grid-cols-1 bg-gradient-to-r from-slate-900 to-slate-950 min-h-[calc(100vh-57px)] lg:grid-cols-12 lg:min-h-screen">
+        <div className="animated-background">
+            <div className="container mx-auto grid grid-cols-1 border-r border-l border-slate-800 bg-gradient-to-r from-slate-900 to-slate-950 min-h-[calc(100vh-57px)] lg:grid-cols-12 lg:min-h-screen">
                 
                 {/* Login + Navbar Movile */}
                 <div className="lg:hidden col-span-12">
@@ -21,7 +24,7 @@ export const LadderLayout = () => {
                 </div>
 
                 {/* Banner */}
-                <header className="col-span-12 text-white flex items-center justify-center text-2xl px-4">
+                <header className="col-span-12 text-white flex items-center justify-center text-2xl">
                     <Banner />
                 </header>
 
