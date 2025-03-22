@@ -154,9 +154,14 @@ export const Login = () => {
 
                         <p className="text-slate-200 font-semibold">
                             ¿No tienes cuenta?{" "}
-                            <Link className="underline" to="/registro">
+                            <Link className="underline hover:text-slate-400" to="/ladder/registro">
                                 Regístrate aquí
                             </Link>
+                            <div className="text-center">
+                                <Link className="underline hover:text-slate-400" to="/ladder/recuperar-password">
+                                    ¿Olvidaste Tu Contraseña?
+                                </Link>
+                            </div>
                         </p>
                     </form>
 
