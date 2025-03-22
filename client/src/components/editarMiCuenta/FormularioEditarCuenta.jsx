@@ -138,7 +138,7 @@ export const FormularioEditarCuenta = () => {
                         id="twitch"
                         name="twitch"
                         value={form.twitch}
-                        placeholder="Ingresa tu link de twitch"
+                        placeholder="Ingresa tu usuario de twitch"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
@@ -156,7 +156,7 @@ export const FormularioEditarCuenta = () => {
                         id="youtube"
                         name="youtube"
                         value={form.youtube}
-                        placeholder="Ingresa tu link de youtube"
+                        placeholder="Ingresa tu usuario de youtube"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />

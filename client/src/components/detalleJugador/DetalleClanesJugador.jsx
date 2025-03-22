@@ -44,7 +44,7 @@ export const DetalleClanesJugador = ({ player }) => {
                                             {clan &&
                                                 formatDate(
                                                     clan.PlayerClan.joined_at
-                                                )}
+                                                ).fechaFormateada}
                                         </td>
                                     </tr>
                                 ))}

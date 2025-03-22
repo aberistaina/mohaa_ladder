@@ -18,6 +18,7 @@ export const PartidosJugados = ({ partidos }) => {
                                 <th className="px-4 py-2">Clan Perdedor</th>
                                 <th className="px-4 py-2">Comentario</th>
                                 <th className="px-4 py-2">Fecha</th>
+                                <th className="px-4 py-2">Hora</th>
                             </tr>
                         </thead>
                         <tbody className="text-center text-lg font-medium">
@@ -44,10 +45,12 @@ export const PartidosJugados = ({ partidos }) => {
                                         </td>
 
                                         <td className="px-4 py-2">
-                                            {formatDate(partido.fecha)}
+                                            {formatDate(partido.fecha).fechaFormateada}
                                         </td>
-                                        
-                                        
+
+                                        <td className="px-4 py-2">
+                                            {formatDate(partido.fecha).horaFormateada}
+                                        </td>
                                     </tr>
                                 ))}
                         </tbody>

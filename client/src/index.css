@@ -19,7 +19,7 @@ html {
     height: 100%;
     background: linear-gradient(90deg, rgb(18, 18, 51) 38%, rgb(27, 11, 43) 53%, rgb(19, 4, 59) 94%);
     background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite; 
+    animation: gradientAnimation 7s ease infinite; 
 }
 
 @keyframes gradientAnimation {

@@ -25,7 +25,7 @@ export const DetalleJugador = () => {
 
     return (
         <>
-            <div className="max-w-5xl mx-auto p-6 border border-slate-500 bg-slate-900 rounded shadow-md">
+            <div className="w-80 mr-3 max-w-full mx-auto p-6 border border-slate-500 bg-slate-900 rounded shadow-md md:w-auto md:mt-2 md:mr-auto">
                 <PlayerInfoCard player={player}/>
                 <DetalleClanesJugador player={player} />
             </div>
