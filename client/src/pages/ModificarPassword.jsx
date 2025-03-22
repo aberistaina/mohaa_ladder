@@ -5,8 +5,11 @@ import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
-import { IoMdEye } from "react-icons/io";
 import { useSelector } from 'react-redux';
+
+// Iconos
+import { MdOutlineBrowserUpdated } from "react-icons/md";
+import { IoMdEye } from "react-icons/io";
 
 export const ModificarPassword = () => {
     const { enqueueSnackbar } = useSnackbar()
@@ -62,7 +65,7 @@ export const ModificarPassword = () => {
 
 return (
     <>
-        <div className="w-full max-w-md p-6 border border-slate-500 rounded">
+        <div className="w-full max-w-md p-6 border border-slate-500 rounded mb-10 md:mb-0 md:mt-4">
                     <h2 className="text-2xl font-bold text-center text-slate-100 mb-6">Modificar Contraseña</h2>
                     <form className="space-y-4 flex justify-center flex-col" onSubmit={handleSubmit} >
                     <div>
@@ -77,7 +80,7 @@ return (
                             type={viewPassword ? "text" : "password"}
                             id="password"
                             placeholder="Ingresa tu contraseña"
-                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                            className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <IoMdEye className="text-4xl fill-[#FFFFFF] cursor-pointer" onClick={() => setViewPassword(!viewPassword)} />
@@ -97,7 +100,7 @@ return (
                                 type={viewPassword ? "text" : "password"}
                                 id="repeatPassword"
                                 placeholder="Repite tu contraseña"
-                                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300"
+                                className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                                 onChange={(e) => setRepeatPassword(e.target.value)}
                             />
                             <IoMdEye className="text-4xl fill-[#FFFFFF] cursor-pointer" onClick={() => setViewPassword(!viewPassword)} />
@@ -111,8 +114,9 @@ return (
                     
 
                     <button
-                        className="mb-10 px-4 py-4 mx-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
+                        className="mb-10 px-4 py-3 mr-10 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 hover:text-slate-400 transition-all duration-300 text-lg hover:-translate-x-1"
                     >
+                        <MdOutlineBrowserUpdated className="inline-block mb-1 mr-1" />
                         Modificar Contraseña
                     </button>
                     </form>

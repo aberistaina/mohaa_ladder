@@ -7,6 +7,10 @@ import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
+// Iconos
+import { MdOutlineBrowserUpdated } from "react-icons/md";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { IoPersonAddOutline } from "react-icons/io5";
 
 export const PlayerClanCard = ({ player }) => {
     const { enqueueSnackbar } = useSnackbar();
@@ -68,12 +72,12 @@ export const PlayerClanCard = ({ player }) => {
                             {player.clanes &&
                                 player.clanes.map((clan) => (
                                     <tr
-                                        className="text-slate-300 text-lg transition-all duration-300 hover:bg-slate-800"
+                                        className="text-slate-300 text-lg"
                                         key={clan.id}
                                     >
                                         <td className="px-4 py-2">
                                             <Link
-                                                className="hover:text-blue-500 hover:underline transition duration-300"
+                                                className="text-slate-50 underline hover:text-slate-500 transition-all duration-300"
                                                 to={`/ladder/detalle-clan/${clan.id}`}
                                             >
                                                 {clan.nombre}
@@ -91,12 +95,13 @@ export const PlayerClanCard = ({ player }) => {
                                                     clan.PlayerClan.joined_at
                                                 )}
                                         </td>
-                                        <td className="px-4 py-2">
-                                        <button className=" px-1 py-1 mx-2   bg-red-600 text-white font-bold rounded-lg shadow-md hover:bg-red-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300"
-                                        onClick={(e) =>{abandonarClan(player.id, clan.id, clan.nombre)}}
-                                        >
-                                                                Dejar Clan
-                                                            </button>
+                                        <td className="px-4 py-2 md:flex md:justify-center md:items-center">
+                                            <button className="flex justify-center items-center px-1 bg-red-600 text-white font-bold rounded-lg shadow-2xl transition-all duration-300 text-sm py-2 hover:-translate-x-1 hover:text-slate-500 hover:bg-red-800 md:text-lg md:py-0"
+                                            onClick={(e) =>{abandonarClan(player.id, clan.id, clan.nombre)}}
+                                            >
+                                                <RiLogoutBoxLine />
+                                                Dejar Clan
+                                            </button>
                                         </td>
                                         {clan.PlayerClan.rango &&
                                             (clan.PlayerClan.rango ===
@@ -104,17 +109,19 @@ export const PlayerClanCard = ({ player }) => {
                                                 clan.PlayerClan.rango ===
                                                     "Co-Lider") && (
                                                 <td>
-                                                    <div className="flex justify-center items-center">
+                                                    <div className="flex justify-center items-center py-2">
                                                         <Link to={`/ladder/editar-clan/${clan.id}`}>
-                                                            <button   className="px-4 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                            <button className="flex justify-center items-center gap-x-1 px-2 py-0 mx-2 bg-blue-700 text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-900 hover:-translate-x-1 hover:text-slate-400">
+                                                                <MdOutlineBrowserUpdated />
                                                                 Editar
                                                             </button>
                                                         </Link>
                                                         <Link to={`/ladder/reclutar/${clan.id}/${clan.etapa.id}`}>
-                                                            <button className="px-2 py-0 mx-2  bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                            <button className="flex justify-center items-center gap-x-1 px-1 mr-2 bg-green-600 text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:bg-green-800 hover:text-slate-500 hover:-translate-x-1">
+                                                                <IoPersonAddOutline />
                                                                 Reclutar
                                                             </button>
-                                                            </Link>
+                                                        </Link>
                                                     </div>
                                                 </td>
                                             )}
