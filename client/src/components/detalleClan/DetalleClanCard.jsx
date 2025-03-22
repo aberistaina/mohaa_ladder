@@ -3,17 +3,17 @@ import { formatDate } from "../../utils/formatearFecha";
 export const DetalleClanCard = ({ clan }) => {
     return (
         <>
-            {/* Información del Jugador */}
+            {/* Información del Clan */}
             <div className="flex flex-col md:flex-row mb-8">
-                <div className="w-full md:w-1/3 md:pr-6 mb-6 md:mb-0">
-                    {/* Imagen del Jugador */}
+                <div className="w-full md:w-1/2 md:pr-6 mb-6 md:mb-0">
+                    {/* Imagen del Clan */}
                     <img
                         src={clan.imagen}
                         alt="imagenClan"
-                        className="rounded-full w-32 h-32 md:w-full md:h-full object-cover mx-auto"
+                        className="rounded-xl w-32 h-32 md:w-full md:h-full object-cover mx-auto"
                     />
                 </div>
-                <div className="w-full md:w-2/3">
+                <div className="w-full md:w-1/2">
                     <h2 className="text-2xl font-bold mb-4 text-slate-100">
                         Información del Clan
                     </h2>
@@ -53,7 +53,7 @@ export const DetalleClanCard = ({ clan }) => {
                         <div className="flex justify-between">
                             <p className="font-semibold">Fecha Creación:</p>
                             <span className="font-normal text-slate-300">
-                                {formatDate(clan.created_at)}
+                                {formatDate(clan.created_at).fechaFormateada}
                             </span>
                         </div>
                         

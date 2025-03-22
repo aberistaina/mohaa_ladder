@@ -93,7 +93,7 @@ export const PlayerClanCard = ({ player }) => {
                                             {clan &&
                                                 formatDate(
                                                     clan.PlayerClan.joined_at
-                                                )}
+                                                ).fechaFormateada}
                                         </td>
                                         <td className="px-4 py-2 md:flex md:justify-center md:items-center">
                                             <button className="flex justify-center items-center px-1 bg-red-600 text-white font-bold rounded-lg shadow-2xl transition-all duration-300 text-sm py-2 hover:-translate-x-1 hover:text-slate-500 hover:bg-red-800 md:text-lg md:py-0"

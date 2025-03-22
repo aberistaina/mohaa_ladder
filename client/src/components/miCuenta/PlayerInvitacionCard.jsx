@@ -112,7 +112,7 @@ export const PlayerInvitacionCard = ({ player }) => {
                                             <td className="px-4 py-2">
                                                 {formatDate(
                                                     invitacion.fecha_envio
-                                                )}
+                                                ).fechaFormateada}
                                             </td>
                                             <td className="px-4 py-2">
                                                 <div className="flex justify-center">
