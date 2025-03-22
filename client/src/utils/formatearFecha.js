@@ -1,8 +1,19 @@
 export const formatDate = (fecha) => {
-    if (!fecha) return 'Fecha no disponible'
-    
-    const [datePart] = fecha.split("T");
+    if (!fecha) {
+        return {
+            fechaFormateada: "Fecha no disponible",
+            horaFormateada: "Hora no disponible",
+        };
+    }
+
+    const [datePart, hora] = fecha.split(" ");
     const [year, month, day] = datePart.split("-");
-    
-    return `${day}/${month}/${year}`;
+
+    const fechaFormateada = `${day}/${month}/${year}`;
+    const horaFormateada = hora.slice(0, 5)
+
+    return {
+        fechaFormateada,
+        horaFormateada,
+    };
 };
