@@ -3,6 +3,9 @@ import { fetchHook } from "../../hooks/fetchHook";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+// Iconos
+import { IoMdAdd } from "react-icons/io";
+
 export const EtapasJuegos = () => {
     const { id } = useParams();
     const [etapas, setEtapas] = useState([]);
@@ -40,7 +43,7 @@ export const EtapasJuegos = () => {
                             {etapas &&
                                 etapas.map((etapa) => (
                                     <tr
-                                        className="text-slate-300 transition-all duration-300 hover:bg-slate-800 text-lg"
+                                        className="text-slate-300 text-lg"
                                         key={etapa.id}
                                     >
                                         <td className="px-10 py-4">
@@ -51,7 +54,8 @@ export const EtapasJuegos = () => {
                                         </td>
                                         <td className="px-10 py-4">
                                             <Link to={`/ladder/etapa/${etapa.id}`}>
-                                                <button className="px-3 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-300">
+                                                <button className="px-3 py-0 mx-2  bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-800 transition-all duration-300 hover:text-slate-400 hover:-translate-x-1">
+                                                    <IoMdAdd className="inline-block mb-1 mr-1" />
                                                     Ver Más
                                                 </button>
                                             </Link>
