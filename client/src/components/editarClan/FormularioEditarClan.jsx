@@ -272,8 +272,15 @@ export const FormularioEditarClan = () => {
                     <MdDeleteOutline className="inline-block mb-1 mr-1" />
                     Eliminar Clan
                 </button>
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="bg-slate-800 text-white px-2 py-1 rounded-lg transition-all duration-300 text-lg font-semibold hover:bg-slate-700 hover:-translate-x-1"
+                        >
+                            ← Volver
+                    </button>
+                </div>
             </form>
-            
         </>
     );
 };
