@@ -5,11 +5,13 @@ import { useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { LoginContext } from "../context/LoginContext";
 import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 // Iconos
 import { IoPersonAddOutline } from "react-icons/io5";
 
 export const ReclutarPage = () => {
+    const navigate = useNavigate();
     const {clanId, etapaId } = useParams();
     const [playerId, setPlayerId] = useState("");
     const { enqueueSnackbar } = useSnackbar();
@@ -67,6 +69,14 @@ export const ReclutarPage = () => {
                     >
                         <IoPersonAddOutline className="inline-block mb-1 mr-1" />
                         Reclutar
+                    </button>
+                </div>
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="bg-slate-800 text-white px-2 py-1 rounded-lg transition-all duration-300 text-lg font-semibold hover:bg-slate-700 hover:-translate-x-1"
+                        >
+                            ← Volver
                     </button>
                 </div>
             </form>

@@ -5,9 +5,7 @@ import { TablaJugadores } from './TablaJugadores'
 export const ListaJugadores = () => {
     const [ jugadores, setJugadores ] = useState([])
 
-    
-
-      useEffect(() => {
+    useEffect(() => {
         const getJugadores = async() =>{
             try {
                 const url = "http://localhost:3000/api/v1/players/"
@@ -28,7 +26,7 @@ export const ListaJugadores = () => {
             getJugadores();
         }, []);
     
-  return (
+    return (
     <TablaJugadores jugadores={jugadores}/>
-  )
+    )
 }
