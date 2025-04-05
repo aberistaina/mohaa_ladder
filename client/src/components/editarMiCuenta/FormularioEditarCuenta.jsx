@@ -12,7 +12,6 @@ import { MdOutlineBrowserUpdated } from "react-icons/md";
 export const FormularioEditarCuenta = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    /* const { token } = useContext(LoginContext) */
     const player = useSelector((state) => state.auth.player);
     const token = useSelector((state) => state.auth.token);
     const { id } = useParams();
@@ -138,7 +137,7 @@ export const FormularioEditarCuenta = () => {
                         id="twitch"
                         name="twitch"
                         value={form.twitch}
-                        placeholder="Ingresa tu link de twitch"
+                        placeholder="Ingresa tu usuario de twitch"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
@@ -156,7 +155,7 @@ export const FormularioEditarCuenta = () => {
                         id="youtube"
                         name="youtube"
                         value={form.youtube}
-                        placeholder="Ingresa tu link de youtube"
+                        placeholder="Ingresa tu usuario de youtube"
                         className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-300 text-xl"
                         onChange={handleChange}
                     />
@@ -166,6 +165,14 @@ export const FormularioEditarCuenta = () => {
                     <button className="px-2 py-1 mx-2 text-xl bg-blue-700 text-white font-bold rounded-lg shadow-md hover:bg-blue-900 transition-all duration-300 hover:-translate-x-1 hover:text-slate-500">
                     <MdOutlineBrowserUpdated className="inline-block mb-1 mr-1" />
                     Actualizar Mi Cuenta
+                    </button>
+                </div>
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="bg-slate-800 text-white px-2 py-1 rounded-lg transition-all duration-300 text-lg font-semibold hover:bg-slate-700 hover:-translate-x-1"
+                        >
+                            ← Volver
                     </button>
                 </div>
             </form>

@@ -1,13 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { fetchHook } from "../hooks/fetchHook";
-import { LoginContext } from "../context/LoginContext";
 import { NavLink } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 export const NavBar = () => {
     const [juegos, setJuegos] = useState([]);
-    /* const { player } = useContext(LoginContext); */
-    const player = useSelector((state) => state.auth.player);
+
+    const playerData = useSelector((state) => state.auth.player);
+    const player = playerData?.data;
     const token = useSelector((state) => state.auth.token);
 
 

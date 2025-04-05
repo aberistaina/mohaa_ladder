@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { useEffect } from "react";
 import { HomePage } from "./pages/HomePage";
 import { Reportes } from "./components/Reportes";
 import { RegisterPage } from "./pages/RegisterPage";
@@ -22,14 +22,23 @@ import { ModificarPassword } from "./pages/ModificarPassword";
 import { DescargasPages } from "./pages/DescargasPages";
 import { VolverAJugar } from "./pages/VolverAJugar";
 import { ServidoresPages } from "./pages/ServidoresPages";
+import { useDispatch } from "react-redux";
+import { setAuthFromStorage } from "./store/authSlice";
+import { StreamPage } from "./pages/StreamPage";
 
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(setAuthFromStorage());
+    }, []);
+    
     return (
         <BrowserRouter>
             <Routes>
                 {/* Página principal */}
                 <Route path="/" element={<HomePageLayout><HomePage /></HomePageLayout>} />
+                <Route path="/stream" element={<HomePageLayout><StreamPage /></HomePageLayout>} />
                 <Route path="/descargas" element={<HomePageLayout><DescargasPages /></HomePageLayout>} />
                 <Route path="/volver-a-jugar" element={<HomePageLayout><VolverAJugar /></HomePageLayout>} />
                 <Route path="/servidores" element={<HomePageLayout><ServidoresPages /></HomePageLayout>} />

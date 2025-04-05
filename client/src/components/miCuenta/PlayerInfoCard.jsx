@@ -65,7 +65,7 @@ export const PlayerInfoCard = ({ player }) => {
                             {player.twitch ? (
                                 <div>
                                     <Link
-                                        to={`${player.twitch}`}
+                                        to={`https://www.twitch.tv/${player.twitch}`}
                                         target="_blank"
                                     >
                                         <BsTwitch className=" text-3xl fill-[#9146FF] hover:fill-[#5315af] transition-all duration-500 hover:scale-150" />
@@ -80,7 +80,7 @@ export const PlayerInfoCard = ({ player }) => {
                             {player.youtube ? (
                                 <div className="px-4 py-2">
                                     <Link
-                                        to={`${player.youtube}`}
+                                        to={`https://www.youtube.com/${player.youtube}`}
                                         target="_blank"
                                     >
                                         <FaYoutube className=" text-3xl fill-[#FF0033] hover:fill-[#830821] transition-all duration-500 hover:scale-150" />

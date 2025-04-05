@@ -14,7 +14,6 @@ import { CiLogout } from "react-icons/ci";
 export const FormularioEditarClan = () => {
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate()
-    /* const { token, player } = useContext(LoginContext) */
     const player = useSelector((state) => state.auth.player);
     const token = useSelector((state) => state.auth.token);
     const [clan, setClan] = useState({});
@@ -35,11 +34,12 @@ export const FormularioEditarClan = () => {
 
     const eliminarCLan = async() =>{
         try {
+            const playerId = player.data?.id
             const url = `http://localhost:3000/api/v1/clanes/eliminar/clan?token=${token}`;
             const method = "DELETE";
             const body = { 
                 clanId: id, 
-                playerId: player.id 
+                playerId
             };
             
             const confirmed = window.confirm('¿Estás seguro de que quieres eliminar el clan, esta acción no se puede revertir?');
@@ -272,8 +272,15 @@ export const FormularioEditarClan = () => {
                     <MdDeleteOutline className="inline-block mb-1 mr-1" />
                     Eliminar Clan
                 </button>
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="bg-slate-800 text-white px-2 py-1 rounded-lg transition-all duration-300 text-lg font-semibold hover:bg-slate-700 hover:-translate-x-1"
+                        >
+                            ← Volver
+                    </button>
+                </div>
             </form>
-            
         </>
     );
 };

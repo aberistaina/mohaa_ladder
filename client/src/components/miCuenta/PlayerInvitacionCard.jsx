@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 export const PlayerInvitacionCard = ({ player }) => {
     const [invitaciones, setInvitaciones] = useState();
     const { enqueueSnackbar } = useSnackbar();
-    /* const { token } = useContext(LoginContext) */
     const token = useSelector((state) => state.auth.token);
     const navigate = useNavigate()
 

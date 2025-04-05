@@ -8,7 +8,9 @@ import { MdOutlineBrowserUpdated } from "react-icons/md";
 
 export const BotonEditarCuenta = () => {
     /* const { player } = useContext(LoginContext); */
-    const player = useSelector((state) => state.auth.player);
+    const playerData = useSelector((state) => state.auth.player);
+    const player = playerData?.data
+
     const token = useSelector((state) => state.auth.token);
     return (
         <div className="flex justify-end mb-10 md:mb-0">

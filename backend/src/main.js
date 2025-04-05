@@ -7,6 +7,7 @@ import ladderRoutes  from "./routes/ladder.routes.js"
 import playersRoutes  from "./routes/players.routes.js"
 import loginRoutes  from "./routes/login.routes.js"
 import invitacionesRoutes  from "./routes/invitaciones.routes.js"
+import streamRoutes  from "./routes/stream.routes.js"
 
 
 import * as path from "path";
@@ -32,5 +33,6 @@ app.use("/api/v1/invitaciones", invitacionesRoutes)
 app.use("/api/v1/ladder", ladderRoutes)
 app.use("/api/v1/players", playersRoutes)
 app.use("/api/v1/login", loginRoutes)
+app.use("/api/v1/stream", streamRoutes)
 
 

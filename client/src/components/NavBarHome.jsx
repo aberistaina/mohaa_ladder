@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
+import { SiStreamlabs } from "react-icons/si";
 import { FaDownload, FaGamepad, FaServer } from "react-icons/fa";
 import { GiTalk, GiTrophy } from "react-icons/gi";
 
@@ -51,6 +52,20 @@ export const NavBarHome = () => {
                             to="/"
                         >
                             Home
+                        </Link>
+                    </div>
+
+                    <div className="flex items-center ">
+                        <SiStreamlabs className={` hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/stream" ? "fill-red-950 font-bold" : "fill-white"
+                            }`} /> 
+                        <Link
+                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
+                                location.pathname === "/stream" ? "text-red-950 font-bold" : "text-white"
+                            }`}
+                            to="/stream"
+                        >
+                            Stream
                         </Link>
                     </div>
 

@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { GrAddCircle } from "react-icons/gr";
 
 export const CrearClan = () => {
-    /* const { player, token } = useContext(LoginContext); */
+
     const player = useSelector((state) => state.auth.player);
     const token = useSelector((state) => state.auth.token);
     const { id } = useParams();
@@ -38,9 +38,9 @@ export const CrearClan = () => {
         try {
             const url = `http://localhost:3000/api/v1/clanes?token=${token}`;
             const method = "POST";
-            formCrearClan.id_lider = player.id
+            const playerId = player.data?.id;
+            formCrearClan.id_lider = playerId
             const body = formCrearClan;
-            console.log(token);
 
             const data = await fetchHook(url, method, body);
 

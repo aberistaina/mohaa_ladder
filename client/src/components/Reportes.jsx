@@ -3,15 +3,14 @@ import { fetchHook } from "../hooks/fetchHook";
 import { obtenerLocalStorage } from "../hooks/localStorage";
 import {useSnackbar} from 'notistack';
 import { useNavigate } from "react-router-dom";
-import { LoginContext } from "../context/LoginContext";
+
 import { useSelector } from 'react-redux';
 
 // Iconos
 import { FaCheck } from "react-icons/fa6";
 
 export const Reportes = () => {
-    /* const { token } = useContext(LoginContext) */
-    const player = useSelector((state) => state.auth.player);
+    const player = useSelector((state) => state.auth.player)
     const token = useSelector((state) => state.auth.token);
     const { enqueueSnackbar } = useSnackbar();
     const [etapas, setEtapas] = useState([]);
@@ -56,8 +55,7 @@ export const Reportes = () => {
     const getClanPerdedor = async (idEtapa) => { 
         try {
             setidEtapa(idEtapa);
-            const { playerData } = obtenerLocalStorage()
-            const idJugador = playerData.id;
+            const idJugador = player.data?.id
             const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
             const method = "GET";
             const data = await fetchHook(url, method);
@@ -78,7 +76,6 @@ export const Reportes = () => {
     };
 
     useEffect(() => {
-        
         const getJuegos = async () => {
             try {
                 const url = `http://localhost:3000/api/v1/juegos`;
@@ -124,6 +121,14 @@ export const Reportes = () => {
         }
     }
 
+    if (!player) {
+        return (
+            <div className="text-white text-center mt-10">
+                Cargando datos del jugador...
+            </div>
+        );
+    }
+    
     return (
         <>
             <div className="flex justify-center h-screen">

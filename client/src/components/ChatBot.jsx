@@ -28,7 +28,6 @@ export const ChatBot = () => {
         setUserMessage((prevMessages) => [...prevMessages, mensajeUsuario]);
         const urlProduccion = "https://bot-mohaa.vercel.app/axisbot/chat";
         const response = await fetchHook(urlProduccion, "POST", data)
-        console.log(response.response)
         const respuestaBot = response.response
         const mensajeBot = {
             origen: "🤖AxisBot🤖",

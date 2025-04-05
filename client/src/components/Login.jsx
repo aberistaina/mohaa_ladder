@@ -35,9 +35,8 @@ export const Login = () => {
                 body: JSON.stringify(body),
             });
             const data = await response.json();
-
             if (data.code === 200) {
-                dispatch(login({ player: data.player, token: data.token }));
+                dispatch(login(data.token));
                 enqueueSnackbar("Sesión iniciada correctamente", {
                     variant: "success",
                 });

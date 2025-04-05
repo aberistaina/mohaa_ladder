@@ -15,7 +15,6 @@ export const LoginProvider = ({ children }) => {
     useEffect(() => {
         const { playerData } = obtenerLocalStorage();
         const { token } = obtenerLocalStorage();
-        console.log(token);
         if (playerData && token) {
             setPlayer(playerData)
             setToken(token)

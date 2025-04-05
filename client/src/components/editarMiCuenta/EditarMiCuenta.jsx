@@ -1,12 +1,7 @@
-import { FormularioEditarCuenta } from "./FormularioEditarCuenta"
-
+import { FormularioEditarCuenta } from "./FormularioEditarCuenta";
 
 export const EditarMiCuenta = () => {
-
-    
-    
-
   return (
-    <FormularioEditarCuenta />
+      <FormularioEditarCuenta />
   )
 }

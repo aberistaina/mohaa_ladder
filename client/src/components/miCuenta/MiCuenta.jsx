@@ -10,8 +10,8 @@ import { useSelector } from 'react-redux';
 export const MiCuenta = () => {
     
     const [ userData , userSetData ] = useState({})
-    /* const { player } = useContext(LoginContext); */
-    const player = useSelector((state) => state.auth.player);
+    const playerData = useSelector((state) => state.auth.player);
+    const player = playerData?.data
     const token = useSelector((state) => state.auth.token);
 
 
@@ -38,7 +38,7 @@ export const MiCuenta = () => {
 
     return (
         <>
-            <div className="w-96 mr-2 mb-10 p-6 border border-slate-500 bg-slate-900 rounded shadow-md md:w-full md:max-w-5xl md:mx-auto md:mb-0 md:mt-2">
+            <div className="w-80 mr-3 mb-10 p-6 border border-slate-500 bg-slate-900 rounded shadow-md md:w-full md:max-w-5xl md:mx-auto md:mb-0 md:mt-2">
                 <PlayerInfoCard player={userData} />
                 <BotonEditarCuenta />
                 <PlayerClanCard player={userData} />
