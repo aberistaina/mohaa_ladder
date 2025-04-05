@@ -53,7 +53,7 @@ export const DetalleClanCard = ({ clan }) => {
                         <div className="flex justify-between">
                             <p className="font-semibold">Fecha Creación:</p>
                             <span className="font-normal text-slate-300">
-                                {formatDate(clan.created_at)}
+                                {formatDate(clan.created_at).fechaFormateada}
                             </span>
                         </div>
                         

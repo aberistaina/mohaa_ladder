@@ -44,7 +44,7 @@ export const PartidosJugados = ({ partidos }) => {
                                         </td>
 
                                         <td className="px-4 py-2">
-                                            {formatDate(partido.fecha)}
+                                            {formatDate(partido.fecha).fechaFormateada}
                                         </td>
                                         
                                         

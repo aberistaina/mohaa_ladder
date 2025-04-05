@@ -67,7 +67,7 @@ export const TablaJugadores = ({ jugadores }) => {
                                         </Link>
                                     </td>
                                     <td className="px-4 py-2 text-center">
-                                        {formatDate(jugador.created_at)}
+                                        {formatDate(jugador.created_at).fechaFormateada}
                                     </td>
 
                                     {

@@ -34,7 +34,7 @@ export const JugadoresClan = ({ clan }) => {
                                             </Link>
                                         </td>
                                         <td className="px-4 py-2">
-                                            {formatDate(player.PlayerClan?.joined_at)}
+                                            {formatDate(player.PlayerClan?.joined_at).fechaFormateada}
                                         </td>
                                         <td className="px-4 py-2">
                                             {player.PlayerClan?.rango}

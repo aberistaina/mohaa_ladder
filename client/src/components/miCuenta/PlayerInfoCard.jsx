@@ -37,7 +37,7 @@ export const PlayerInfoCard = ({ player }) => {
                         <div className="flex justify-between">
                             <p className="font-semibold">Fecha de Ingreso:</p>
                             <span className="font-normal text-slate-300">
-                                {player && formatDate(player.created_at)}
+                                {player && formatDate(player.created_at).fechaFormateada}
                             </span>
                         </div>
                         <div className="flex justify-between">
