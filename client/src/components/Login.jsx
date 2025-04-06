@@ -1,5 +1,5 @@
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,7 @@ export const Login = () => {
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
     const dispatch = useDispatch();
-    const { player, isAuthenticated } = useSelector((state) => state.auth); // Obtener usuario desde Redux
+    const { player, isAuthenticated } = useSelector((state) => state.auth);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -24,7 +24,7 @@ export const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        const url = "http://localhost:3000/api/v1/login";
+        const url = "https://mohaax.cl/api/v1/login";
         const method = "POST";
         const body = { email, password };
 
@@ -52,35 +52,42 @@ export const Login = () => {
         }
     };
 
-    const loginGoogle = async(token) =>{
-        const url = 'http://localhost:3000/api/v1/login/google';
-                const method = 'POST';
-                const decodedToken = jwtDecode(token);
-                const body = {
-                    token,
-                    name: decodedToken.name,
-                    email: decodedToken.email,
-                };
-        
-                try {
-                    const response = await fetch(url, {
-                        method,
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(body),
-                    });
-                    const data = await response.json();
-        
-                    if (data.code === 200) {
-                        enqueueSnackbar('Sesión iniciada correctamente con Google', { variant: 'success' });
-                        dispatch(login({ player: data.player, token: data.token }));
-                        navigate('/ladder');
-                    } else {
-                        enqueueSnackbar(data.message, { variant: 'error' });
-                    }
-                } catch (error) {
-                    enqueueSnackbar('Error al iniciar sesión con Google', { variant: 'error' });
-                }
-    }
+    const loginGoogle = async (token) => {
+        console.log(token);
+        const url = "https://mohaax.cl/api/v1/login/google";
+        const method = "POST";
+        const decodedToken = jwtDecode(token);
+        const body = {
+            token,
+            name: decodedToken.name,
+            email: decodedToken.email,
+        };
+
+        try {
+            const response = await fetch(url, {
+                method,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body),
+            });
+            const data = await response.json();
+
+            if (data.code === 200) {
+                console.log(data);
+                enqueueSnackbar("Sesión iniciada correctamente con Google", {
+                    variant: "success",
+                });
+                dispatch(login(data.token));
+                navigate("/ladder");
+            } else {
+                enqueueSnackbar(data.message, { variant: "error" });
+            }
+        } catch (error) {
+            console.log(error);
+            enqueueSnackbar("Error al iniciar sesión con Google", {
+                variant: "error",
+            });
+        }
+    };
 
     return (
         <div>
@@ -93,7 +100,10 @@ export const Login = () => {
                         {player.username}
                     </h3>
                     <div className="bg-slate-800 w-24 h-24 rounded-full overflow-hidden mt-1 transition-all duration-300 hover:scale-110">
-                        <img alt="Avatar" src={`https://robohash.org/${player.username}`} />
+                        <img
+                            alt="Avatar"
+                            src={`https://robohash.org/${player.username}`}
+                        />
                     </div>
                     <button
                         className="px-4 py-2 mt-4 bg-red-500 text-white font-bold rounded-lg shadow-md  transition-all duration-500 hover:text-slate-400 hover:bg-red-700 hover:-translate-x-1"
@@ -151,17 +161,25 @@ export const Login = () => {
                             Inicia Sesión
                         </button>
 
-                        <p className="text-slate-200 font-semibold">
-                            ¿No tienes cuenta?{" "}
-                            <Link className="underline hover:text-slate-400" to="/ladder/registro">
-                                Regístrate aquí
-                            </Link>
-                            <div className="text-center">
-                                <Link className="underline hover:text-slate-400" to="/ladder/recuperar-password">
+                        <div className="text-slate-200 font-semibold space-y-2 text-center">
+                            <p>
+                                ¿No tienes cuenta?{" "}
+                                <Link
+                                    className="underline hover:text-slate-400"
+                                    to="/ladder/registro"
+                                >
+                                    Regístrate aquí
+                                </Link>
+                            </p>
+                            <p>
+                                <Link
+                                    className="underline hover:text-slate-400"
+                                    to="/ladder/recuperar-password"
+                                >
                                     ¿Olvidaste Tu Contraseña?
                                 </Link>
-                            </div>
-                        </p>
+                            </p>
+                        </div>
                     </form>
 
                     <div className="flex items-center justify-center my-4">

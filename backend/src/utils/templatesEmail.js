@@ -70,7 +70,7 @@ export const crearTemplateHtml = (email, asunto, token, username) => {
                                     <a href="http://localhost:5173/ladder/validar-cuenta/?email=${email}&token=${token}" class="button">Validar Cuenta</a>
                                 </div>
                                 <div class="bienvenida" style="text-align: center;">
-                                    <img src="http://localhost:3000/assets/public/bienvenida.png" alt="Bienvenida" style="max-width: 600px; width: 100%; height: auto;">
+                                    <img src="https://mohaax.cl/assets/public/bienvenida.png" alt="Bienvenida" style="max-width: 600px; width: 100%; height: auto;">
                                 </div>
 
                                 

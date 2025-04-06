@@ -36,7 +36,7 @@ export const CrearClan = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `http://localhost:3000/api/v1/clanes?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/clanes?token=${token}`;
             const method = "POST";
             const playerId = player.data?.id;
             formCrearClan.id_lider = playerId

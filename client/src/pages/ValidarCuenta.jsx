@@ -25,7 +25,7 @@ export const ValidarCuenta = () => {
 
     const validar = async () => {
         try {
-            const url = `http://localhost:3000/api/v1/players/validar/${email}?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/players/validar/${email}?token=${token}`;
             const method = "GET";
 
             const data = await fetchHook(url, method);
@@ -44,7 +44,7 @@ export const ValidarCuenta = () => {
     const reenviarValidacion = async (e) => {
         try {
             e.preventDefault();
-            const url = `http://localhost:3000/api/v1/players/reenviar-validacion/${emailForm}`;
+            const url = `https://mohaax.cl/api/v1/players/reenviar-validacion/${emailForm}`;
             const method = "GET";
 
             const data = await fetchHook(url, method);

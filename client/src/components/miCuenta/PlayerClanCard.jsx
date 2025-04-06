@@ -23,7 +23,7 @@ export const PlayerClanCard = ({ player }) => {
             const confirmed = window.confirm(`¿Estás seguro de que quieres abandonar el clan ${nombreClan}?`);
             
             if(confirmed){
-                const url = `http://localhost:3000/api/v1/players/dejar-clan?token=${token}`
+                const url = `https://mohaax.cl/api/v1/players/dejar-clan?token=${token}`
                 const method = "DELETE"
                 const body = {
                     playerId,

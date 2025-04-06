@@ -16,7 +16,7 @@ export const DetalleClan = () => {
         useEffect(() => {
             const getInfoClan = async () => {
                 try {
-                    const url = `http://localhost:3000/api/v1/clanes/${id}`;
+                    const url = `https://mohaax.cl/api/v1/clanes/${id}`;
                     const method = "GET";
                     const data = await fetchHook(url, method);
                     setClan(data.data);
@@ -26,7 +26,7 @@ export const DetalleClan = () => {
             };
             const getInfoPartidos = async () => {
                 try {
-                    const url = `http://localhost:3000/api/v1/ladder/${id}`;
+                    const url = `https://mohaax.cl/api/v1/ladder/${id}`;
                     const method = "GET";
                     const data = await fetchHook(url, method);
                     setPartidos(data.data);

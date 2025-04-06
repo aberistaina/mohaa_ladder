@@ -8,7 +8,7 @@ export const ListaJugadores = () => {
     useEffect(() => {
         const getJugadores = async() =>{
             try {
-                const url = "http://localhost:3000/api/v1/players/"
+                const url = "https://mohaax.cl/api/v1/players/"
                 const method = "GET"
                 const data = await fetchHook(url, method)
                 if(data?.data){

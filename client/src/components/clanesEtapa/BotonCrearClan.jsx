@@ -9,7 +9,7 @@ import { GrAddCircle } from "react-icons/gr";
 export const BotonCrearClan = () => {
     const [etapa, setEtapa] = useState("");
     const { id } = useParams();
-    const url = `http://localhost:3000/api/v1/etapas/${id}`
+    const url = `https://mohaax.cl/api/v1/etapas/${id}`
     const method = "GET";
 
     useEffect(() => {

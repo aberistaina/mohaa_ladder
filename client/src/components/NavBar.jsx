@@ -18,7 +18,7 @@ export const NavBar = () => {
     useEffect(() => {
         const getJuegos = async () => {
             try {
-                const url = "http://localhost:3000/api/v1/juegos";
+                const url = "https://mohaax.cl/api/v1/juegos";
                 const method = "GET"
                 const data = await fetchHook(url, method);
                 if(data?.data){

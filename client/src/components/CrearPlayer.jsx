@@ -33,7 +33,7 @@ export const CrearPlayer = () => {
             if (newError.email || newError.password || newError.username) {
                 return;
             } else {
-                const url = "http://localhost:3000/api/v1/players";
+                const url = "https://mohaax.cl/api/v1/players";
                 const method = "POST";
                 const body = {
                     username,

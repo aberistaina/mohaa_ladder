@@ -29,7 +29,7 @@ export const ReclutarPage = () => {
             reclutador_id: player.id,
         };
 
-        const url = `http://localhost:3000/api/v1/invitaciones/?token=${token}`;
+        const url = `https://mohaax.cl/api/v1/invitaciones/?token=${token}`;
         const method = "POST";
         const data = await fetchHook(url, method, body);
 

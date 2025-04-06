@@ -13,7 +13,7 @@ export const EtapasJuegos = () => {
     useEffect(() => {
         const getEtapas = async () => {
             try {
-                const url = `http://localhost:3000/api/v1/etapas/juego/${id}`;
+                const url = `https://mohaax.cl/api/v1/etapas/juego/${id}`;
                 const method = "GET";
                 const data = await fetchHook(url, method);
                 setEtapas(data.data);

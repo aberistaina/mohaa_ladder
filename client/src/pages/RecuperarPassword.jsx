@@ -11,7 +11,7 @@ export const RecuperarPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = `http://localhost:3000/api/v1/players/recuperar-password`;
+            const url = `https://mohaax.cl/api/v1/players/recuperar-password`;
             const method = "POST";
 
             const body = {

@@ -7,7 +7,7 @@ export const StreamPage = () => {
     useEffect(() => {
         const fetchStreams = async () => {
             try {
-                const res = await fetch("http://localhost:3000/api/v1/stream");
+                const res = await fetch("https://mohaax.cl/api/v1/stream");
                 const data = await res.json();
                 setStreams(data.data);
                 console.log(data);

@@ -23,7 +23,7 @@ export const LoginProvider = ({ children }) => {
 
     // Login tradicional
     const login = async (email, password) => {
-        const url = 'http://localhost:3000/api/v1/login';
+        const url = 'https://mohaax.cl/api/v1/login';
         const method = 'POST';
         const body = { email, password };
 
@@ -53,7 +53,7 @@ export const LoginProvider = ({ children }) => {
 
     // Login con Google
     const loginGoogle = async (token) => {
-        const url = 'http://localhost:3000/api/v1/login/google';
+        const url = 'https://mohaax.cl/api/v1/login/google';
         const method = 'POST';
         const decodedToken = jwtDecode(token);
         const body = {

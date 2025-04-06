@@ -25,7 +25,7 @@ export const Reportes = () => {
 
     const getEtapas = async (id) => { 
         try {
-            const url = `http://localhost:3000/api/v1/etapas/juego/${id}`;
+            const url = `https://mohaax.cl/api/v1/etapas/juego/${id}`;
             const method = "GET";
             const data = await fetchHook(url, method);
             setidJuego(id);
@@ -38,7 +38,7 @@ export const Reportes = () => {
 
     const getClanes = async (idEtapa, idClanPerdedor) => { 
         try {
-            const url = `http://localhost:3000/api/v1/clanes/obtenerCLanReporte/${idEtapa}/${idClanPerdedor}`;
+            const url = `https://mohaax.cl/api/v1/clanes/obtenerCLanReporte/${idEtapa}/${idClanPerdedor}`;
             const method = "GET";
             const data = await fetchHook(url, method);
 
@@ -56,7 +56,7 @@ export const Reportes = () => {
         try {
             setidEtapa(idEtapa);
             const idJugador = player.data?.id
-            const url = `http://localhost:3000/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
+            const url = `https://mohaax.cl/api/v1/players/obtenerCLanEtapa/${idJugador}/${idEtapa}`;
             const method = "GET";
             const data = await fetchHook(url, method);
 
@@ -78,7 +78,7 @@ export const Reportes = () => {
     useEffect(() => {
         const getJuegos = async () => {
             try {
-                const url = `http://localhost:3000/api/v1/juegos`;
+                const url = `https://mohaax.cl/api/v1/juegos`;
                 const method = "GET";
                 const data = await fetchHook(url, method);
                 setJuegos(data.data);
@@ -95,7 +95,7 @@ export const Reportes = () => {
         try {
             getClanPerdedor(idEtapa);
 
-            const url = `http://localhost:3000/api/v1/ladder?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/ladder?token=${token}`;
             const method = "POST";
             const body = {
                 id_clan_ganador: idClanGanador,

@@ -9,7 +9,7 @@ export const ClanesEtapa = () => {
     const [clanes, setClanes] = useState("");
     const { id } = useParams();
 
-    const url = `http://localhost:3000/api/v1/clanes/etapa/${id}`
+    const url = `https://mohaax.cl/api/v1/clanes/etapa/${id}`
     const method = "GET";
 
     useEffect(() => {

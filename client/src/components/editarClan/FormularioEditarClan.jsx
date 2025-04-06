@@ -35,7 +35,7 @@ export const FormularioEditarClan = () => {
     const eliminarCLan = async() =>{
         try {
             const playerId = player.data?.id
-            const url = `http://localhost:3000/api/v1/clanes/eliminar/clan?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/clanes/eliminar/clan?token=${token}`;
             const method = "DELETE";
             const body = { 
                 clanId: id, 
@@ -80,7 +80,7 @@ export const FormularioEditarClan = () => {
 
     const getInfoClan = async () => {
         try {
-            const url = `http://localhost:3000/api/v1/clanes/${id}`;
+            const url = `https://mohaax.cl/api/v1/clanes/${id}`;
             const method = "GET";
             const data = await fetchHook(url, method);
             setClan(data.data);
@@ -104,7 +104,7 @@ export const FormularioEditarClan = () => {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-            const url = `http://localhost:3000/api/v1/clanes/editar/${id}?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/clanes/editar/${id}?token=${token}`;
             const method = "POST";
             const data = await fetchHook(url, method, form);
     
@@ -121,7 +121,7 @@ export const FormularioEditarClan = () => {
 
     const expulsarJugador = async(playerId, clanId) =>{
         try {
-            const url = `http://localhost:3000/api/v1/clanes/eliminar?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/clanes/eliminar?token=${token}`;
             const method = "DELETE";
             const body = {
                 playerId,

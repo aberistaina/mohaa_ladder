@@ -42,7 +42,7 @@ export const ModificarPassword = () => {
             } else {
             const token = params.get("token") || contextToken
             
-            const url = `http://localhost:3000/api/v1/players/modificar-password/${email}?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/players/modificar-password/${email}?token=${token}`;
             const method = "POST";
 
             const body = {

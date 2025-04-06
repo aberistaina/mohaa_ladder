@@ -20,7 +20,7 @@ export const MiCuenta = () => {
             const id = player.id;
             const getInfoPlayer = async () => {
                 try {
-                    const url = `http://localhost:3000/api/v1/players/${id}`;
+                    const url = `https://mohaax.cl/api/v1/players/${id}`;
                     const method = "GET";
                     const data = await fetchHook(url, method);
                     userSetData(data.data);

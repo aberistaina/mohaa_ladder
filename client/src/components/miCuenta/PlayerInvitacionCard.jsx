@@ -17,7 +17,7 @@ export const PlayerInvitacionCard = ({ player }) => {
     useEffect(() => {   
         const getInvitationsPlayer = async () => {
             try {
-                const url = `http://localhost:3000/api/v1/invitaciones/${player.id}?token=${token}`;
+                const url = `https://mohaax.cl/api/v1/invitaciones/${player.id}?token=${token}`;
                 const method = "GET";
                 const data = await fetchHook(url, method);
                 setInvitaciones(data.data);
@@ -36,7 +36,7 @@ export const PlayerInvitacionCard = ({ player }) => {
                 id_etapa: idEtapa,
                 id_invitacion: invitacionId,
             };
-            const url = `http://localhost:3000/api/v1/invitaciones/aceptar?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/invitaciones/aceptar?token=${token}`;
             const method = "POST";
             const data = await fetchHook(url, method, body);
     
@@ -56,7 +56,7 @@ export const PlayerInvitacionCard = ({ player }) => {
             const body = {
                 id_invitacion: idInvitacion,
             };
-            const url = `http://localhost:3000/api/v1/invitaciones/rechazar?token=${token}`;
+            const url = `https://mohaax.cl/api/v1/invitaciones/rechazar?token=${token}`;
             const method = "POST";
             const data = await fetchHook(url, method, body);
     
