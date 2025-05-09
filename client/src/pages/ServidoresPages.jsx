@@ -3,8 +3,8 @@ import React from 'react'
 export const ServidoresPages = () => {
   return (
     <>
-            <div className="bg-[url('public/background2.svg')] bg-cover bg-center w-full min-h-screen flex items-center flex-col justify-center">
-                <h1 className="text-center text-white text-3xl mb-6">
+            <div className="animated-background2 bg-cover bg-center w-full min-h-screen flex items-center flex-col justify-center pb-6">
+                <h1 className="text-center text-white text-3xl my-6 underline font-semibold">
                     Servidores Clanes
                 </h1>
 
@@ -108,7 +108,7 @@ export const ServidoresPages = () => {
 
                 </div>
 
-                <h1 className="text-center text-white text-3xl mb-6">
+                <h1 className="text-center text-white text-3xl my-6 underline font-semibold">
                     Servidores Ligas
                 </h1>
 

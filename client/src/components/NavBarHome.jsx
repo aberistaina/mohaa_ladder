@@ -9,7 +9,7 @@ export const NavBarHome = () => {
     const [menuIcon, setMenuIcon] = useState(false);
     const location = useLocation();
     return (
-        <nav className="bg-black/50 shadow px-6 opacity-90">
+        <nav className="bg-slate-950 shadow px-6 py-2 border-b border-slate-500">
             <div className="flex h-16 items-center justify-between max-w-7xl mx-auto">
                 {/* Mobile menu button */}
                 <button
@@ -42,12 +42,12 @@ export const NavBarHome = () => {
                 {/* Desktop menu */}
                 <div className="hidden md:flex flex-row space-x-8">
                     <div className="flex items-center ">
-                        <IoHome className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/" ? "fill-red-950 font-bold" : "fill-white"
+                        <IoHome className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/"
                         >
@@ -56,12 +56,12 @@ export const NavBarHome = () => {
                     </div>
 
                     <div className="flex items-center ">
-                        <SiStreamlabs className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/stream" ? "fill-red-950 font-bold" : "fill-white"
+                        <SiStreamlabs className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/stream" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/stream" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/stream" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/stream"
                         >
@@ -70,12 +70,12 @@ export const NavBarHome = () => {
                     </div>
 
                     <div className="flex justify-between items-center ">
-                        <FaServer className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/servidores" ? "fill-red-950 font-bold" : "fill-white"
+                        <FaServer className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/servidores" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/servidores" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/servidores" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/servidores"
                         >
@@ -85,12 +85,12 @@ export const NavBarHome = () => {
                     </div>
 
                     <div className="flex justify-between items-center ">
-                        <GiTrophy className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "fill-red-950 font-bold" : "fill-white"
+                        <GiTrophy className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/ladder" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/ladder" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/ladder"
                         >
@@ -99,28 +99,28 @@ export const NavBarHome = () => {
                     
                     </div>
 
-                    <div className="flex justify-between items-center ">
-                        <GiTalk className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "fill-red-950 font-bold" : "fill-white"
+                    <div className="flex justify-between items-center " disabled>
+                        <GiTalk className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/ladder" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/ladder" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors disabled: ${
+                                location.pathname === "/ladder" ? "text-red-600 font-bold" : "text-white"
                             }`}
-                            to="/foro"
+                            to="/#"
                         >
-                            Foro
+                            Foro (Próximamente)
                         </Link>
                     
                     </div>
 
                     <div className="flex justify-between items-center ">
-                        <FaDownload className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/descargas" ? "fill-red-950 font-bold" : "fill-white"
+                        <FaDownload className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/descargas" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/descargas" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/descargas" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/descargas"
                         >
@@ -130,12 +130,12 @@ export const NavBarHome = () => {
                     </div>
 
                     <div className="flex justify-between items-center ">
-                        <FaGamepad className={` hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/volver-a-jugar" ? "fill-red-950 font-bold" : "fill-white"
+                        <FaGamepad className={` hover:text-slate-400 transition-colors ${
+                                location.pathname === "/volver-a-jugar" ? "fill-red-600 font-bold" : "fill-white"
                             }`} /> 
                         <Link
-                            className={`px-3 py-2 hover:text-yellow-400 transition-colors ${
-                                location.pathname === "/volver-a-jugar" ? "text-red-950 font-bold" : "text-white"
+                            className={`px-3 py-2 hover:text-slate-400 transition-colors ${
+                                location.pathname === "/volver-a-jugar" ? "text-red-600 font-bold" : "text-white"
                             }`}
                             to="/volver-a-jugar"
                         >

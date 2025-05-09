@@ -23,7 +23,7 @@ export const StreamPage = () => {
 
     return (
         <>
-            <div className="bg-[#0e0e10] min-h-screen">
+            <div className="animated-background2 min-h-screen">
                 <div className="p-4">
                     <h1 className="text-2xl font-bold mb-4 text-slate-100">Streams en vivo</h1>
 

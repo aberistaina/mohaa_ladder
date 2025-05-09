@@ -26,14 +26,14 @@ export const emitirToken = async(req, res, next) =>{
 
         
         if (!player){
-            return res.json({code:400, message: "email o Password Incorrecto",})
+            return res.json({code:400, message: "Email o Password Incorrecto",})
         }
 
         let validacionPassword = await bcrypt.compare(password, player.password)
         
         
         if(!validacionPassword){
-            return res.json({code:400, message: "email o Password Incorrecto",})
+            return res.json({code:400, message: "Email o Password Incorrecto",})
         }
 
         if(!player.validado){
